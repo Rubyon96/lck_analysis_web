@@ -465,6 +465,7 @@ const computeStandingsFromMatches = (baseTeams, completedMatches) => {
     }))
     .sort((a, b) =>
       b.wins - a.wins ||
+      a.losses - b.losses ||
       b.gameDiff - a.gameDiff ||
       b.gameWins - a.gameWins ||
       a.shortName.localeCompare(b.shortName)

@@ -1,6 +1,6 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-21T15:53:09.049Z",
+    "generatedAt": "2026-08-21T16:01:21.906Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
     "rawPandascoreMatches": 1230,
@@ -2894,23 +2894,9 @@ window.lck2026Data = {
           "gameLosses": 28
         },
         {
-          "id": "bro",
-          "group": "rise",
-          "rank": 6,
-          "shortName": "BRO",
-          "fullName": "HANJIN BRION",
-          "logo": "./assets/logos/bro.png",
-          "wins": 10,
-          "losses": 16,
-          "gameDiff": -7,
-          "streak": "1L",
-          "gameWins": 27,
-          "gameLosses": 34
-        },
-        {
           "id": "bfx",
           "group": "rise",
-          "rank": 7,
+          "rank": 6,
           "shortName": "BFX",
           "fullName": "BNK FEARX",
           "logo": "./assets/logos/bfx.png",
@@ -2920,6 +2906,20 @@ window.lck2026Data = {
           "streak": "1W",
           "gameWins": 23,
           "gameLosses": 33
+        },
+        {
+          "id": "bro",
+          "group": "rise",
+          "rank": 7,
+          "shortName": "BRO",
+          "fullName": "HANJIN BRION",
+          "logo": "./assets/logos/bro.png",
+          "wins": 10,
+          "losses": 16,
+          "gameDiff": -7,
+          "streak": "1L",
+          "gameWins": 27,
+          "gameLosses": 34
         },
         {
           "id": "ns",

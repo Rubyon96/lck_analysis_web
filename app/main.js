@@ -78,7 +78,10 @@ const getRoundAdjustedTeams = (round) => {
 
   if (roundData) {
     const rankedTeams = [...(roundData.standings || [])]
-      .sort((a, b) => b.wins - a.wins || b.gameDiff - a.gameDiff || a.shortName.localeCompare(b.shortName));
+      .sort((a, b) =>
+        (a.rank || 999) - (b.rank || 999) ||
+        compareStandingTeams(a, b)
+      );
     return applyDisplayRank(rankedTeams);
   }
 
@@ -139,6 +142,7 @@ const getCumulativeMatchesThroughRound = (round) =>
 
 const compareStandingTeams = (a, b) =>
   b.wins - a.wins ||
+  a.losses - b.losses ||
   b.gameDiff - a.gameDiff ||
   (b.gameWins || 0) - (a.gameWins || 0) ||
   a.shortName.localeCompare(b.shortName);
