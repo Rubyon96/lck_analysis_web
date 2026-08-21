@@ -1,0 +1,12 @@
+{
+  "T1": ["T1"],
+  "HLE": ["HLE", "한화생명", "한화생명e스포츠", "Hanwha Life Esports"],
+  "GEN": ["GEN", "젠지", "Gen.G"],
+  "KT": ["KT", "kt 롤스터", "KT Rolster"],
+  "DK": ["DK", "Dplus KIA"],
+  "BRO": ["BRO", "한진 브리온", "HANJIN BRION", "BRION"],
+  "BFX": ["BFX", "BNK 피어엑스", "BNK FEARX"],
+  "KRX": ["KRX", "KIWOOM DRX", "키움 DRX"],
+  "NS": ["NS", "농심", "농심 레드포스", "Nongshim RedForce"],
+  "DNS": ["DNS", "DN 수퍼스", "DN SOOPers"]
+}

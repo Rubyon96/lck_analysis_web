@@ -1,0 +1,18 @@
+{
+  "primary": {
+    "id": "pandascore",
+    "name": "PandaScore",
+    "baseUrl": "https://api.pandascore.co",
+    "tokenEnv": "PANDASCORE_TOKEN"
+  },
+  "secondary": {
+    "id": "naver",
+    "name": "Naver eSports",
+    "scheduleUrl": "https://game.naver.com/esports/League_of_Legends/schedule/lck",
+    "scheduleApiBaseUrl": "https://esports-api.game.naver.com",
+    "topLeagueId": "lck",
+    "scheduleStartMonth": "2026-04",
+    "scheduleEndMonth": "2026-08",
+    "standingsUrl": "https://game.naver.com/esports/League_of_Legends/record/lck/team/lck_2026?type=AD"
+  }
+}

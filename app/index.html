@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LCK Standings Simulator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="home-page" class="home-page" aria-label="LCK 팀 순위">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">2026 LCK Prototype</p>
+            <h1>STANDINGS</h1>
+          </div>
+          <div class="status-pill">임시 데이터</div>
+        </header>
+
+        <nav id="round-tabs" class="round-tabs" aria-label="정규시즌 라운드"></nav>
+        <p id="round-note" class="round-note"></p>
+        <div id="standings-view" class="standings-view" aria-label="선택 라운드 순위"></div>
+      </section>
+
+      <section id="team-detail" class="detail-page" aria-live="polite"></section>
+    </main>
+
+    <script src="./data/sample_matches.js"></script>
+    <script src="./data/lck_2026_data.js"></script>
+    <script src="./data/league_rules.js"></script>
+    <script src="./analysis.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
