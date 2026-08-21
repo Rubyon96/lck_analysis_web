@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-21T11:58:07.589Z",
+    "generatedAt": "2026-08-21T14:06:15.154Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1229,
+    "rawPandascoreMatches": 1226,
     "filteredPandascoreMatches": 56,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
@@ -48,10 +48,10 @@
       "shortName": "T1",
       "fullName": "T1",
       "logo": "./assets/logos/t1.png",
-      "wins": 16,
+      "wins": 17,
       "losses": 8,
-      "gameDiff": 18,
-      "streak": "3L",
+      "gameDiff": 19,
+      "streak": "1W",
       "source": "naver_team_ranking"
     },
     {
@@ -75,9 +75,9 @@
       "fullName": "KT Rolster",
       "logo": "./assets/logos/kt.png",
       "wins": 15,
-      "losses": 10,
-      "gameDiff": 7,
-      "streak": "5L",
+      "losses": 11,
+      "gameDiff": 6,
+      "streak": "6L",
       "source": "naver_team_ranking"
     },
     {
@@ -2819,7 +2819,7 @@
       "startDate": "2026-08-12",
       "endDate": "2026-08-23",
       "matchCount": 20,
-      "completedMatchCount": 15,
+      "completedMatchCount": 16,
       "missingRequiredRounds": [],
       "isCumulativeComplete": true,
       "standings": [
@@ -2858,12 +2858,12 @@
           "shortName": "T1",
           "fullName": "T1",
           "logo": "./assets/logos/t1.png",
-          "wins": 16,
+          "wins": 17,
           "losses": 8,
-          "gameDiff": 18,
-          "streak": "3L",
-          "gameWins": 36,
-          "gameLosses": 18
+          "gameDiff": 19,
+          "streak": "1W",
+          "gameWins": 38,
+          "gameLosses": 19
         },
         {
           "id": "dk",
@@ -2887,11 +2887,11 @@
           "fullName": "KT Rolster",
           "logo": "./assets/logos/kt.png",
           "wins": 15,
-          "losses": 10,
-          "gameDiff": 7,
-          "streak": "5L",
-          "gameWins": 33,
-          "gameLosses": 26
+          "losses": 11,
+          "gameDiff": 6,
+          "streak": "6L",
+          "gameWins": 34,
+          "gameLosses": 28
         },
         {
           "id": "bro",
@@ -3270,15 +3270,15 @@
           "sourceId": "2025082119BrOZ13r1229lol",
           "source": "naver",
           "date": "2026-08-21T10:00:00.000Z",
-          "status": "not_started",
+          "status": "finished",
           "title": "정규시즌 4R",
           "roundId": "r4",
           "roundTitle": "정규시즌 4R",
           "teamA": "KT",
           "teamB": "T1",
-          "scoreA": 0,
-          "scoreB": 0,
-          "winner": null,
+          "scoreA": 1,
+          "scoreB": 2,
+          "winner": "T1",
           "sourceStatus": "single_source",
           "sources": {
             "pandascore": false,
@@ -3369,6 +3369,27 @@
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1568935",
+      "sourceId": 1568935,
+      "source": "pandascore",
+      "date": "2026-08-21T11:19:26Z",
+      "status": "finished",
+      "teamA": "KT",
+      "teamB": "T1",
+      "blueTeam": "KT",
+      "redTeam": "T1",
+      "scoreA": 1,
+      "scoreB": 2,
+      "blueScore": 1,
+      "redScore": 2,
+      "winner": "T1",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1568936",
       "sourceId": 1568936,
@@ -4248,29 +4269,54 @@
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1568935",
-      "sourceId": 1568935,
-      "source": "pandascore",
-      "date": "2026-08-21T11:19:26Z",
-      "status": "running",
-      "teamA": "KT",
-      "teamB": "T1",
-      "blueTeam": "KT",
-      "redTeam": "T1",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "validation": [
+    {
+      "key": "2026-08-21_KT_vs_T1",
+      "status": "confirmed",
+      "pandascore": {
+        "id": "pandascore-1568935",
+        "sourceId": 1568935,
+        "source": "pandascore",
+        "date": "2026-08-21T11:19:26Z",
+        "status": "finished",
+        "teamA": "KT",
+        "teamB": "T1",
+        "blueTeam": "KT",
+        "redTeam": "T1",
+        "scoreA": 1,
+        "scoreB": 2,
+        "blueScore": 1,
+        "redScore": 2,
+        "winner": "T1",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": {
+        "id": "naver-2025082119BrOZ13r1229lol",
+        "sourceId": "2025082119BrOZ13r1229lol",
+        "source": "naver",
+        "date": "2026-08-21T10:00:00.000Z",
+        "status": "finished",
+        "title": "정규시즌 4R",
+        "roundId": "r4",
+        "roundTitle": "정규시즌 4R",
+        "teamA": "KT",
+        "teamB": "T1",
+        "scoreA": 1,
+        "scoreB": 2,
+        "winner": "T1",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": false,
+          "naver": true
+        }
+      }
+    },
     {
       "key": "2026-08-21_BFX_vs_BRO",
       "status": "confirmed",
@@ -6090,50 +6136,6 @@
         "roundTitle": "정규시즌 4R",
         "teamA": "BFX",
         "teamB": "NS",
-        "scoreA": 0,
-        "scoreB": 0,
-        "winner": null,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
-      "key": "2026-08-21_KT_vs_T1",
-      "status": "scheduled_confirmed",
-      "pandascore": {
-        "id": "pandascore-1568935",
-        "sourceId": 1568935,
-        "source": "pandascore",
-        "date": "2026-08-21T11:19:26Z",
-        "status": "running",
-        "teamA": "KT",
-        "teamB": "T1",
-        "blueTeam": "KT",
-        "redTeam": "T1",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025082119BrOZ13r1229lol",
-        "sourceId": "2025082119BrOZ13r1229lol",
-        "source": "naver",
-        "date": "2026-08-21T10:00:00.000Z",
-        "status": "not_started",
-        "title": "정규시즌 4R",
-        "roundId": "r4",
-        "roundTitle": "정규시즌 4R",
-        "teamA": "KT",
-        "teamB": "T1",
         "scoreA": 0,
         "scoreB": 0,
         "winner": null,
