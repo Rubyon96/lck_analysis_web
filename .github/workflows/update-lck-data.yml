@@ -1,0 +1,41 @@
+name: Update LCK data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # KST 19:00-23:50, Wednesday-Sunday. GitHub cron uses UTC.
+    - cron: "*/10 10-14 * * 3-6"
+    - cron: "*/10 10-14 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Update LCK data
+        env:
+          PANDASCORE_TOKEN: ${{ secrets.PANDASCORE_TOKEN }}
+        run: node scripts/update_lck_data.js
+
+      - name: Commit changed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/data/lck_2026_data.js data/processed/lck_2026_data.json data/validation/lck_2026_match_validation.json
+          if git diff --cached --quiet; then
+            echo "No LCK data changes to commit."
+          else
+            git commit -m "Update LCK match data"
+            git push
+          fi
