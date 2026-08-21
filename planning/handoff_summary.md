@@ -216,6 +216,22 @@ The `남은 경기 경우의 수` panel now uses an automatic end-of-round targe
 - Target-rank select options use dark dropdown styling so all ranks remain visible.
 - Finished match plates do not trigger scenario calculation. The left panel only shows the selected team's current rank.
 - Upcoming match plates use simplified win/loss branches first. If win/loss alone cannot separate the target-rank condition, the UI marks the path as requiring set-difference review.
+- Set-difference detail UI rules are fixed:
+  - The closed control text is `득실상세보기`.
+  - The open control text is `상세 접기`.
+  - The control stays in the same row position before and after opening.
+  - The control uses the same pill size, font size, weight, and line height as the impact badge such as `영향 높음`.
+  - The detail table expands downward inside the same card width. It must not open to the right, overlap the match list, or break into vertical fragments.
+  - Do not add a separate `세부사항` control for this interaction.
+- When the same set score appears in both target-achieved and target-missed columns, the UI must explain that the score alone is not the classification key. The detail row should show the additional companion match condition that separates the result.
+- Set detail rows should read as a complete condition, for example `DK 2:0 승리 시 / 달성 조건: HLE가 T1에게 2:0 또는 2:1 승리`. Do not concatenate fragments like `2:0DK 승리HLE 대 T1`.
+- Score text must be written from the named winning team's perspective. For example, if GEN wins with raw left/right score `1:2`, display `GEN 2:1 승리`, not `GEN 1:2 승리`.
+- The achieved column uses `달성 조건`; the missed column uses `미달성 조건`, because missed rows are failure combinations where the selected team's final rank is worse than the target rank.
+- Set-detail result rows should name both teams when possible, e.g. `DK가 GEN에게 2:1 승리 시 / 1등 미달성 조건: HLE가 T1에게 2:1 승리`, so users can understand that this branch fails unless the companion match condition changes.
+- Goal-scenario layout should prioritize the left calculation panel. The right match schedule panel is a compact sidebar, currently 260px on desktop. If space gets tight, reduce or stack the match schedule panel before allowing the calculation detail cards to overflow or overlap.
+- Scenario detail cards must clearly explain their calculation scope. Even when a later match appears inside the detail rows, the calculator is using every relevant remaining match from the selected start point through the round end. Use the condition-block title, such as `3등 조건 - 08.21~08.23 남은 경기 전체 반영`, and avoid adding a duplicate scope box above it.
+- Team logos should be visually normalized by context. Do not keep team-specific logo enlargement rules such as a separate T1 size override; use the same frame and `object-fit: contain` so logo and team name read as a balanced 1:1 pair.
+- Mobile responsiveness is a priority because the expected users will mostly check scenarios on phones. Keep the mobile layout card-based rather than table-like: standings cards show rank/team/streak on the first row and record/diff on the second row, match history hides low-value columns, calendars use two columns, selected-match detail stacks vertically, and goal-scenario match plates stack below the calculator.
 
 ## Known Limitations
 

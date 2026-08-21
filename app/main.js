@@ -12,6 +12,8 @@ let selectedScenarioMatchId = null;
 
 const getSelectedTeam = () => teams.find((team) => team.id === selectedTeamId);
 
+const getTeamByShortName = (shortName) => teams.find((team) => team.shortName === shortName);
+
 const getSelectedRound = () => rules.rounds.find((round) => round.id === selectedRoundId);
 
 const getRoundData = (round) => liveData?.rounds?.[round.id] || null;
@@ -284,9 +286,9 @@ const createTeamRow = (team) => {
         </span>
         <span class="team-name">${team.shortName}</span>
       </span>
-      <span class="stat-value">${team.wins} - ${team.losses}</span>
-      <span class="stat-value">${analysis.getDiffLabel(team.gameDiff)}</span>
-      <span class="stat-value streak ${streakClass}">${team.streak}</span>
+      <span class="stat-value stat-record">${team.wins} - ${team.losses}</span>
+      <span class="stat-value stat-diff">${analysis.getDiffLabel(team.gameDiff)}</span>
+      <span class="stat-value stat-streak streak ${streakClass}">${team.streak}</span>
     </button>
   `;
 };
@@ -694,6 +696,8 @@ const getDefaultScenarioMatch = (round, team) =>
     match.status !== "finished" && isMatchRelevantToTeamRank(round, match, team)
   ) || null;
 
+const getFirstPredictableMatch = (round, team) => getDefaultScenarioMatch(round, team);
+
 const getSelectedScenarioMatch = (round, team) => {
   const matchList = getScenarioPanelMatches(round, team);
   return matchList.find((match) => match.id === selectedScenarioMatchId) ||
@@ -764,6 +768,21 @@ const summarizeGoalScenarios = ({ round, team, targetRank, startMatch = null }) 
       currentRank: latestRank,
       targetRank,
       startMatch,
+      variableMatches: [],
+      totalCases: 0,
+      successCases: 0,
+      scenarios: []
+    };
+  }
+
+  const firstPredictableMatch = getFirstPredictableMatch(round, team);
+  if (startMatch && firstPredictableMatch && startMatch.id !== firstPredictableMatch.id) {
+    return {
+      mode: "locked",
+      currentRank,
+      targetRank,
+      startMatch,
+      blockingMatch: firstPredictableMatch,
       variableMatches: [],
       totalCases: 0,
       successCases: 0,
@@ -860,6 +879,8 @@ const renderDistributionRows = (distribution, totalCases) =>
 
 const getScenarioScore = (scenario, match) => scenario[match.id];
 
+const formatScenarioDate = (date) => formatShortDate(date).replace("월 ", ".").replace("일", "");
+
 const getTeamScenarioLine = (match, scenario, team) => {
   const score = getScenarioScore(scenario, match);
   if (!score) {
@@ -872,7 +893,7 @@ const getTeamScenarioLine = (match, scenario, team) => {
   const opponent = isTeamA ? match.teamB : match.teamA;
   const result = teamScore > opponentScore ? "승리" : "패배";
 
-  return `${team.shortName} ${result} (vs ${opponent})`;
+  return `${formatScenarioDate(match.date)} ${opponent}전 ${result}`;
 };
 
 const getTeamPlanKey = (variableMatches, scenario, team) => {
@@ -892,7 +913,7 @@ const getRivalOutcomeSummary = (match, scenario) => {
 
   const winner = getScenarioWinner(match, score.scoreA, score.scoreB);
   const opponent = winner === match.teamA ? match.teamB : match.teamA;
-  return `${opponent}전 ${winner} 승리`;
+  return `${formatScenarioDate(match.date)} ${opponent}전 ${winner} 승리`;
 };
 
 const getScenarioScoreText = (match, scenario) => {
@@ -902,7 +923,226 @@ const getScenarioScoreText = (match, scenario) => {
   }
 
   const winner = getScenarioWinner(match, score.scoreA, score.scoreB);
-  return `${match.teamA} ${score.scoreA}:${score.scoreB} ${match.teamB} · ${winner} 승리`;
+  return `
+    <span>${formatScenarioDate(match.date)}</span>
+    <strong>${match.teamA} 대 ${match.teamB}</strong>
+    <i aria-hidden="true"></i>
+    <b>${winner} 승리</b>
+  `;
+};
+
+const getScenarioScoreDetailText = (match, scenario) => {
+  const score = getScenarioScore(scenario, match);
+  if (!score) {
+    return "";
+  }
+
+  const winner = getScenarioWinner(match, score.scoreA, score.scoreB);
+  return `
+    <span>${formatScenarioDate(match.date)}</span>
+    <strong>${match.teamA} 대 ${match.teamB}</strong>
+    <i aria-hidden="true"></i>
+    <b>${winner} ${score.scoreA}:${score.scoreB} 승리</b>
+  `;
+};
+
+const getOutcomeKey = (match, scenario) => {
+  const score = getScenarioScore(scenario, match);
+  if (!score) {
+    return "";
+  }
+
+  const winner = getScenarioWinner(match, score.scoreA, score.scoreB);
+  return `${winner}|${score.scoreA}:${score.scoreB}`;
+};
+
+const getOutcomeWinner = (outcomeKey) => outcomeKey.split("|")[0] || "";
+
+const getOutcomeScore = (outcomeKey) => outcomeKey.split("|")[1] || "";
+
+const getWinnerPerspectiveScore = (outcomeKey) => {
+  const [leftScore, rightScore] = getOutcomeScore(outcomeKey).split(":").map(Number);
+
+  if (!Number.isFinite(leftScore) || !Number.isFinite(rightScore)) {
+    return getOutcomeScore(outcomeKey);
+  }
+
+  return `${Math.max(leftScore, rightScore)}:${Math.min(leftScore, rightScore)}`;
+};
+
+const getOutcomeLabel = (outcomeKey) => {
+  const winner = getOutcomeWinner(outcomeKey);
+  const score = getWinnerPerspectiveScore(outcomeKey);
+  return score ? `${winner} ${score} 승리` : `${winner} 승리`;
+};
+
+const uniqueValues = (items) => [...new Set(items.filter(Boolean))];
+
+const teamSubjectParticles = {
+  BFX: "이",
+  BRO: "이",
+  DK: "가",
+  DNS: "이",
+  GEN: "이",
+  HLE: "가",
+  KRX: "이",
+  KT: "가",
+  NS: "이",
+  T1: "이"
+};
+
+const formatTeamSubject = (shortName) => `${shortName}${teamSubjectParticles[shortName] || "이"}`;
+
+const formatOutcomeCondition = (match, outcomeKeys) => {
+  const winners = uniqueValues(outcomeKeys.map(getOutcomeWinner));
+
+  if (winners.length === 1) {
+    const winner = winners[0];
+    const opponent = winner === match.teamA ? match.teamB : match.teamA;
+    const scores = uniqueValues(outcomeKeys.map(getWinnerPerspectiveScore));
+    return `${formatTeamSubject(winner)} ${opponent}에게 ${scores.join(" 또는 ")} 승리`;
+  }
+
+  return outcomeKeys.map(getOutcomeLabel).join(" 또는 ");
+};
+
+const createMiniLogo = (shortName) => {
+  const team = getTeamByShortName(shortName);
+  return team?.logo
+    ? `<img class="scenario-mini-logo" src="${team.logo}" alt="${shortName} 로고" />`
+    : "";
+};
+
+const createPlateTeamLabel = (shortName, resultClass, sideClass) => `
+  <strong class="match-plate-team ${resultClass} ${sideClass}">
+    ${createMiniLogo(shortName)}
+    <span>${shortName}</span>
+  </strong>
+`;
+
+const createImpactMatchLabel = (match) => `
+  <strong class="scenario-impact-match">
+    ${createMiniLogo(match.teamA)}
+    <span>${match.teamA}</span>
+    <small>대</small>
+    ${createMiniLogo(match.teamB)}
+    <span>${match.teamB}</span>
+  </strong>
+`;
+
+const getOutcomeContextText = ({ match, cases, variableMatches, contextLabel }) => {
+  const otherMatches = variableMatches.filter((item) => item.id !== match.id);
+  const conditions = otherMatches.flatMap((otherMatch) => {
+    const outcomeKeys = uniqueValues(cases.map((item) => getOutcomeKey(otherMatch, item.scenario)));
+
+    if (outcomeKeys.length === 1) {
+      return [`${contextLabel}: ${formatOutcomeCondition(otherMatch, outcomeKeys)}`];
+    }
+
+    if (outcomeKeys.length > 1 && outcomeKeys.length < 4) {
+      return [`${contextLabel}: ${formatOutcomeCondition(otherMatch, outcomeKeys)}`];
+    }
+
+    return [];
+  });
+
+  return conditions.length ? conditions.slice(0, 2).join(" / ") : "이 결과만으로 분류됩니다.";
+};
+
+const createSetDetailRows = ({ outcomeKeys, cases, match, variableMatches, contextLabel }) => outcomeKeys.map((key) => {
+  const matchingCases = cases.filter((item) => getOutcomeKey(match, item.scenario) === key);
+  const contextText = getOutcomeContextText({ match, cases: matchingCases, variableMatches, contextLabel });
+
+  return `
+  <div class="scenario-set-row">
+    <b>${formatOutcomeCondition(match, [key])} 시</b>
+    <small>${contextText}</small>
+  </div>
+  `;
+}).join("");
+
+const createSetDetail = ({ successOutcomes, failureOutcomes, successes, failures, match, variableMatches, targetRank }) => `
+  <div class="scenario-set-grid">
+    <section>
+      <small>목표 달성</small>
+      ${createSetDetailRows({ outcomeKeys: successOutcomes, cases: successes, match, variableMatches, contextLabel: `${formatRank(targetRank)} 달성 조건` })}
+    </section>
+    <section>
+      <small>목표 미달성</small>
+      ${createSetDetailRows({ outcomeKeys: failureOutcomes, cases: failures, match, variableMatches, contextLabel: `${formatRank(targetRank)} 미달성 조건` })}
+    </section>
+  </div>
+`;
+
+const createMatchImpactLine = ({ match, items, successes, failures, team, variableMatches, targetRank }) => {
+  const outcomes = uniqueValues(items.map((item) => getOutcomeKey(match, item.scenario)));
+  const successOutcomes = uniqueValues(successes.map((item) => getOutcomeKey(match, item.scenario)));
+  const failureOutcomes = uniqueValues(failures.map((item) => getOutcomeKey(match, item.scenario)));
+  const allWinners = uniqueValues(outcomes.map(getOutcomeWinner));
+  const successWinners = uniqueValues(successOutcomes.map(getOutcomeWinner));
+  const failureWinners = uniqueValues(failureOutcomes.map(getOutcomeWinner));
+  const isDirectMatch = match.teamA === team.shortName || match.teamB === team.shortName;
+  const successLabels = successOutcomes.map(getOutcomeLabel);
+  const allSuccessOutcomesCovered = successOutcomes.length === outcomes.length;
+
+  if (allSuccessOutcomesCovered) {
+    return `
+      <div class="scenario-impact-line neutral">
+        <span>${formatScenarioDate(match.date)}</span>
+        ${createImpactMatchLabel(match)}
+        <em>영향 낮음</em>
+        <b>이 카드에서는 결과와 관계없이 목표 조건이 유지됩니다.</b>
+      </div>
+    `;
+  }
+
+  if (successWinners.length === 1 && allWinners.length > 1) {
+    const winner = successWinners[0];
+    const needsSetCheck = failureWinners.includes(winner);
+    return needsSetCheck ? `
+      <details class="scenario-impact-line set scenario-impact-detail">
+        <summary>
+          <span>${formatScenarioDate(match.date)}</span>
+          ${createImpactMatchLabel(match)}
+          <em>영향 높음</em>
+          <b>${winner} 승리 필요, 세트 득실 확인</b>
+          <span class="scenario-detail-action"></span>
+        </summary>
+        ${createSetDetail({ successOutcomes, failureOutcomes, successes, failures, match, variableMatches, targetRank })}
+      </details>
+    ` : `
+      <div class="scenario-impact-line required">
+        <span>${formatScenarioDate(match.date)}</span>
+        ${createImpactMatchLabel(match)}
+        <em>필수</em>
+        <b>${winner} 승리 필요</b>
+      </div>
+    `;
+  }
+
+  if (allWinners.length === 1 && !allSuccessOutcomesCovered) {
+    return `
+      <details class="scenario-impact-line set scenario-impact-detail">
+        <summary>
+          <span>${formatScenarioDate(match.date)}</span>
+          ${createImpactMatchLabel(match)}
+          <em>${isDirectMatch ? "우리팀 세트" : "타팀 세트"}</em>
+          <b>${successLabels.slice(0, 2).join(" 또는 ")} 조건</b>
+          <span class="scenario-detail-action"></span>
+        </summary>
+        ${createSetDetail({ successOutcomes, failureOutcomes, successes, failures, match, variableMatches, targetRank })}
+      </details>
+    `;
+  }
+
+  return `
+    <div class="scenario-impact-line required">
+      <span>${formatScenarioDate(match.date)}</span>
+      ${createImpactMatchLabel(match)}
+      <em>조합 영향</em>
+      <b>${successLabels.slice(0, 2).join(" 또는 ")} 조건</b>
+    </div>
+  `;
 };
 
 const getCommonRivalConditions = (successes, variableMatches, team) => {
@@ -952,6 +1192,20 @@ const hasRivalResultImpact = (successes, failures, variableMatches, team) => {
   });
 };
 
+const getScenarioScopeTitle = (matches) => {
+  if (!matches.length) {
+    return "남은 경기 전체 반영";
+  }
+
+  const sortedMatches = [...matches].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const startDate = formatScenarioDate(sortedMatches[0].date);
+  const endDate = formatScenarioDate(sortedMatches[sortedMatches.length - 1].date);
+
+  return startDate === endDate
+    ? `${startDate} 남은 경기 전체 반영`
+    : `${startDate}~${endDate} 남은 경기 전체 반영`;
+};
+
 const createManualScenarioCards = (result, team) => {
   const grouped = Object.values(result.scenarios.reduce((groups, item) => {
     const key = getTeamPlanKey(result.variableMatches, item.scenario, team);
@@ -961,7 +1215,7 @@ const createManualScenarioCards = (result, team) => {
     };
   }, {}));
 
-  return grouped.map((items, index) => {
+  const cards = grouped.map((items) => {
     const key = getTeamPlanKey(result.variableMatches, items[0].scenario, team);
     const successes = items.filter((item) => item.rank <= result.targetRank);
     const failures = items.filter((item) => item.rank > result.targetRank);
@@ -973,9 +1227,9 @@ const createManualScenarioCards = (result, team) => {
       : [];
     const rivalImpact = !allSuccess && !noneSuccess &&
       hasRivalResultImpact(successes, failures, result.variableMatches, team);
-    const resultClass = allSuccess ? "success" : noneSuccess ? "fail" : rivalImpact ? "partial" : "diff";
+    const resultClass = allSuccess ? "success" : noneSuccess ? "fail" : "partial";
     const conditionText = allSuccess
-      ? "이 경로는 경쟁 팀 결과와 관계없이 목표 등수 가능성이 열려 있습니다."
+      ? "희망 등수를 유지하거나 달성할 수 있는 경로입니다."
       : noneSuccess
         ? "이 경로에서는 남은 경쟁 팀 결과가 좋아도 목표 등수 달성이 어렵습니다."
         : rivalImpact && conditions.length
@@ -985,62 +1239,69 @@ const createManualScenarioCards = (result, team) => {
             : "승패만으로는 조건이 갈리지 않습니다. 이 경우 세트 득실 확인이 필요합니다.";
     const detailTitle = rivalImpact
       ? "왜 타경기 결과가 필요한가"
-      : resultClass === "diff"
+      : !allSuccess && !noneSuccess
         ? "왜 세트 득실 확인이 필요한가"
         : "계산 상세";
     const rivalMatches = result.variableMatches.filter((match) =>
       match.teamA !== team.shortName && match.teamB !== team.shortName
     );
-    const successExample = successes[0];
-    const failureExample = failures[0];
-    const successLines = successExample
-      ? result.variableMatches.map((match) => getScenarioScoreText(match, successExample.scenario)).filter(Boolean)
-      : [];
-    const failureLines = failureExample
-      ? result.variableMatches.map((match) => getScenarioScoreText(match, failureExample.scenario)).filter(Boolean)
+    const scopeTitle = getScenarioScopeTitle(result.variableMatches);
+    const impactLines = successes.length
+      ? result.variableMatches.map((match) => createMatchImpactLine({ match, items, successes, failures, team, variableMatches: result.variableMatches, targetRank: result.targetRank }))
       : [];
     const rivalText = rivalMatches.length
       ? `선택한 경기 이후 같은 순위표에 남은 경쟁 경기 ${rivalMatches.length}경기가 ${team.shortName}의 최종 순위 계산에 같이 반영됩니다.`
       : `${team.shortName}의 남은 직접 경기 결과와 세트 득실만 최종 순위 계산에 반영됩니다.`;
-    const detailText = resultClass === "partial"
+    const detailText = rivalImpact
       ? `${rivalText} 이 경로에서는 ${conditions.length ? `${conditions.join(", ")} 조건이 맞을 때` : "아래 목표 충족 예시처럼 타경기 결과 조합이 맞을 때"} 목표 ${formatRank(result.targetRank)} 가능성이 열립니다.`
-      : resultClass === "diff"
+      : resultClass === "partial"
         ? `같은 승패 경로 안에서도 2:0, 2:1, 1:2, 0:2에 따라 세트 득실이 달라져 목표 ${formatRank(result.targetRank)} 여부가 갈립니다.`
-        : resultClass === "success"
+      : resultClass === "success"
           ? `남은 조합 ${items.length}개를 확인한 결과, 이 경로는 목표 ${formatRank(result.targetRank)}에 도달하는 조합으로 계산됩니다.`
           : `남은 조합 ${items.length}개를 확인한 결과, 이 경로는 목표 ${formatRank(result.targetRank)}에 도달하지 못하는 조합으로 계산됩니다.`;
 
-    return `
+    return {
+      resultClass,
+      successCount: successes.length,
+      totalCount: items.length,
+      markup: `
       <details class="manual-scenario-card ${resultClass}">
         <summary>
-          <span>${index + 1}. ${key}</span>
+          <span data-scenario-title>${key}</span>
           <strong>추가 성적 ${record.wins}승 ${record.losses}패 · ${successes.length}/${items.length}개 조합 목표 충족</strong>
           <p>${conditionText}</p>
         </summary>
         <div class="manual-scenario-detail">
           <b>${detailTitle}</b>
           <p>${detailText}</p>
-          ${successLines.length ? `
-            <div>
-              <small>목표 충족 예시</small>
-              <ul>${successLines.map((line) => `<li>${line}</li>`).join("")}</ul>
-            </div>
-          ` : ""}
-          ${failureLines.length && resultClass !== "fail" ? `
-            <div>
-              <small>목표 미충족 예시</small>
-              <ul>${failureLines.map((line) => `<li>${line}</li>`).join("")}</ul>
+          ${impactLines.length ? `
+            <div class="scenario-condition-block analysis">
+              <small>${formatRank(result.targetRank)} 조건 - ${scopeTitle}</small>
+              <div class="scenario-impact-list">${impactLines.join("")}</div>
             </div>
           ` : ""}
         </div>
       </details>
-    `;
-  }).join("");
+      `
+    };
+  });
+  const priority = { success: 0, partial: 1, fail: 2 };
+
+  return cards
+    .sort((a, b) =>
+      priority[a.resultClass] - priority[b.resultClass] ||
+      b.successCount - a.successCount ||
+      a.totalCount - b.totalCount
+    )
+    .map((card, index) =>
+      card.markup.replace("<span data-scenario-title>", `<span>${index + 1}. `)
+    )
+    .join("");
 };
 
 const createGoalScenarioResult = (result, team) => {
   const baseText = result.startMatch
-    ? `${formatShortDate(result.startMatch.date)} ${result.startMatch.teamA} vs ${result.startMatch.teamB}부터 라운드 종료까지 계산합니다.`
+    ? `${formatShortDate(result.startMatch.date)} ${result.startMatch.teamA} vs ${result.startMatch.teamB} 시점부터 남은 경기 전체를 계산합니다.`
     : "현재 남은 관련 경기 전체를 계산합니다.";
 
   if (result.startMatch?.status === "finished") {
@@ -1050,6 +1311,17 @@ const createGoalScenarioResult = (result, team) => {
         <p>${formatShortDate(result.startMatch.date)} ${result.startMatch.teamA} vs ${result.startMatch.teamB} 경기는 이미 종료되었습니다.</p>
         <p>${team.shortName}은 현재 선택한 ${result.startMatch.roundTitle || result.startMatch.title || "라운드"} 기준 ${formatRank(result.currentRank)}입니다.</p>
         <small>지난 경기는 경우의 수 계산 대상에서 제외하고, 예정 경기부터 목표 등수 조건을 계산합니다.</small>
+      </div>
+    `;
+  }
+
+  if (result.mode === "locked") {
+    return `
+      <div class="goal-result preview">
+        <strong>이전 경기 업데이트 후 계산 가능</strong>
+        <p>${formatShortDate(result.startMatch.date)} ${result.startMatch.teamA} vs ${result.startMatch.teamB} 경기는 아직 경우의 수 계산 대상이 아닙니다.</p>
+        <p>먼저 ${formatShortDate(result.blockingMatch.date)} ${result.blockingMatch.teamA} vs ${result.blockingMatch.teamB} 경기 결과가 반영되어야 다음 경기 예측을 계산할 수 있습니다.</p>
+        <small>예정 경기 중 가장 가까운 경기만 계산하고, 그 결과가 업데이트되면 다음 예정 경기를 자동으로 계산 대상으로 넘깁니다.</small>
       </div>
     `;
   }
@@ -1136,11 +1408,11 @@ const createMatchPlate = (match, selectedMatch) => {
     <button class="match-plate ${statusClass} ${gradientClass} ${selectedClass}" type="button" data-scenario-base-match-id="${match.id}">
       <span class="match-plate-date">${formatShortDate(match.date)} · ${formatTime(match.date)}</span>
       <div class="match-plate-main">
-        <strong class="${teamAResult}">${match.teamA}</strong>
+        ${createPlateTeamLabel(match.teamA, teamAResult, "left")}
         <span class="match-plate-score">
           ${scoreMarkup}
         </span>
-        <strong class="${teamBResult}">${match.teamB}</strong>
+        ${createPlateTeamLabel(match.teamB, teamBResult, "right")}
       </div>
     </button>
   `;
@@ -1186,9 +1458,8 @@ const createGoalScenarioPanel = (round, team) => {
             </select>
           </label>
           <div class="goal-color-guide" aria-label="경우의 수 색상 안내">
-            <span><i class="guide-dot success"></i>목표 가능</span>
-            <span><i class="guide-dot partial"></i>타경기 조건</span>
-            <span><i class="guide-dot diff"></i>세트 득실 확인</span>
+            <span><i class="guide-dot success"></i>희망 등수 유지 가능</span>
+            <span><i class="guide-dot partial"></i>타경기·세트득실 조건</span>
             <span><i class="guide-dot fail"></i>목표 어려움</span>
           </div>
         </div>
