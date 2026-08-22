@@ -9,6 +9,8 @@ let selectedTeamId = "t1";
 let selectedRoundId = "r1";
 let selectedDetailMatchId = null;
 let selectedScenarioMatchId = null;
+let selectedHomeSlideIndex = 1;
+let selectedStoryMatchId = null;
 
 const getSelectedTeam = () => teams.find((team) => team.id === selectedTeamId);
 
@@ -60,7 +62,44 @@ const getRoundIndex = (roundId) => Number(String(roundId || "").replace("r", "")
 const showHome = () => {
   document.querySelector("#home-page").classList.remove("hidden");
   document.querySelector("#team-detail").classList.remove("visible");
+  renderHomeSlide();
 };
+
+const renderHomeSlide = () => {
+  const track = document.querySelector("#home-slide-track");
+  if (!track) {
+    return;
+  }
+
+  track.style.transform = `translateX(-${selectedHomeSlideIndex * 100}%)`;
+  document.querySelectorAll("[data-home-slide-step]").forEach((button) => {
+    const step = Number(button.dataset.homeSlideStep || 0);
+    button.disabled =
+      selectedHomeSlideIndex + step < 0 ||
+      selectedHomeSlideIndex + step > 2;
+  });
+};
+
+const moveHomeSlide = (step) => {
+  selectedHomeSlideIndex = Math.min(2, Math.max(0, selectedHomeSlideIndex + step));
+  renderHomeSlide();
+};
+
+const getAllMatches = () => Object.values(liveData?.rounds || {})
+  .flatMap((roundData) => roundData.matches || []);
+
+const getDefaultStoryMatch = () =>
+  getAllMatches().find((match) =>
+    getDateKey(match.date) === getDateKey(new Date()) &&
+    match.teamA === "DK" &&
+    match.teamB === "GEN"
+  ) ||
+  getAllMatches().find((match) =>
+    match.status !== "finished" &&
+    [match.teamA, match.teamB].includes("DK") &&
+    [match.teamA, match.teamB].includes("GEN")
+  ) ||
+  getAllMatches().find((match) => match.status !== "finished");
 
 const getRoundAdjustedTeams = (round) => {
   const roundData = getRoundData(round);
@@ -139,6 +178,18 @@ const getCumulativeMatchesThroughRound = (round) =>
   Object.values(liveData?.rounds || {})
     .filter((roundData) => getRoundIndex(roundData.id) <= getRoundIndex(round.id))
     .flatMap((roundData) => roundData.matches || []);
+
+const getHomePreviewDateKey = (matchesForRound) => {
+  const sortedMatches = [...matchesForRound].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const todayKey = getDateKey(new Date());
+  const todayMatch = sortedMatches.find((match) => getDateKey(match.date) === todayKey);
+  const nextMatch = sortedMatches.find((match) =>
+    match.status !== "finished" && getDateKey(match.date) >= todayKey
+  );
+  const latestMatch = [...sortedMatches].reverse().find((match) => match.status === "finished");
+
+  return getDateKey((todayMatch || nextMatch || latestMatch || sortedMatches[0])?.date);
+};
 
 const compareStandingTeams = (a, b) =>
   b.wins - a.wins ||
@@ -345,6 +396,15 @@ const renderStandingsView = () => {
   const standingsView = document.querySelector("#standings-view");
 
   document.querySelector("#round-note").textContent = getRoundNote(round);
+  document.querySelector("#home-match-preview").innerHTML = createHomeMatchPreview(round, adjustedTeams);
+  document.querySelectorAll("[data-home-story-match-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      selectedStoryMatchId = button.dataset.homeStoryMatchId;
+      selectedHomeSlideIndex = 2;
+      renderMatchStorySlide();
+      renderHomeSlide();
+    });
+  });
 
   if (round.standingsView === "overall") {
     standingsView.className = "standings-view overall-board";
@@ -1388,7 +1448,7 @@ const getMatchPlateStatus = (match) => {
   return `${match.scoreA} : ${match.scoreB}`;
 };
 
-const createMatchPlate = (match, selectedMatch) => {
+const createMatchPlate = (match, selectedMatch, matchOrderLabel = "", extraAttributes = "") => {
   const statusClass = match.status === "finished" ? "finished" : "upcoming";
   const selectedClass = selectedMatch?.id === match.id ? "selected" : "";
   const scoreMarkup = match.status === "finished"
@@ -1409,8 +1469,11 @@ const createMatchPlate = (match, selectedMatch) => {
     : "";
 
   return `
-    <button class="match-plate ${statusClass} ${gradientClass} ${selectedClass}" type="button" data-scenario-base-match-id="${match.id}">
-      <span class="match-plate-date">${formatShortDate(match.date)} · ${formatTime(match.date)}</span>
+    <button class="match-plate ${statusClass} ${gradientClass} ${selectedClass}" type="button" data-scenario-base-match-id="${match.id}" ${extraAttributes}>
+      <span class="match-plate-date">
+        ${matchOrderLabel ? `<b class="match-plate-order">${matchOrderLabel}</b>` : ""}
+        ${formatShortDate(match.date)} · ${formatTime(match.date)}
+      </span>
       <div class="match-plate-main">
         ${createPlateTeamLabel(match.teamA, teamAResult, "left")}
         <span class="match-plate-score">
@@ -1420,6 +1483,243 @@ const createMatchPlate = (match, selectedMatch) => {
       </div>
     </button>
   `;
+};
+
+const createHomeMatchGroup = ({ title, markClass, matchesForGroup }) => `
+  <article class="home-match-group">
+    <div class="home-match-heading">
+      <span class="group-mark ${markClass}"></span>
+      <strong>${title}</strong>
+    </div>
+    <div class="home-match-list">
+      ${matchesForGroup.length
+        ? matchesForGroup.map((match) => createMatchPlate(
+          match,
+          null,
+          match.homeOrderLabel || "",
+          `data-home-story-match-id="${match.id}"`
+        )).join("")
+        : "<p class=\"detail-empty\">표시할 경기 데이터가 없습니다.</p>"}
+    </div>
+  </article>
+`;
+
+const createHomeMatchPreview = (round, adjustedTeams) => {
+  const roundMatches = getRoundMatches(round).sort((a, b) => new Date(a.date) - new Date(b.date));
+  const previewDateKey = getHomePreviewDateKey(roundMatches);
+  const allMatchesForDate = Object.values(liveData?.rounds || {})
+    .flatMap((roundData) => roundData.matches || [])
+    .filter((match) => getDateKey(match.date) === previewDateKey)
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
+  const orderByMatchId = allMatchesForDate.reduce((orders, match, index) => ({
+    ...orders,
+    [match.id]: `${index + 1}경기`
+  }), {});
+  const dateMatches = roundMatches
+    .filter((match) => getDateKey(match.date) === previewDateKey)
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .map((match) => ({
+      ...match,
+      homeOrderLabel: orderByMatchId[match.id] || ""
+    }));
+  const dateLabel = previewDateKey ? formatDate(previewDateKey) : "경기 정보";
+
+  if (!dateMatches.length) {
+    return `
+      <div class="home-match-shell">
+        <div class="home-match-title">
+          <span>${round.name} 경기 정보</span>
+          <strong>표시할 경기 데이터가 없습니다.</strong>
+        </div>
+      </div>
+    `;
+  }
+
+  if (round.standingsView !== "groups") {
+    return `
+      <div class="home-match-shell">
+        <div class="home-match-title">
+          <span>${round.name} 경기 정보</span>
+          <strong>${dateLabel}</strong>
+        </div>
+        <div class="home-match-board single">
+          ${createHomeMatchGroup({
+            title: "TODAY MATCHES",
+            markClass: "overall-mark",
+            matchesForGroup: dateMatches
+          })}
+        </div>
+      </div>
+    `;
+  }
+
+  const groupByTeam = adjustedTeams.reduce((groups, team) => ({
+    ...groups,
+    [team.shortName]: team.group
+  }), {});
+  const legendMatches = dateMatches.filter((match) =>
+    groupByTeam[match.teamA] === "legend" || groupByTeam[match.teamB] === "legend"
+  );
+  const riseMatches = dateMatches.filter((match) =>
+    groupByTeam[match.teamA] === "rise" || groupByTeam[match.teamB] === "rise"
+  );
+
+  return `
+    <div class="home-match-shell">
+      <div class="home-match-title">
+        <span>${round.name} 경기 정보</span>
+        <strong>${dateLabel}</strong>
+      </div>
+      <div class="home-match-board">
+        ${createHomeMatchGroup({
+          title: "LEGEND GROUP",
+          markClass: "legend-mark",
+          matchesForGroup: legendMatches
+        })}
+        ${createHomeMatchGroup({
+          title: "RISE GROUP",
+          markClass: "rise-mark",
+          matchesForGroup: riseMatches
+        })}
+      </div>
+    </div>
+  `;
+};
+
+const getMatchesBetweenTeams = (teamA, teamB) =>
+  getAllMatches()
+    .filter((match) =>
+      [match.teamA, match.teamB].includes(teamA) &&
+      [match.teamA, match.teamB].includes(teamB)
+    )
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+const getStoryTeam = (shortName) => getTeamByShortName(shortName) || { shortName, logo: "" };
+
+const getStoryHeadline = (match) => {
+  const pairKey = [match.teamA, match.teamB].sort().join("_");
+
+  if (pairKey === "DK_GEN") {
+    return "DK의 GEN전 북벌, 정규시즌 마지막 고비";
+  }
+
+  return `${match.teamA} vs ${match.teamB}, 오늘 순위표를 흔들 경기`;
+};
+
+const getStorySummary = (match) => {
+  const pairKey = [match.teamA, match.teamB].sort().join("_");
+
+  if (pairKey === "DK_GEN") {
+    return "올해 맞대결은 DK가 2승 1패로 앞서지만, GEN은 현재 1위 흐름을 지키는 입장입니다.";
+  }
+
+  return "상대 전적과 최근 흐름, 순위 영향을 함께 보면 경기의 무게가 더 선명해집니다.";
+};
+
+const createStoryRecordList = (storyMatches, teamA, teamB) => {
+  if (!storyMatches.length) {
+    return "<p class=\"story-empty\">올해 맞대결 결과가 아직 없습니다.</p>";
+  }
+
+  return storyMatches.map((match, index) => {
+    const winner = match.winner || "-";
+    const isTeamAHome = match.teamA === teamA;
+    const teamAScore = isTeamAHome ? match.scoreA : match.scoreB;
+    const teamBScore = isTeamAHome ? match.scoreB : match.scoreA;
+    const scoreLabel = match.status === "finished"
+      ? `${teamA} ${teamAScore} : ${teamBScore} ${teamB}`
+      : `${teamA} vs ${teamB}`;
+    const resultLabel = match.status === "finished" ? `${winner} 승` : "예정";
+
+    const gradientClass = match.status !== "finished"
+      ? ""
+      : winner === teamA ? "left-win" : "right-win";
+
+    return `
+      <li class="story-record-plate ${match.status === "finished" ? "finished" : "upcoming"} ${gradientClass}">
+        <span>${index + 1}차전 · ${formatDate(match.date)}</span>
+        <strong>${match.roundTitle || match.title || ""}</strong>
+        <b>${scoreLabel}</b>
+        <em>${resultLabel}</em>
+      </li>
+    `;
+  }).join("");
+};
+
+const createMatchStorySlide = () => {
+  const defaultMatch = getDefaultStoryMatch();
+  const match = getAllMatches().find((item) => item.id === selectedStoryMatchId) || defaultMatch;
+
+  if (!match) {
+    return `
+      <div class="story-empty-shell">
+        <p class="eyebrow">MATCH POINT</p>
+        <h2>오늘 경기 관전포인트</h2>
+      </div>
+    `;
+  }
+
+  const teamA = getStoryTeam(match.teamA);
+  const teamB = getStoryTeam(match.teamB);
+  const storyMatches = getMatchesBetweenTeams(match.teamA, match.teamB);
+  const finishedMatches = storyMatches.filter((item) => item.status === "finished");
+  const teamAWins = finishedMatches.filter((item) => item.winner === match.teamA).length;
+  const teamBWins = finishedMatches.filter((item) => item.winner === match.teamB).length;
+
+  return `
+    <div class="story-page">
+      <button class="story-back-button" type="button" data-story-back>STANDINGS로 돌아가기</button>
+      <section class="story-hero">
+        <div class="story-hero-logos">
+          <span class="story-logo-frame team-${teamA.id || teamA.shortName.toLowerCase()}">
+            <img src="${teamA.logo}" alt="${teamA.shortName} 로고" />
+          </span>
+          <b>VS</b>
+          <span class="story-logo-frame team-${teamB.id || teamB.shortName.toLowerCase()}">
+            <img src="${teamB.logo}" alt="${teamB.shortName} 로고" />
+          </span>
+        </div>
+        <div class="story-hero-copy">
+          <p class="eyebrow">${formatDate(match.date)} · ${formatTime(match.date)} · ${match.roundTitle || match.title || ""}</p>
+          <h2>${match.teamA} vs ${match.teamB}</h2>
+          <strong>${getStoryHeadline(match)}</strong>
+          <p>${getStorySummary(match)}</p>
+        </div>
+      </section>
+
+      <section class="story-section">
+        <div class="story-section-title">
+          <span>올해 전체 상대 전적</span>
+          <strong>${match.teamA} ${teamAWins}승 · ${match.teamB} ${teamBWins}승</strong>
+        </div>
+        <ul class="story-record-list">
+          ${createStoryRecordList(storyMatches, match.teamA, match.teamB)}
+        </ul>
+      </section>
+
+      <article class="story-card story-point-card">
+        <span>관전포인트</span>
+        <ul>
+          <li>DK가 올해 GEN전 우위를 다시 이어가며 북벌 서사를 굳힐 수 있는지</li>
+          <li>GEN이 1위 팀다운 안정감으로 상대전적 열세를 끊을 수 있는지</li>
+          <li>정규시즌 막판 세트 득실과 순위 경우의 수에 어떤 영향을 주는지</li>
+        </ul>
+      </article>
+    </div>
+  `;
+};
+
+const renderMatchStorySlide = () => {
+  const storySlide = document.querySelector("#match-story-slide");
+  if (!storySlide) {
+    return;
+  }
+
+  storySlide.innerHTML = createMatchStorySlide();
+  storySlide.querySelector("[data-story-back]")?.addEventListener("click", () => {
+    selectedHomeSlideIndex = 1;
+    renderHomeSlide();
+  });
 };
 
 const createRoundMatchPlatePanel = (round, team) => {
@@ -1681,4 +1981,26 @@ const renderTeamDetail = () => {
 
 renderRoundTabs();
 renderStandingsView();
+selectedStoryMatchId = getDefaultStoryMatch()?.id || null;
+renderMatchStorySlide();
+document.querySelectorAll("[data-home-slide-step]").forEach((button) => {
+  button.addEventListener("click", () => moveHomeSlide(Number(button.dataset.homeSlideStep || 0)));
+});
+
+let homeSwipeStartX = null;
+document.querySelector(".home-slide-viewport")?.addEventListener("touchstart", (event) => {
+  homeSwipeStartX = event.touches[0]?.clientX ?? null;
+}, { passive: true });
+document.querySelector(".home-slide-viewport")?.addEventListener("touchend", (event) => {
+  if (homeSwipeStartX === null) {
+    return;
+  }
+
+  const endX = event.changedTouches[0]?.clientX ?? homeSwipeStartX;
+  const deltaX = endX - homeSwipeStartX;
+  if (Math.abs(deltaX) > 48) {
+    moveHomeSlide(deltaX < 0 ? 1 : -1);
+  }
+  homeSwipeStartX = null;
+}, { passive: true });
 showHome();
