@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-22T11:43:03.838Z",
+    "generatedAt": "2026-08-22T13:21:58.364Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1226,
+    "rawPandascoreMatches": 1225,
     "filteredPandascoreMatches": 56,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
@@ -129,7 +129,7 @@
       "wins": 7,
       "losses": 18,
       "gameDiff": -17,
-      "streak": "4L",
+      "streak": "5L",
       "source": "naver_team_ranking"
     },
     {
@@ -142,7 +142,7 @@
       "wins": 5,
       "losses": 20,
       "gameDiff": -31,
-      "streak": "1L",
+      "streak": "1W",
       "source": "naver_team_ranking"
     }
   ],
@@ -2819,7 +2819,7 @@
       "startDate": "2026-08-12",
       "endDate": "2026-08-23",
       "matchCount": 20,
-      "completedMatchCount": 17,
+      "completedMatchCount": 18,
       "missingRequiredRounds": [],
       "isCumulativeComplete": true,
       "standings": [
@@ -2943,11 +2943,11 @@
           "fullName": "Kiwoom DRX",
           "logo": "./assets/logos/krx.png",
           "wins": 7,
-          "losses": 18,
-          "gameDiff": -17,
-          "streak": "4L",
+          "losses": 19,
+          "gameDiff": -19,
+          "streak": "5L",
           "gameWins": 22,
-          "gameLosses": 39
+          "gameLosses": 41
         },
         {
           "id": "dns",
@@ -2956,11 +2956,11 @@
           "shortName": "DNS",
           "fullName": "DN SOOPers",
           "logo": "./assets/logos/dns.png",
-          "wins": 5,
+          "wins": 6,
           "losses": 20,
-          "gameDiff": -31,
-          "streak": "1L",
-          "gameWins": 11,
+          "gameDiff": -29,
+          "streak": "1W",
+          "gameWins": 13,
           "gameLosses": 42
         }
       ],
@@ -3310,15 +3310,15 @@
           "sourceId": "2025082219V3M75Fj4967lol",
           "source": "naver",
           "date": "2026-08-22T10:00:00.000Z",
-          "status": "not_started",
+          "status": "finished",
           "title": "정규시즌 4R",
           "roundId": "r4",
           "roundTitle": "정규시즌 4R",
           "teamA": "DNS",
           "teamB": "KRX",
-          "scoreA": 0,
+          "scoreA": 2,
           "scoreB": 0,
-          "winner": null,
+          "winner": "DNS",
           "sourceStatus": "single_source",
           "sources": {
             "pandascore": false,
@@ -3369,6 +3369,27 @@
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1568938",
+      "sourceId": 1568938,
+      "source": "pandascore",
+      "date": "2026-08-22T11:26:32Z",
+      "status": "finished",
+      "teamA": "DNS",
+      "teamB": "KRX",
+      "blueTeam": "DNS",
+      "redTeam": "KRX",
+      "scoreA": 2,
+      "scoreB": 0,
+      "blueScore": 2,
+      "redScore": 0,
+      "winner": "DNS",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1568937",
       "sourceId": 1568937,
@@ -4250,29 +4271,54 @@
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1568938",
-      "sourceId": 1568938,
-      "source": "pandascore",
-      "date": "2026-08-22T11:26:32Z",
-      "status": "running",
-      "teamA": "DNS",
-      "teamB": "KRX",
-      "blueTeam": "DNS",
-      "redTeam": "KRX",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "validation": [
+    {
+      "key": "2026-08-22_DNS_vs_KRX",
+      "status": "confirmed",
+      "pandascore": {
+        "id": "pandascore-1568938",
+        "sourceId": 1568938,
+        "source": "pandascore",
+        "date": "2026-08-22T11:26:32Z",
+        "status": "finished",
+        "teamA": "DNS",
+        "teamB": "KRX",
+        "blueTeam": "DNS",
+        "redTeam": "KRX",
+        "scoreA": 2,
+        "scoreB": 0,
+        "blueScore": 2,
+        "redScore": 0,
+        "winner": "DNS",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": {
+        "id": "naver-2025082219V3M75Fj4967lol",
+        "sourceId": "2025082219V3M75Fj4967lol",
+        "source": "naver",
+        "date": "2026-08-22T10:00:00.000Z",
+        "status": "finished",
+        "title": "정규시즌 4R",
+        "roundId": "r4",
+        "roundTitle": "정규시즌 4R",
+        "teamA": "DNS",
+        "teamB": "KRX",
+        "scoreA": 2,
+        "scoreB": 0,
+        "winner": "DNS",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": false,
+          "naver": true
+        }
+      }
+    },
     {
       "key": "2026-08-22_DK_vs_GEN",
       "status": "confirmed",
@@ -6094,50 +6140,6 @@
         "roundTitle": "정규시즌 4R",
         "teamA": "BFX",
         "teamB": "NS",
-        "scoreA": 0,
-        "scoreB": 0,
-        "winner": null,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
-      "key": "2026-08-22_DNS_vs_KRX",
-      "status": "scheduled_confirmed",
-      "pandascore": {
-        "id": "pandascore-1568938",
-        "sourceId": 1568938,
-        "source": "pandascore",
-        "date": "2026-08-22T11:26:32Z",
-        "status": "running",
-        "teamA": "DNS",
-        "teamB": "KRX",
-        "blueTeam": "DNS",
-        "redTeam": "KRX",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025082219V3M75Fj4967lol",
-        "sourceId": "2025082219V3M75Fj4967lol",
-        "source": "naver",
-        "date": "2026-08-22T10:00:00.000Z",
-        "status": "not_started",
-        "title": "정규시즌 4R",
-        "roundId": "r4",
-        "roundTitle": "정규시즌 4R",
-        "teamA": "DNS",
-        "teamB": "KRX",
         "scoreA": 0,
         "scoreB": 0,
         "winner": null,
