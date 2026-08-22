@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-21T16:01:21.906Z",
+    "generatedAt": "2026-08-22T10:53:20.223Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1230,
+    "rawPandascoreMatches": 1224,
     "filteredPandascoreMatches": 56,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
@@ -25,7 +25,7 @@
       "wins": 19,
       "losses": 6,
       "gameDiff": 23,
-      "streak": "5W",
+      "streak": "1L",
       "source": "naver_team_ranking"
     },
     {
@@ -64,7 +64,7 @@
       "wins": 16,
       "losses": 9,
       "gameDiff": 9,
-      "streak": "1L",
+      "streak": "1W",
       "source": "naver_team_ranking"
     },
     {
@@ -2819,7 +2819,7 @@
       "startDate": "2026-08-12",
       "endDate": "2026-08-23",
       "matchCount": 20,
-      "completedMatchCount": 16,
+      "completedMatchCount": 17,
       "missingRequiredRounds": [],
       "isCumulativeComplete": true,
       "standings": [
@@ -2831,11 +2831,11 @@
           "fullName": "Gen.G",
           "logo": "./assets/logos/gen.png",
           "wins": 19,
-          "losses": 6,
-          "gameDiff": 23,
-          "streak": "5W",
-          "gameWins": 40,
-          "gameLosses": 17
+          "losses": 7,
+          "gameDiff": 22,
+          "streak": "1L",
+          "gameWins": 41,
+          "gameLosses": 19
         },
         {
           "id": "hle",
@@ -2872,12 +2872,12 @@
           "shortName": "DK",
           "fullName": "Dplus KIA",
           "logo": "./assets/logos/dk.png",
-          "wins": 16,
+          "wins": 17,
           "losses": 9,
-          "gameDiff": 9,
-          "streak": "1L",
-          "gameWins": 34,
-          "gameLosses": 25
+          "gameDiff": 10,
+          "streak": "1W",
+          "gameWins": 36,
+          "gameLosses": 26
         },
         {
           "id": "kt",
@@ -3290,15 +3290,15 @@
           "sourceId": "2025082217kJ6zFWM3082lol",
           "source": "naver",
           "date": "2026-08-22T08:00:00.000Z",
-          "status": "not_started",
+          "status": "finished",
           "title": "정규시즌 4R",
           "roundId": "r4",
           "roundTitle": "정규시즌 4R",
           "teamA": "DK",
           "teamB": "GEN",
-          "scoreA": 0,
-          "scoreB": 0,
-          "winner": null,
+          "scoreA": 2,
+          "scoreB": 1,
+          "winner": "DK",
           "sourceStatus": "single_source",
           "sources": {
             "pandascore": false,
@@ -3369,6 +3369,27 @@
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1568937",
+      "sourceId": 1568937,
+      "source": "pandascore",
+      "date": "2026-08-22T08:04:23Z",
+      "status": "finished",
+      "teamA": "DK",
+      "teamB": "GEN",
+      "blueTeam": "DK",
+      "redTeam": "GEN",
+      "scoreA": 2,
+      "scoreB": 1,
+      "blueScore": 2,
+      "redScore": 1,
+      "winner": "DK",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1568935",
       "sourceId": 1568935,
@@ -4191,30 +4212,10 @@
   ],
   "upcomingMatches": [
     {
-      "id": "pandascore-1568937",
-      "sourceId": 1568937,
-      "source": "pandascore",
-      "date": "2026-08-22T08:00:00Z",
-      "status": "not_started",
-      "teamA": "DK",
-      "teamB": "GEN",
-      "blueTeam": "DK",
-      "redTeam": "GEN",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
       "id": "pandascore-1568938",
       "sourceId": 1568938,
       "source": "pandascore",
-      "date": "2026-08-22T10:00:00Z",
+      "date": "2026-08-22T11:10:00Z",
       "status": "not_started",
       "teamA": "DNS",
       "teamB": "KRX",
@@ -4272,6 +4273,51 @@
     }
   ],
   "validation": [
+    {
+      "key": "2026-08-22_DK_vs_GEN",
+      "status": "confirmed",
+      "pandascore": {
+        "id": "pandascore-1568937",
+        "sourceId": 1568937,
+        "source": "pandascore",
+        "date": "2026-08-22T08:04:23Z",
+        "status": "finished",
+        "teamA": "DK",
+        "teamB": "GEN",
+        "blueTeam": "DK",
+        "redTeam": "GEN",
+        "scoreA": 2,
+        "scoreB": 1,
+        "blueScore": 2,
+        "redScore": 1,
+        "winner": "DK",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": {
+        "id": "naver-2025082217kJ6zFWM3082lol",
+        "sourceId": "2025082217kJ6zFWM3082lol",
+        "source": "naver",
+        "date": "2026-08-22T08:00:00.000Z",
+        "status": "finished",
+        "title": "정규시즌 4R",
+        "roundId": "r4",
+        "roundTitle": "정규시즌 4R",
+        "teamA": "DK",
+        "teamB": "GEN",
+        "scoreA": 2,
+        "scoreB": 1,
+        "winner": "DK",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": false,
+          "naver": true
+        }
+      }
+    },
     {
       "key": "2026-08-21_KT_vs_T1",
       "status": "confirmed",
@@ -5971,57 +6017,13 @@
       "naver": null
     },
     {
-      "key": "2026-08-22_DK_vs_GEN",
-      "status": "scheduled_confirmed",
-      "pandascore": {
-        "id": "pandascore-1568937",
-        "sourceId": 1568937,
-        "source": "pandascore",
-        "date": "2026-08-22T08:00:00Z",
-        "status": "not_started",
-        "teamA": "DK",
-        "teamB": "GEN",
-        "blueTeam": "DK",
-        "redTeam": "GEN",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025082217kJ6zFWM3082lol",
-        "sourceId": "2025082217kJ6zFWM3082lol",
-        "source": "naver",
-        "date": "2026-08-22T08:00:00.000Z",
-        "status": "not_started",
-        "title": "정규시즌 4R",
-        "roundId": "r4",
-        "roundTitle": "정규시즌 4R",
-        "teamA": "DK",
-        "teamB": "GEN",
-        "scoreA": 0,
-        "scoreB": 0,
-        "winner": null,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
       "key": "2026-08-22_DNS_vs_KRX",
       "status": "scheduled_confirmed",
       "pandascore": {
         "id": "pandascore-1568938",
         "sourceId": 1568938,
         "source": "pandascore",
-        "date": "2026-08-22T10:00:00Z",
+        "date": "2026-08-22T11:10:00Z",
         "status": "not_started",
         "teamA": "DNS",
         "teamB": "KRX",
