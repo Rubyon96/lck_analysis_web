@@ -6,7 +6,7 @@ const analysis = window.lckAnalysis;
 const rules = window.leagueRules.lck2026;
 
 let selectedTeamId = "t1";
-let selectedRoundId = "r1";
+let selectedRoundId = null;
 let selectedDetailMatchId = null;
 let selectedScenarioMatchId = null;
 let selectedHomeSlideIndex = 1;
@@ -15,8 +15,6 @@ let selectedStoryMatchId = null;
 const getSelectedTeam = () => teams.find((team) => team.id === selectedTeamId);
 
 const getTeamByShortName = (shortName) => teams.find((team) => team.shortName === shortName);
-
-const getSelectedRound = () => rules.rounds.find((round) => round.id === selectedRoundId);
 
 const getRoundData = (round) => liveData?.rounds?.[round.id] || null;
 
@@ -58,6 +56,29 @@ const createLocalDate = (dateKey) => {
 };
 
 const getRoundIndex = (roundId) => Number(String(roundId || "").replace("r", "")) || 0;
+
+const getInitialRoundId = () => {
+  const today = createLocalDate(getDateKey(new Date()));
+  const roundForToday = rules.rounds.find((round) => {
+    const roundData = liveData?.rounds?.[round.id];
+
+    if (!roundData?.startDate || !roundData?.endDate) {
+      return false;
+    }
+
+    return today >= createLocalDate(roundData.startDate) && today <= createLocalDate(roundData.endDate);
+  });
+
+  return roundForToday?.id ||
+    rules.rounds.find((round) => getRoundData(round)?.status === "active")?.id ||
+    rules.rounds[rules.rounds.length - 1]?.id ||
+    "r1";
+};
+
+selectedRoundId = getInitialRoundId();
+
+const getSelectedRound = () =>
+  rules.rounds.find((round) => round.id === selectedRoundId) || rules.rounds[0];
 
 const showHome = () => {
   document.querySelector("#home-page").classList.remove("hidden");
