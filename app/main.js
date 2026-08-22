@@ -943,7 +943,7 @@ const createRankOptions = (round, team) => {
     ? getRoundAdjustedTeams(round).filter((item) => item.group === team.group).length
     : getRoundAdjustedTeams(round).length;
   const currentRank = team.displayRank || team.rank || 1;
-  const defaultRank = Math.max(1, currentRank - 1);
+  const defaultRank = currentRank;
 
   return Array.from({ length: size }, (_, index) => {
     const rank = index + 1;
@@ -1525,27 +1525,98 @@ const createHomeMatchGroup = ({ title, markClass, matchesForGroup }) => `
   </article>
 `;
 
-const createHomeMatchPreview = (round, adjustedTeams) => {
-  const roundMatches = getRoundMatches(round).sort((a, b) => new Date(a.date) - new Date(b.date));
-  const previewDateKey = getHomePreviewDateKey(roundMatches);
+const getMatchesWithHomeOrder = (roundMatches, dateKey) => {
   const allMatchesForDate = Object.values(liveData?.rounds || {})
     .flatMap((roundData) => roundData.matches || [])
-    .filter((match) => getDateKey(match.date) === previewDateKey)
+    .filter((match) => getDateKey(match.date) === dateKey)
     .sort((a, b) => new Date(a.date) - new Date(b.date));
   const orderByMatchId = allMatchesForDate.reduce((orders, match, index) => ({
     ...orders,
     [match.id]: `${index + 1}경기`
   }), {});
-  const dateMatches = roundMatches
-    .filter((match) => getDateKey(match.date) === previewDateKey)
+
+  return roundMatches
+    .filter((match) => getDateKey(match.date) === dateKey)
     .sort((a, b) => new Date(a.date) - new Date(b.date))
     .map((match) => ({
       ...match,
       homeOrderLabel: orderByMatchId[match.id] || ""
     }));
-  const dateLabel = previewDateKey ? formatDate(previewDateKey) : "경기 정보";
+};
 
-  if (!dateMatches.length) {
+const getNextUpcomingDateKey = (roundMatches, todayKey) => {
+  const upcomingMatch = roundMatches
+    .filter((match) => match.status !== "finished" && getDateKey(match.date) >= todayKey)
+    .sort((a, b) => new Date(a.date) - new Date(b.date))[0];
+
+  return getDateKey(upcomingMatch?.date);
+};
+
+const createHomeMatchBoard = ({ round, adjustedTeams, matchesForBoard }) => {
+  if (round.standingsView !== "groups") {
+    return `
+      <div class="home-match-board single">
+        ${createHomeMatchGroup({
+          title: "TODAY MATCHES",
+          markClass: "overall-mark",
+          matchesForGroup: matchesForBoard
+        })}
+      </div>
+    `;
+  }
+
+  const groupByTeam = adjustedTeams.reduce((groups, team) => ({
+    ...groups,
+    [team.shortName]: team.group
+  }), {});
+  const legendMatches = matchesForBoard.filter((match) =>
+    groupByTeam[match.teamA] === "legend" || groupByTeam[match.teamB] === "legend"
+  );
+  const riseMatches = matchesForBoard.filter((match) =>
+    groupByTeam[match.teamA] === "rise" || groupByTeam[match.teamB] === "rise"
+  );
+
+  return `
+    <div class="home-match-board">
+      ${createHomeMatchGroup({
+        title: "LEGEND GROUP",
+        markClass: "legend-mark",
+        matchesForGroup: legendMatches
+      })}
+      ${createHomeMatchGroup({
+        title: "RISE GROUP",
+        markClass: "rise-mark",
+        matchesForGroup: riseMatches
+      })}
+    </div>
+  `;
+};
+
+const createHomeMatchSection = ({ round, adjustedTeams, title, dateKey, matchesForSection }) => `
+  <section class="home-match-section">
+    <div class="home-match-title">
+      <span>${title}</span>
+      <strong>${dateKey ? formatDate(dateKey) : "경기 정보 없음"}</strong>
+    </div>
+    ${matchesForSection.length
+      ? createHomeMatchBoard({ round, adjustedTeams, matchesForBoard: matchesForSection })
+      : "<p class=\"detail-empty\">표시할 경기 데이터가 없습니다.</p>"}
+  </section>
+`;
+
+const createHomeMatchPreview = (round, adjustedTeams) => {
+  const roundMatches = getRoundMatches(round).sort((a, b) => new Date(a.date) - new Date(b.date));
+  const todayKey = getDateKey(new Date());
+  const todayMatches = getMatchesWithHomeOrder(roundMatches, todayKey);
+  const todayConfirmedMatches = todayMatches.filter((match) => match.status === "finished");
+  const nextUpcomingDateKey = getNextUpcomingDateKey(roundMatches, todayKey);
+  const nextUpcomingMatches = nextUpcomingDateKey
+    ? getMatchesWithHomeOrder(roundMatches, nextUpcomingDateKey).filter((match) => match.status !== "finished")
+    : [];
+  const fallbackDateKey = getHomePreviewDateKey(roundMatches);
+  const fallbackMatches = fallbackDateKey ? getMatchesWithHomeOrder(roundMatches, fallbackDateKey) : [];
+
+  if (!todayConfirmedMatches.length && !nextUpcomingMatches.length && !fallbackMatches.length) {
     return `
       <div class="home-match-shell">
         <div class="home-match-title">
@@ -1556,53 +1627,41 @@ const createHomeMatchPreview = (round, adjustedTeams) => {
     `;
   }
 
-  if (round.standingsView !== "groups") {
-    return `
-      <div class="home-match-shell">
-        <div class="home-match-title">
-          <span>${round.name} 경기 정보</span>
-          <strong>${dateLabel}</strong>
-        </div>
-        <div class="home-match-board single">
-          ${createHomeMatchGroup({
-            title: "TODAY MATCHES",
-            markClass: "overall-mark",
-            matchesForGroup: dateMatches
-          })}
-        </div>
-      </div>
-    `;
+  const sections = [];
+
+  if (todayConfirmedMatches.length) {
+    sections.push(createHomeMatchSection({
+      round,
+      adjustedTeams,
+      title: `${round.name} 오늘 확정 경기`,
+      dateKey: todayKey,
+      matchesForSection: todayConfirmedMatches
+    }));
   }
 
-  const groupByTeam = adjustedTeams.reduce((groups, team) => ({
-    ...groups,
-    [team.shortName]: team.group
-  }), {});
-  const legendMatches = dateMatches.filter((match) =>
-    groupByTeam[match.teamA] === "legend" || groupByTeam[match.teamB] === "legend"
-  );
-  const riseMatches = dateMatches.filter((match) =>
-    groupByTeam[match.teamA] === "rise" || groupByTeam[match.teamB] === "rise"
-  );
+  if (nextUpcomingMatches.length) {
+    sections.push(createHomeMatchSection({
+      round,
+      adjustedTeams,
+      title: `${round.name} 다음 예정 경기`,
+      dateKey: nextUpcomingDateKey,
+      matchesForSection: nextUpcomingMatches
+    }));
+  }
+
+  if (!sections.length) {
+    sections.push(createHomeMatchSection({
+      round,
+      adjustedTeams,
+      title: `${round.name} 경기 정보`,
+      dateKey: fallbackDateKey,
+      matchesForSection: fallbackMatches
+    }));
+  }
 
   return `
     <div class="home-match-shell">
-      <div class="home-match-title">
-        <span>${round.name} 경기 정보</span>
-        <strong>${dateLabel}</strong>
-      </div>
-      <div class="home-match-board">
-        ${createHomeMatchGroup({
-          title: "LEGEND GROUP",
-          markClass: "legend-mark",
-          matchesForGroup: legendMatches
-        })}
-        ${createHomeMatchGroup({
-          title: "RISE GROUP",
-          markClass: "rise-mark",
-          matchesForGroup: riseMatches
-        })}
-      </div>
+      ${sections.join("")}
     </div>
   `;
 };
@@ -1767,7 +1826,7 @@ const createRoundMatchPlatePanel = (round, team) => {
 };
 
 const createGoalScenarioPanel = (round, team) => {
-  const initialTarget = Math.max(1, (team.displayRank || team.rank || 1) - 1);
+  const initialTarget = team.displayRank || team.rank || 1;
   const startMatch = getSelectedScenarioMatch(round, team);
   selectedScenarioMatchId = startMatch?.id || null;
   const result = summarizeGoalScenarios({ round, team, targetRank: initialTarget, startMatch });

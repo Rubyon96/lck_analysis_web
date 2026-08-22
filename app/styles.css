@@ -458,9 +458,15 @@ h1 {
 }
 
 .home-match-shell {
+  display: grid;
+  gap: 18px;
   border-radius: 10px;
   padding: 16px;
   background: var(--panel);
+}
+
+.home-match-section {
+  min-width: 0;
 }
 
 .home-match-title {
