@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-22T10:53:20.223Z",
+    "generatedAt": "2026-08-22T11:43:03.838Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1224,
+    "rawPandascoreMatches": 1226,
     "filteredPandascoreMatches": 56,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
@@ -4212,26 +4212,6 @@ window.lck2026Data = {
   ],
   "upcomingMatches": [
     {
-      "id": "pandascore-1568938",
-      "sourceId": 1568938,
-      "source": "pandascore",
-      "date": "2026-08-22T11:10:00Z",
-      "status": "not_started",
-      "teamA": "DNS",
-      "teamB": "KRX",
-      "blueTeam": "DNS",
-      "redTeam": "KRX",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
       "id": "pandascore-1568939",
       "sourceId": 1568939,
       "source": "pandascore",
@@ -4261,6 +4241,26 @@ window.lck2026Data = {
       "teamB": "NS",
       "blueTeam": "BFX",
       "redTeam": "NS",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1568938",
+      "sourceId": 1568938,
+      "source": "pandascore",
+      "date": "2026-08-22T11:26:32Z",
+      "status": "running",
+      "teamA": "DNS",
+      "teamB": "KRX",
+      "blueTeam": "DNS",
+      "redTeam": "KRX",
       "scoreA": 0,
       "scoreB": 0,
       "blueScore": 0,
@@ -6017,50 +6017,6 @@ window.lck2026Data = {
       "naver": null
     },
     {
-      "key": "2026-08-22_DNS_vs_KRX",
-      "status": "scheduled_confirmed",
-      "pandascore": {
-        "id": "pandascore-1568938",
-        "sourceId": 1568938,
-        "source": "pandascore",
-        "date": "2026-08-22T11:10:00Z",
-        "status": "not_started",
-        "teamA": "DNS",
-        "teamB": "KRX",
-        "blueTeam": "DNS",
-        "redTeam": "KRX",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025082219V3M75Fj4967lol",
-        "sourceId": "2025082219V3M75Fj4967lol",
-        "source": "naver",
-        "date": "2026-08-22T10:00:00.000Z",
-        "status": "not_started",
-        "title": "정규시즌 4R",
-        "roundId": "r4",
-        "roundTitle": "정규시즌 4R",
-        "teamA": "DNS",
-        "teamB": "KRX",
-        "scoreA": 0,
-        "scoreB": 0,
-        "winner": null,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
       "key": "2026-08-23_HLE_vs_T1",
       "status": "scheduled_confirmed",
       "pandascore": {
@@ -6138,6 +6094,50 @@ window.lck2026Data = {
         "roundTitle": "정규시즌 4R",
         "teamA": "BFX",
         "teamB": "NS",
+        "scoreA": 0,
+        "scoreB": 0,
+        "winner": null,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": false,
+          "naver": true
+        }
+      }
+    },
+    {
+      "key": "2026-08-22_DNS_vs_KRX",
+      "status": "scheduled_confirmed",
+      "pandascore": {
+        "id": "pandascore-1568938",
+        "sourceId": 1568938,
+        "source": "pandascore",
+        "date": "2026-08-22T11:26:32Z",
+        "status": "running",
+        "teamA": "DNS",
+        "teamB": "KRX",
+        "blueTeam": "DNS",
+        "redTeam": "KRX",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": {
+        "id": "naver-2025082219V3M75Fj4967lol",
+        "sourceId": "2025082219V3M75Fj4967lol",
+        "source": "naver",
+        "date": "2026-08-22T10:00:00.000Z",
+        "status": "not_started",
+        "title": "정규시즌 4R",
+        "roundId": "r4",
+        "roundTitle": "정규시즌 4R",
+        "teamA": "DNS",
+        "teamB": "KRX",
         "scoreA": 0,
         "scoreB": 0,
         "winner": null,
