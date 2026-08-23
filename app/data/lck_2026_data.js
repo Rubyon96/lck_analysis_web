@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-23T10:53:08.683Z",
+    "generatedAt": "2026-08-23T11:42:50.639Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1220,
+    "rawPandascoreMatches": 1219,
     "filteredPandascoreMatches": 55,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
@@ -3357,7 +3357,7 @@ window.lck2026Data = {
           "teamA": "BFX",
           "teamB": "NS",
           "scoreA": 1,
-          "scoreB": 0,
+          "scoreB": 1,
           "winner": null,
           "sourceStatus": "single_source",
           "sources": {
@@ -4243,9 +4243,9 @@ window.lck2026Data = {
       "blueTeam": "BFX",
       "redTeam": "NS",
       "scoreA": 1,
-      "scoreB": 0,
+      "scoreB": 1,
       "blueScore": 1,
-      "redScore": 0,
+      "redScore": 1,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
@@ -6075,9 +6075,9 @@ window.lck2026Data = {
         "blueTeam": "BFX",
         "redTeam": "NS",
         "scoreA": 1,
-        "scoreB": 0,
+        "scoreB": 1,
         "blueScore": 1,
-        "redScore": 0,
+        "redScore": 1,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
@@ -6096,7 +6096,7 @@ window.lck2026Data = {
         "teamA": "BFX",
         "teamB": "NS",
         "scoreA": 1,
-        "scoreB": 0,
+        "scoreB": 1,
         "winner": null,
         "sourceStatus": "single_source",
         "sources": {
