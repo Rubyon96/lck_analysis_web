@@ -1,10 +1,10 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-22T14:54:54.925Z",
+    "generatedAt": "2026-08-23T10:53:08.683Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1223,
-    "filteredPandascoreMatches": 56,
+    "rawPandascoreMatches": 1220,
+    "filteredPandascoreMatches": 55,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
     "roundSnapshotSource": "naver_schedule_title",
@@ -23,22 +23,22 @@ window.lck2026Data = {
       "fullName": "Gen.G",
       "logo": "./assets/logos/gen.png",
       "wins": 19,
-      "losses": 6,
-      "gameDiff": 23,
+      "losses": 7,
+      "gameDiff": 22,
       "streak": "1L",
       "source": "naver_team_ranking"
     },
     {
       "id": "hle",
       "group": "legend",
-      "rank": 2,
+      "rank": 1,
       "shortName": "HLE",
       "fullName": "Hanwha Life Esports",
       "logo": "./assets/logos/hle.png",
-      "wins": 18,
+      "wins": 19,
       "losses": 7,
-      "gameDiff": 20,
-      "streak": "2W",
+      "gameDiff": 22,
+      "streak": "3W",
       "source": "naver_team_ranking"
     },
     {
@@ -49,9 +49,9 @@ window.lck2026Data = {
       "fullName": "T1",
       "logo": "./assets/logos/t1.png",
       "wins": 17,
-      "losses": 8,
-      "gameDiff": 19,
-      "streak": "1W",
+      "losses": 9,
+      "gameDiff": 17,
+      "streak": "1L",
       "source": "naver_team_ranking"
     },
     {
@@ -61,9 +61,9 @@ window.lck2026Data = {
       "shortName": "DK",
       "fullName": "Dplus KIA",
       "logo": "./assets/logos/dk.png",
-      "wins": 16,
+      "wins": 17,
       "losses": 9,
-      "gameDiff": 9,
+      "gameDiff": 10,
       "streak": "1W",
       "source": "naver_team_ranking"
     },
@@ -127,8 +127,8 @@ window.lck2026Data = {
       "fullName": "Kiwoom DRX",
       "logo": "./assets/logos/krx.png",
       "wins": 7,
-      "losses": 18,
-      "gameDiff": -17,
+      "losses": 19,
+      "gameDiff": -19,
       "streak": "5L",
       "source": "naver_team_ranking"
     },
@@ -139,9 +139,9 @@ window.lck2026Data = {
       "shortName": "DNS",
       "fullName": "DN SOOPers",
       "logo": "./assets/logos/dns.png",
-      "wins": 5,
+      "wins": 6,
       "losses": 20,
-      "gameDiff": -31,
+      "gameDiff": -29,
       "streak": "1W",
       "source": "naver_team_ranking"
     }
@@ -2819,14 +2819,28 @@ window.lck2026Data = {
       "startDate": "2026-08-12",
       "endDate": "2026-08-23",
       "matchCount": 20,
-      "completedMatchCount": 18,
+      "completedMatchCount": 19,
       "missingRequiredRounds": [],
       "isCumulativeComplete": true,
       "standings": [
         {
-          "id": "gen",
+          "id": "hle",
           "group": "legend",
           "rank": 1,
+          "shortName": "HLE",
+          "fullName": "Hanwha Life Esports",
+          "logo": "./assets/logos/hle.png",
+          "wins": 19,
+          "losses": 7,
+          "gameDiff": 22,
+          "streak": "3W",
+          "gameWins": 43,
+          "gameLosses": 21
+        },
+        {
+          "id": "gen",
+          "group": "legend",
+          "rank": 2,
           "shortName": "GEN",
           "fullName": "Gen.G",
           "logo": "./assets/logos/gen.png",
@@ -2838,20 +2852,6 @@ window.lck2026Data = {
           "gameLosses": 19
         },
         {
-          "id": "hle",
-          "group": "legend",
-          "rank": 2,
-          "shortName": "HLE",
-          "fullName": "Hanwha Life Esports",
-          "logo": "./assets/logos/hle.png",
-          "wins": 18,
-          "losses": 7,
-          "gameDiff": 20,
-          "streak": "2W",
-          "gameWins": 41,
-          "gameLosses": 21
-        },
-        {
           "id": "t1",
           "group": "legend",
           "rank": 3,
@@ -2859,11 +2859,11 @@ window.lck2026Data = {
           "fullName": "T1",
           "logo": "./assets/logos/t1.png",
           "wins": 17,
-          "losses": 8,
-          "gameDiff": 19,
-          "streak": "1W",
+          "losses": 9,
+          "gameDiff": 17,
+          "streak": "1L",
           "gameWins": 38,
-          "gameLosses": 19
+          "gameLosses": 21
         },
         {
           "id": "dk",
@@ -3330,15 +3330,15 @@ window.lck2026Data = {
           "sourceId": "2025082317ywVw2bq6499lol",
           "source": "naver",
           "date": "2026-08-23T08:00:00.000Z",
-          "status": "not_started",
+          "status": "finished",
           "title": "정규시즌 4R",
           "roundId": "r4",
           "roundTitle": "정규시즌 4R",
           "teamA": "HLE",
           "teamB": "T1",
-          "scoreA": 0,
+          "scoreA": 2,
           "scoreB": 0,
-          "winner": null,
+          "winner": "HLE",
           "sourceStatus": "single_source",
           "sources": {
             "pandascore": false,
@@ -3356,7 +3356,7 @@ window.lck2026Data = {
           "roundTitle": "정규시즌 4R",
           "teamA": "BFX",
           "teamB": "NS",
-          "scoreA": 0,
+          "scoreA": 1,
           "scoreB": 0,
           "winner": null,
           "sourceStatus": "single_source",
@@ -3369,6 +3369,27 @@ window.lck2026Data = {
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1568939",
+      "sourceId": 1568939,
+      "source": "pandascore",
+      "date": "2026-08-23T08:01:12Z",
+      "status": "finished",
+      "teamA": "HLE",
+      "teamB": "T1",
+      "blueTeam": "HLE",
+      "redTeam": "T1",
+      "scoreA": 2,
+      "scoreB": 0,
+      "blueScore": 2,
+      "redScore": 0,
+      "winner": "HLE",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1568938",
       "sourceId": 1568938,
@@ -4208,63 +4229,22 @@ window.lck2026Data = {
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1505698",
-      "sourceId": 1505698,
-      "source": "pandascore",
-      "date": "2026-06-12T08:18:28Z",
-      "status": "finished",
-      "teamA": "HLE",
-      "teamB": "T1",
-      "blueTeam": "HLE",
-      "redTeam": "T1",
-      "scoreA": 3,
-      "scoreB": 1,
-      "blueScore": 3,
-      "redScore": 1,
-      "winner": "HLE",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "upcomingMatches": [
     {
-      "id": "pandascore-1568939",
-      "sourceId": 1568939,
-      "source": "pandascore",
-      "date": "2026-08-23T08:00:00Z",
-      "status": "not_started",
-      "teamA": "HLE",
-      "teamB": "T1",
-      "blueTeam": "HLE",
-      "redTeam": "T1",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
       "id": "pandascore-1568940",
       "sourceId": 1568940,
       "source": "pandascore",
-      "date": "2026-08-23T10:00:00Z",
-      "status": "not_started",
+      "date": "2026-08-23T10:14:14Z",
+      "status": "running",
       "teamA": "BFX",
       "teamB": "NS",
       "blueTeam": "BFX",
       "redTeam": "NS",
-      "scoreA": 0,
+      "scoreA": 1,
       "scoreB": 0,
-      "blueScore": 0,
+      "blueScore": 1,
       "redScore": 0,
       "sourceStatus": "single_source",
       "sources": {
@@ -4274,6 +4254,51 @@ window.lck2026Data = {
     }
   ],
   "validation": [
+    {
+      "key": "2026-08-23_HLE_vs_T1",
+      "status": "confirmed",
+      "pandascore": {
+        "id": "pandascore-1568939",
+        "sourceId": 1568939,
+        "source": "pandascore",
+        "date": "2026-08-23T08:01:12Z",
+        "status": "finished",
+        "teamA": "HLE",
+        "teamB": "T1",
+        "blueTeam": "HLE",
+        "redTeam": "T1",
+        "scoreA": 2,
+        "scoreB": 0,
+        "blueScore": 2,
+        "redScore": 0,
+        "winner": "HLE",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": {
+        "id": "naver-2025082317ywVw2bq6499lol",
+        "sourceId": "2025082317ywVw2bq6499lol",
+        "source": "naver",
+        "date": "2026-08-23T08:00:00.000Z",
+        "status": "finished",
+        "title": "정규시즌 4R",
+        "roundId": "r4",
+        "roundTitle": "정규시즌 4R",
+        "teamA": "HLE",
+        "teamB": "T1",
+        "scoreA": 2,
+        "scoreB": 0,
+        "winner": "HLE",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": false,
+          "naver": true
+        }
+      }
+    },
     {
       "key": "2026-08-22_DNS_vs_KRX",
       "status": "confirmed",
@@ -6037,91 +6062,21 @@ window.lck2026Data = {
       "naver": null
     },
     {
-      "key": "2026-06-12_HLE_vs_T1",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1505698",
-        "sourceId": 1505698,
-        "source": "pandascore",
-        "date": "2026-06-12T08:18:28Z",
-        "status": "finished",
-        "teamA": "HLE",
-        "teamB": "T1",
-        "blueTeam": "HLE",
-        "redTeam": "T1",
-        "scoreA": 3,
-        "scoreB": 1,
-        "blueScore": 3,
-        "redScore": 1,
-        "winner": "HLE",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-08-23_HLE_vs_T1",
-      "status": "scheduled_confirmed",
-      "pandascore": {
-        "id": "pandascore-1568939",
-        "sourceId": 1568939,
-        "source": "pandascore",
-        "date": "2026-08-23T08:00:00Z",
-        "status": "not_started",
-        "teamA": "HLE",
-        "teamB": "T1",
-        "blueTeam": "HLE",
-        "redTeam": "T1",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025082317ywVw2bq6499lol",
-        "sourceId": "2025082317ywVw2bq6499lol",
-        "source": "naver",
-        "date": "2026-08-23T08:00:00.000Z",
-        "status": "not_started",
-        "title": "정규시즌 4R",
-        "roundId": "r4",
-        "roundTitle": "정규시즌 4R",
-        "teamA": "HLE",
-        "teamB": "T1",
-        "scoreA": 0,
-        "scoreB": 0,
-        "winner": null,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
       "key": "2026-08-23_BFX_vs_NS",
       "status": "scheduled_confirmed",
       "pandascore": {
         "id": "pandascore-1568940",
         "sourceId": 1568940,
         "source": "pandascore",
-        "date": "2026-08-23T10:00:00Z",
-        "status": "not_started",
+        "date": "2026-08-23T10:14:14Z",
+        "status": "running",
         "teamA": "BFX",
         "teamB": "NS",
         "blueTeam": "BFX",
         "redTeam": "NS",
-        "scoreA": 0,
+        "scoreA": 1,
         "scoreB": 0,
-        "blueScore": 0,
+        "blueScore": 1,
         "redScore": 0,
         "sourceStatus": "single_source",
         "sources": {
@@ -6140,7 +6095,7 @@ window.lck2026Data = {
         "roundTitle": "정규시즌 4R",
         "teamA": "BFX",
         "teamB": "NS",
-        "scoreA": 0,
+        "scoreA": 1,
         "scoreB": 0,
         "winner": null,
         "sourceStatus": "single_source",
