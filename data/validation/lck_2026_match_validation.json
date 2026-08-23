@@ -1,5 +1,50 @@
 [
   {
+    "key": "2026-08-23_BFX_vs_NS",
+    "status": "confirmed",
+    "pandascore": {
+      "id": "pandascore-1568940",
+      "sourceId": 1568940,
+      "source": "pandascore",
+      "date": "2026-08-23T10:14:14Z",
+      "status": "finished",
+      "teamA": "BFX",
+      "teamB": "NS",
+      "blueTeam": "BFX",
+      "redTeam": "NS",
+      "scoreA": 1,
+      "scoreB": 2,
+      "blueScore": 1,
+      "redScore": 2,
+      "winner": "NS",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    "naver": {
+      "id": "naver-2025082319El3fNSf8283lol",
+      "sourceId": "2025082319El3fNSf8283lol",
+      "source": "naver",
+      "date": "2026-08-23T10:00:00.000Z",
+      "status": "finished",
+      "title": "정규시즌 4R",
+      "roundId": "r4",
+      "roundTitle": "정규시즌 4R",
+      "teamA": "BFX",
+      "teamB": "NS",
+      "scoreA": 1,
+      "scoreB": 2,
+      "winner": "NS",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": false,
+        "naver": true
+      }
+    }
+  },
+  {
     "key": "2026-08-23_HLE_vs_T1",
     "status": "confirmed",
     "pandascore": {
@@ -1805,49 +1850,5 @@
       }
     },
     "naver": null
-  },
-  {
-    "key": "2026-08-23_BFX_vs_NS",
-    "status": "scheduled_confirmed",
-    "pandascore": {
-      "id": "pandascore-1568940",
-      "sourceId": 1568940,
-      "source": "pandascore",
-      "date": "2026-08-23T10:14:14Z",
-      "status": "running",
-      "teamA": "BFX",
-      "teamB": "NS",
-      "blueTeam": "BFX",
-      "redTeam": "NS",
-      "scoreA": 1,
-      "scoreB": 1,
-      "blueScore": 1,
-      "redScore": 1,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    "naver": {
-      "id": "naver-2025082319El3fNSf8283lol",
-      "sourceId": "2025082319El3fNSf8283lol",
-      "source": "naver",
-      "date": "2026-08-23T10:00:00.000Z",
-      "status": "not_started",
-      "title": "정규시즌 4R",
-      "roundId": "r4",
-      "roundTitle": "정규시즌 4R",
-      "teamA": "BFX",
-      "teamB": "NS",
-      "scoreA": 1,
-      "scoreB": 1,
-      "winner": null,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": false,
-        "naver": true
-      }
-    }
   }
 ]

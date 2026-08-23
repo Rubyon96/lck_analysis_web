@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-23T11:42:50.639Z",
+    "generatedAt": "2026-08-23T13:22:21.428Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1219,
+    "rawPandascoreMatches": 1216,
     "filteredPandascoreMatches": 55,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
@@ -81,22 +81,9 @@ window.lck2026Data = {
       "source": "naver_team_ranking"
     },
     {
-      "id": "bfx",
-      "group": "rise",
-      "rank": 1,
-      "shortName": "BFX",
-      "fullName": "BNK FEARX",
-      "logo": "./assets/logos/bfx.png",
-      "wins": 10,
-      "losses": 15,
-      "gameDiff": -10,
-      "streak": "1W",
-      "source": "naver_team_ranking"
-    },
-    {
       "id": "bro",
       "group": "rise",
-      "rank": 2,
+      "rank": 1,
       "shortName": "BRO",
       "fullName": "HANJIN BRION",
       "logo": "./assets/logos/bro.png",
@@ -107,16 +94,29 @@ window.lck2026Data = {
       "source": "naver_team_ranking"
     },
     {
+      "id": "bfx",
+      "group": "rise",
+      "rank": 2,
+      "shortName": "BFX",
+      "fullName": "BNK FEARX",
+      "logo": "./assets/logos/bfx.png",
+      "wins": 10,
+      "losses": 16,
+      "gameDiff": -11,
+      "streak": "1L",
+      "source": "naver_team_ranking"
+    },
+    {
       "id": "ns",
       "group": "rise",
-      "rank": 3,
+      "rank": 2,
       "shortName": "NS",
       "fullName": "Nongshim RedForce",
       "logo": "./assets/logos/ns.png",
-      "wins": 9,
+      "wins": 10,
       "losses": 16,
-      "gameDiff": -12,
-      "streak": "2W",
+      "gameDiff": -11,
+      "streak": "3W",
       "source": "naver_team_ranking"
     },
     {
@@ -2815,11 +2815,11 @@ window.lck2026Data = {
     "r4": {
       "id": "r4",
       "name": "Round 4",
-      "status": "active",
+      "status": "completed",
       "startDate": "2026-08-12",
       "endDate": "2026-08-23",
       "matchCount": 20,
-      "completedMatchCount": 19,
+      "completedMatchCount": 20,
       "missingRequiredRounds": [],
       "isCumulativeComplete": true,
       "standings": [
@@ -2894,23 +2894,9 @@ window.lck2026Data = {
           "gameLosses": 28
         },
         {
-          "id": "bfx",
-          "group": "rise",
-          "rank": 6,
-          "shortName": "BFX",
-          "fullName": "BNK FEARX",
-          "logo": "./assets/logos/bfx.png",
-          "wins": 10,
-          "losses": 15,
-          "gameDiff": -10,
-          "streak": "1W",
-          "gameWins": 23,
-          "gameLosses": 33
-        },
-        {
           "id": "bro",
           "group": "rise",
-          "rank": 7,
+          "rank": 6,
           "shortName": "BRO",
           "fullName": "HANJIN BRION",
           "logo": "./assets/logos/bro.png",
@@ -2924,15 +2910,29 @@ window.lck2026Data = {
         {
           "id": "ns",
           "group": "rise",
-          "rank": 8,
+          "rank": 7,
           "shortName": "NS",
           "fullName": "Nongshim RedForce",
           "logo": "./assets/logos/ns.png",
-          "wins": 9,
+          "wins": 10,
           "losses": 16,
-          "gameDiff": -12,
-          "streak": "2W",
-          "gameWins": 23,
+          "gameDiff": -11,
+          "streak": "3W",
+          "gameWins": 25,
+          "gameLosses": 36
+        },
+        {
+          "id": "bfx",
+          "group": "rise",
+          "rank": 8,
+          "shortName": "BFX",
+          "fullName": "BNK FEARX",
+          "logo": "./assets/logos/bfx.png",
+          "wins": 10,
+          "losses": 16,
+          "gameDiff": -11,
+          "streak": "1L",
+          "gameWins": 24,
           "gameLosses": 35
         },
         {
@@ -3350,15 +3350,15 @@ window.lck2026Data = {
           "sourceId": "2025082319El3fNSf8283lol",
           "source": "naver",
           "date": "2026-08-23T10:00:00.000Z",
-          "status": "not_started",
+          "status": "finished",
           "title": "정규시즌 4R",
           "roundId": "r4",
           "roundTitle": "정규시즌 4R",
           "teamA": "BFX",
           "teamB": "NS",
           "scoreA": 1,
-          "scoreB": 1,
-          "winner": null,
+          "scoreB": 2,
+          "winner": "NS",
           "sourceStatus": "single_source",
           "sources": {
             "pandascore": false,
@@ -3369,6 +3369,27 @@ window.lck2026Data = {
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1568940",
+      "sourceId": 1568940,
+      "source": "pandascore",
+      "date": "2026-08-23T10:14:14Z",
+      "status": "finished",
+      "teamA": "BFX",
+      "teamB": "NS",
+      "blueTeam": "BFX",
+      "redTeam": "NS",
+      "scoreA": 1,
+      "scoreB": 2,
+      "blueScore": 1,
+      "redScore": 2,
+      "winner": "NS",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1568939",
       "sourceId": 1568939,
@@ -4231,29 +4252,53 @@ window.lck2026Data = {
       }
     }
   ],
-  "upcomingMatches": [
-    {
-      "id": "pandascore-1568940",
-      "sourceId": 1568940,
-      "source": "pandascore",
-      "date": "2026-08-23T10:14:14Z",
-      "status": "running",
-      "teamA": "BFX",
-      "teamB": "NS",
-      "blueTeam": "BFX",
-      "redTeam": "NS",
-      "scoreA": 1,
-      "scoreB": 1,
-      "blueScore": 1,
-      "redScore": 1,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    }
-  ],
+  "upcomingMatches": [],
   "validation": [
+    {
+      "key": "2026-08-23_BFX_vs_NS",
+      "status": "confirmed",
+      "pandascore": {
+        "id": "pandascore-1568940",
+        "sourceId": 1568940,
+        "source": "pandascore",
+        "date": "2026-08-23T10:14:14Z",
+        "status": "finished",
+        "teamA": "BFX",
+        "teamB": "NS",
+        "blueTeam": "BFX",
+        "redTeam": "NS",
+        "scoreA": 1,
+        "scoreB": 2,
+        "blueScore": 1,
+        "redScore": 2,
+        "winner": "NS",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": {
+        "id": "naver-2025082319El3fNSf8283lol",
+        "sourceId": "2025082319El3fNSf8283lol",
+        "source": "naver",
+        "date": "2026-08-23T10:00:00.000Z",
+        "status": "finished",
+        "title": "정규시즌 4R",
+        "roundId": "r4",
+        "roundTitle": "정규시즌 4R",
+        "teamA": "BFX",
+        "teamB": "NS",
+        "scoreA": 1,
+        "scoreB": 2,
+        "winner": "NS",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": false,
+          "naver": true
+        }
+      }
+    },
     {
       "key": "2026-08-23_HLE_vs_T1",
       "status": "confirmed",
@@ -6060,50 +6105,6 @@ window.lck2026Data = {
         }
       },
       "naver": null
-    },
-    {
-      "key": "2026-08-23_BFX_vs_NS",
-      "status": "scheduled_confirmed",
-      "pandascore": {
-        "id": "pandascore-1568940",
-        "sourceId": 1568940,
-        "source": "pandascore",
-        "date": "2026-08-23T10:14:14Z",
-        "status": "running",
-        "teamA": "BFX",
-        "teamB": "NS",
-        "blueTeam": "BFX",
-        "redTeam": "NS",
-        "scoreA": 1,
-        "scoreB": 1,
-        "blueScore": 1,
-        "redScore": 1,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025082319El3fNSf8283lol",
-        "sourceId": "2025082319El3fNSf8283lol",
-        "source": "naver",
-        "date": "2026-08-23T10:00:00.000Z",
-        "status": "not_started",
-        "title": "정규시즌 4R",
-        "roundId": "r4",
-        "roundTitle": "정규시즌 4R",
-        "teamA": "BFX",
-        "teamB": "NS",
-        "scoreA": 1,
-        "scoreB": 1,
-        "winner": null,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
     }
   ]
 };
