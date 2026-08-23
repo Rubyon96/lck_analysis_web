@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-23T14:03:04.354Z",
+    "generatedAt": "2026-08-23T14:57:02.167Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
     "rawPandascoreMatches": 1216,
@@ -4252,7 +4252,48 @@
       }
     }
   ],
-  "upcomingMatches": [],
+  "upcomingMatches": [
+    {
+      "id": "pandascore-1629295",
+      "sourceId": 1629295,
+      "source": "pandascore",
+      "date": "2026-08-26T08:00:00Z",
+      "status": "not_started",
+      "teamA": "KT",
+      "teamB": "BRO",
+      "blueTeam": "KT",
+      "redTeam": "BRO",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1629296",
+      "sourceId": 1629296,
+      "source": "pandascore",
+      "date": "2026-08-27T08:00:00Z",
+      "status": "not_started",
+      "teamA": "NS",
+      "teamB": "BFX",
+      "blueTeam": "NS",
+      "redTeam": "BFX",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    }
+  ],
   "validation": [
     {
       "key": "2026-08-23_BFX_vs_NS",
@@ -6098,6 +6139,56 @@
         "blueScore": 3,
         "redScore": 0,
         "winner": "GEN",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-08-26_BRO_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1629295",
+        "sourceId": 1629295,
+        "source": "pandascore",
+        "date": "2026-08-26T08:00:00Z",
+        "status": "not_started",
+        "teamA": "KT",
+        "teamB": "BRO",
+        "blueTeam": "KT",
+        "redTeam": "BRO",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-08-27_BFX_vs_NS",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1629296",
+        "sourceId": 1629296,
+        "source": "pandascore",
+        "date": "2026-08-27T08:00:00Z",
+        "status": "not_started",
+        "teamA": "NS",
+        "teamB": "BFX",
+        "blueTeam": "NS",
+        "redTeam": "BFX",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
