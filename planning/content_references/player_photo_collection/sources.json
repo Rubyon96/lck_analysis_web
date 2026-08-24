@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "createdAt": "2026-08-24",
+    "purpose": "Reference sources for LCK team/player visuals. Image files are not downloaded here unless reuse rights are confirmed.",
+    "copyrightRule": "Treat official team, LCK, SOOP, CHZZK, news, and wiki images as copyrighted unless a media kit or license explicitly permits public reuse.",
+    "storageRule": {
+      "referenceRoot": "planning/content_references/player_photo_collection",
+      "publicAssetRoot": "app/assets/story",
+      "teamFolders": ["raw", "approved", "edited"],
+      "requiredSidecar": "source_notes.json",
+      "allowedPublicStatuses": ["approved", "generated"],
+      "blockedPublicStatuses": ["reference", "needs_permission"],
+      "fileNamePatterns": {
+        "teamGroup": "<team>_roster_<season>_<source>_<status>.<ext>",
+        "player": "<team>_<player>_<season>_<source>_<status>.<ext>",
+        "matchStory": "<teamA>_<teamB>_<date>_<story-key>_<status>.<ext>"
+      }
+    }
+  },
+  "globalSources": [
+    {
+      "name": "LCK 2026 R1 integrated roster",
+      "url": "https://lolesports.com/ko-KR/news/2026-r1-roster",
+      "use": "Roster confirmation and visual reference",
+      "copyrightStatus": "reference_only"
+    },
+    {
+      "name": "LCK 2026 Liquipedia overview",
+      "url": "https://liquipedia.net/leagueoflegends/LCK/2026",
+      "use": "Roster cross-check and team list",
+      "copyrightStatus": "reference_only"
+    },
+    {
+      "name": "SOOP LCK official page",
+      "url": "https://lck.sooplive.com/",
+      "use": "Broadcast/content format reference",
+      "copyrightStatus": "reference_only"
+    }
+  ],
+  "teams": {
+    "T1": [
+      {
+        "name": "T1 League of Legends official team page",
+        "url": "https://www.t1.gg/teams/leagueoflegends/",
+        "use": "Player photo and team visual reference",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "GEN": [
+      {
+        "name": "Gen.G media kit",
+        "url": "https://www.gengesports.cn/web/mediaKit",
+        "use": "Player photos, team photos, and logo/media kit reference",
+        "copyrightStatus": "media_kit_check_terms_before_use"
+      }
+    ],
+    "HLE": [
+      {
+        "name": "Hanwha Life Esports official site",
+        "url": "https://hle.kr/en",
+        "use": "Brand story and team visual reference",
+        "copyrightStatus": "reference_only"
+      },
+      {
+        "name": "Hanwha Life Esports Liquipedia page",
+        "url": "https://liquipedia.net/leagueoflegends/Hanwha_Life_Esports",
+        "use": "Roster/history/gallery reference",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "DK": [
+      {
+        "name": "Dplus KIA official site",
+        "url": "https://dpluskia.gg/",
+        "use": "Team visual and brand reference",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "KT": [
+      {
+        "name": "kt sports e-Sports official page",
+        "url": "https://kt-sports.co.kr/sports/site/esports/game/info.do",
+        "use": "KT Rolster official team/game visual reference",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "BFX": [
+      {
+        "name": "BNK FEARX link hub",
+        "url": "https://litt.ly/fearxbusan",
+        "use": "Official links and documentary/content reference",
+        "copyrightStatus": "reference_only"
+      },
+      {
+        "name": "BNK FEARX store",
+        "url": "https://fearxstore.com/",
+        "use": "Uniform and brand visual reference",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "BRO": [
+      {
+        "name": "HANJIN BRION official site",
+        "url": "https://brionesports.gg/",
+        "use": "Brand, merchandise, and team content reference",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "NS": [
+      {
+        "name": "Nongshim RedForce official LoL player page",
+        "url": "https://www.ns-esports.com/page/22",
+        "use": "Player profile photo reference",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "KRX": [
+      {
+        "name": "DRX official LoL page",
+        "url": "https://www.drx.gg/lol",
+        "use": "Player profile and team visual reference",
+        "copyrightStatus": "reference_only"
+      },
+      {
+        "name": "Kiwoom DRX link hub",
+        "url": "https://litt.ly/drxglobal",
+        "use": "Official links and content channels",
+        "copyrightStatus": "reference_only"
+      }
+    ],
+    "DNS": [
+      {
+        "name": "DN SOOPers official site",
+        "url": "https://soopers.gg/",
+        "use": "Team/player page and brand visual reference",
+        "copyrightStatus": "reference_only"
+      }
+    ]
+  }
+}

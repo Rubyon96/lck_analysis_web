@@ -3,16 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LCK Standings Simulator</title>
+    <title>LOL.FLOW</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="app-shell">
+      <header class="top-navbar" aria-label="상단 내비게이션">
+        <button class="brand-mark" type="button" data-main-tab="standings" aria-label="LOL.FLOW 홈">
+          <span class="brand-symbol"></span>
+          <strong>LOL.FLOW</strong>
+        </button>
+        <nav class="top-nav-menu" aria-label="주요 메뉴">
+          <button class="top-nav-item" type="button" data-main-tab="standings">LCK순위</button>
+          <button class="top-nav-item" type="button" data-main-tab="schedule">경기 일정</button>
+        </nav>
+      </header>
       <section id="home-page" class="home-page" aria-label="LCK 팀 순위">
         <div class="home-carousel" aria-label="첫 화면 페이지">
           <div class="home-slide-viewport">
             <div id="home-slide-track" class="home-slide-track">
-              <article class="home-slide blank" aria-label="왼쪽 예비 페이지"></article>
               <article class="home-slide standings-slide" aria-label="순위 페이지">
                 <header class="page-header">
                   <div>
@@ -25,7 +34,17 @@
                 <nav id="round-tabs" class="round-tabs" aria-label="정규시즌 라운드"></nav>
                 <p id="round-note" class="round-note"></p>
                 <div id="standings-view" class="standings-view" aria-label="선택 라운드 순위"></div>
-                <section id="home-match-preview" class="home-match-preview" aria-label="선택 라운드 경기 정보"></section>
+              </article>
+              <article class="home-slide schedule-slide" aria-label="경기 일정 페이지">
+                <header class="page-header compact">
+                  <div>
+                    <p class="eyebrow">2026 LCK Prototype</p>
+                    <h1>경기 일정</h1>
+                  </div>
+                  <div class="status-pill">임시 데이터</div>
+                </header>
+                <nav id="schedule-round-tabs" class="round-tabs schedule-round-tabs" aria-label="경기 일정 라운드"></nav>
+                <section id="schedule-view" class="schedule-view" aria-label="선택 라운드 경기 일정"></section>
               </article>
               <article id="match-story-slide" class="home-slide story-slide" aria-label="오늘 경기 관전포인트"></article>
             </div>
@@ -38,6 +57,7 @@
 
     <script src="./data/sample_matches.js"></script>
     <script src="./data/lck_2026_data.js"></script>
+    <script src="./data/lck_head_to_head.js"></script>
     <script src="./data/league_rules.js"></script>
     <script src="./analysis.js"></script>
     <script src="./main.js"></script>
