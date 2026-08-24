@@ -1826,32 +1826,6 @@
     "naver": null
   },
   {
-    "key": "2026-06-13_GEN_vs_KT",
-    "status": "single_source",
-    "pandascore": {
-      "id": "pandascore-1505699",
-      "sourceId": 1505699,
-      "source": "pandascore",
-      "date": "2026-06-13T06:17:00Z",
-      "status": "finished",
-      "teamA": "GEN",
-      "teamB": "KT",
-      "blueTeam": "GEN",
-      "redTeam": "KT",
-      "scoreA": 3,
-      "scoreB": 0,
-      "blueScore": 3,
-      "redScore": 0,
-      "winner": "GEN",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    "naver": null
-  },
-  {
     "key": "2026-08-26_BRO_vs_KT",
     "status": "single_source",
     "pandascore": {

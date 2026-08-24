@@ -467,7 +467,6 @@ const computeStandingsFromMatches = (baseTeams, completedMatches) => {
       b.wins - a.wins ||
       a.losses - b.losses ||
       b.gameDiff - a.gameDiff ||
-      b.gameWins - a.gameWins ||
       a.shortName.localeCompare(b.shortName)
     )
     .map((team, index) => ({
@@ -505,13 +504,23 @@ const getRoundStatus = (matchesForRound) => {
   return "scheduled";
 };
 
-const attachCurrentGroups = (standings, currentTeams) => standings.map((team) => {
+const attachCurrentGroups = (standings, currentTeams, { applyOfficialOrder = false } = {}) => {
+  const officialOrderByTeam = currentTeams.reduce((orders, team, index) => ({
+    ...orders,
+    [team.shortName]: index + 1
+  }), {});
+
+  return standings.map((team) => {
   const currentTeam = currentTeams.find((item) => item.shortName === team.shortName);
   return {
     ...team,
+    rank: applyOfficialOrder && officialOrderByTeam[team.shortName]
+      ? officialOrderByTeam[team.shortName]
+      : team.rank,
     group: currentTeam?.group || team.group
   };
-});
+  }).sort((a, b) => a.rank - b.rank);
+};
 
 const buildRoundSnapshots = ({ baseTeams, naverMatches, currentTeams }) =>
   ["r1", "r2", "r3", "r4"].reduce((rounds, roundId) => {
@@ -527,8 +536,11 @@ const buildRoundSnapshots = ({ baseTeams, naverMatches, currentTeams }) =>
     const computedStandings = completedThroughRound.length > 0
       ? computeStandingsFromMatches(baseTeams, completedThroughRound)
       : [];
+    const applyOfficialOrder = roundId === "r4" &&
+      currentTeams.length === baseTeams.length &&
+      computedStandings.length === baseTeams.length;
     const standings = ["r3", "r4"].includes(roundId) && currentTeams.length > 0
-      ? attachCurrentGroups(computedStandings, currentTeams)
+      ? attachCurrentGroups(computedStandings, currentTeams, { applyOfficialOrder })
       : computedStandings;
     const range = getRoundDateRange(matchesForRound);
 

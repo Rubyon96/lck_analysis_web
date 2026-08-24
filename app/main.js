@@ -264,7 +264,6 @@ const compareStandingTeams = (a, b) =>
   b.wins - a.wins ||
   a.losses - b.losses ||
   b.gameDiff - a.gameDiff ||
-  (b.gameWins || 0) - (a.gameWins || 0) ||
   a.shortName.localeCompare(b.shortName);
 
 const applyDisplayRanks = (standingTeams, round) => {
