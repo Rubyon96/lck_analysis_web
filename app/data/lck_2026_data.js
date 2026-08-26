@@ -1,10 +1,10 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-24T15:34:52.545Z",
+    "generatedAt": "2026-08-26T11:15:55.989Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1207,
-    "filteredPandascoreMatches": 54,
+    "rawPandascoreMatches": 1192,
+    "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 10,
     "roundSnapshotSource": "naver_schedule_title",
@@ -4208,50 +4208,9 @@ window.lck2026Data = {
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1505700",
-      "sourceId": 1505700,
-      "source": "pandascore",
-      "date": "2026-06-14T06:19:56Z",
-      "status": "finished",
-      "teamA": "T1",
-      "teamB": "GEN",
-      "blueTeam": "T1",
-      "redTeam": "GEN",
-      "scoreA": 3,
-      "scoreB": 2,
-      "blueScore": 3,
-      "redScore": 2,
-      "winner": "T1",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "upcomingMatches": [
-    {
-      "id": "pandascore-1629295",
-      "sourceId": 1629295,
-      "source": "pandascore",
-      "date": "2026-08-26T08:00:00Z",
-      "status": "not_started",
-      "teamA": "KT",
-      "teamB": "BRO",
-      "blueTeam": "KT",
-      "redTeam": "BRO",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
     {
       "id": "pandascore-1629296",
       "sourceId": 1629296,
@@ -4266,6 +4225,26 @@ window.lck2026Data = {
       "scoreB": 0,
       "blueScore": 0,
       "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1629295",
+      "sourceId": 1629295,
+      "source": "pandascore",
+      "date": "2026-08-26T08:02:30Z",
+      "status": "running",
+      "teamA": "KT",
+      "teamB": "BRO",
+      "blueTeam": "KT",
+      "redTeam": "BRO",
+      "scoreA": 1,
+      "scoreB": 2,
+      "blueScore": 1,
+      "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
@@ -6075,57 +6054,6 @@ window.lck2026Data = {
       }
     },
     {
-      "key": "2026-06-14_GEN_vs_T1",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1505700",
-        "sourceId": 1505700,
-        "source": "pandascore",
-        "date": "2026-06-14T06:19:56Z",
-        "status": "finished",
-        "teamA": "T1",
-        "teamB": "GEN",
-        "blueTeam": "T1",
-        "redTeam": "GEN",
-        "scoreA": 3,
-        "scoreB": 2,
-        "blueScore": 3,
-        "redScore": 2,
-        "winner": "T1",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-08-26_BRO_vs_KT",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1629295",
-        "sourceId": 1629295,
-        "source": "pandascore",
-        "date": "2026-08-26T08:00:00Z",
-        "status": "not_started",
-        "teamA": "KT",
-        "teamB": "BRO",
-        "blueTeam": "KT",
-        "redTeam": "BRO",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
       "key": "2026-08-27_BFX_vs_NS",
       "status": "single_source",
       "pandascore": {
@@ -6142,6 +6070,31 @@ window.lck2026Data = {
         "scoreB": 0,
         "blueScore": 0,
         "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-08-26_BRO_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1629295",
+        "sourceId": 1629295,
+        "source": "pandascore",
+        "date": "2026-08-26T08:02:30Z",
+        "status": "running",
+        "teamA": "KT",
+        "teamB": "BRO",
+        "blueTeam": "KT",
+        "redTeam": "BRO",
+        "scoreA": 1,
+        "scoreB": 2,
+        "blueScore": 1,
+        "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
