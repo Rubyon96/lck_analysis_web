@@ -1,6 +1,6 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-29T10:23:28.359Z",
+    "generatedAt": "2026-08-29T10:33:53.823Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
     "rawPandascoreMatches": 1157,
@@ -4315,9 +4315,9 @@ window.lck2026Data = {
       "blueTeam": "T1",
       "redTeam": "BFX",
       "scoreA": 1,
-      "scoreB": 1,
+      "scoreB": 2,
       "blueScore": 1,
-      "redScore": 1,
+      "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
@@ -6243,9 +6243,9 @@ window.lck2026Data = {
         "blueTeam": "T1",
         "redTeam": "BFX",
         "scoreA": 1,
-        "scoreB": 1,
+        "scoreB": 2,
         "blueScore": 1,
-        "redScore": 1,
+        "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,

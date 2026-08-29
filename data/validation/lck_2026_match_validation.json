@@ -1916,9 +1916,9 @@
       "blueTeam": "T1",
       "redTeam": "BFX",
       "scoreA": 1,
-      "scoreB": 1,
+      "scoreB": 2,
       "blueScore": 1,
-      "redScore": 1,
+      "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
