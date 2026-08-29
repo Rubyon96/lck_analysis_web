@@ -1915,9 +1915,9 @@
       "teamB": "BFX",
       "blueTeam": "T1",
       "redTeam": "BFX",
-      "scoreA": 1,
+      "scoreA": 2,
       "scoreB": 2,
-      "blueScore": 1,
+      "blueScore": 2,
       "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
