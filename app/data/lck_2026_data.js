@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-29T12:23:41.615Z",
+    "generatedAt": "2026-08-29T12:33:35.633Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1156,
+    "rawPandascoreMatches": 1155,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -37,11 +37,11 @@ window.lck2026Data = {
       "fullName": "BNK FEARX",
       "logo": "./assets/logos/bfx.png",
       "wins": 6,
-      "losses": 4,
-      "gameDiff": 3,
+      "losses": 5,
+      "gameDiff": 2,
       "streak": "1L",
-      "gameWins": 16,
-      "gameLosses": 13
+      "gameWins": 18,
+      "gameLosses": 16
     },
     {
       "id": "gen",
@@ -100,9 +100,23 @@ window.lck2026Data = {
       "gameLosses": 10
     },
     {
-      "id": "bro",
+      "id": "t1",
       "group": "rise",
       "rank": 7,
+      "shortName": "T1",
+      "fullName": "T1",
+      "logo": "./assets/logos/t1.png",
+      "wins": 4,
+      "losses": 5,
+      "gameDiff": -2,
+      "streak": "1L",
+      "gameWins": 11,
+      "gameLosses": 13
+    },
+    {
+      "id": "bro",
+      "group": "rise",
+      "rank": 8,
       "shortName": "BRO",
       "fullName": "HANJIN BRION",
       "logo": "./assets/logos/bro.png",
@@ -112,20 +126,6 @@ window.lck2026Data = {
       "streak": "1L",
       "gameWins": 15,
       "gameLosses": 16
-    },
-    {
-      "id": "t1",
-      "group": "rise",
-      "rank": 8,
-      "shortName": "T1",
-      "fullName": "T1",
-      "logo": "./assets/logos/t1.png",
-      "wins": 3,
-      "losses": 5,
-      "gameDiff": -3,
-      "streak": "1L",
-      "gameWins": 8,
-      "gameLosses": 11
     },
     {
       "id": "kt",
@@ -2918,23 +2918,9 @@ window.lck2026Data = {
           "gameLosses": 21
         },
         {
-          "id": "bro",
-          "group": "rise",
-          "rank": 7,
-          "shortName": "BRO",
-          "fullName": "HANJIN BRION",
-          "logo": "./assets/logos/bro.png",
-          "wins": 10,
-          "losses": 16,
-          "gameDiff": -7,
-          "streak": "1L",
-          "gameWins": 27,
-          "gameLosses": 34
-        },
-        {
           "id": "t1",
           "group": "rise",
-          "rank": 8,
+          "rank": 7,
           "shortName": "T1",
           "fullName": "T1",
           "logo": "./assets/logos/t1.png",
@@ -2944,6 +2930,20 @@ window.lck2026Data = {
           "streak": "1L",
           "gameWins": 38,
           "gameLosses": 21
+        },
+        {
+          "id": "bro",
+          "group": "rise",
+          "rank": 8,
+          "shortName": "BRO",
+          "fullName": "HANJIN BRION",
+          "logo": "./assets/logos/bro.png",
+          "wins": 10,
+          "losses": 16,
+          "gameDiff": -7,
+          "streak": "1L",
+          "gameWins": 27,
+          "gameLosses": 34
         },
         {
           "id": "kt",
@@ -3379,6 +3379,27 @@ window.lck2026Data = {
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1642153",
+      "sourceId": 1642153,
+      "source": "pandascore",
+      "date": "2026-08-29T08:02:23Z",
+      "status": "finished",
+      "teamA": "T1",
+      "teamB": "BFX",
+      "blueTeam": "T1",
+      "redTeam": "BFX",
+      "scoreA": 3,
+      "scoreB": 2,
+      "blueScore": 3,
+      "redScore": 2,
+      "winner": "T1",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1629297",
       "sourceId": 1629297,
@@ -4303,29 +4324,35 @@ window.lck2026Data = {
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1642153",
-      "sourceId": 1642153,
-      "source": "pandascore",
-      "date": "2026-08-29T08:02:23Z",
-      "status": "running",
-      "teamA": "T1",
-      "teamB": "BFX",
-      "blueTeam": "T1",
-      "redTeam": "BFX",
-      "scoreA": 2,
-      "scoreB": 2,
-      "blueScore": 2,
-      "redScore": 2,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "validation": [
+    {
+      "key": "2026-08-29_BFX_vs_T1",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642153",
+        "sourceId": 1642153,
+        "source": "pandascore",
+        "date": "2026-08-29T08:02:23Z",
+        "status": "finished",
+        "teamA": "T1",
+        "teamB": "BFX",
+        "blueTeam": "T1",
+        "redTeam": "BFX",
+        "scoreA": 3,
+        "scoreB": 2,
+        "blueScore": 3,
+        "redScore": 2,
+        "winner": "T1",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-08-28_BFX_vs_BRO",
       "status": "single_source",
@@ -6221,31 +6248,6 @@ window.lck2026Data = {
         "scoreB": 0,
         "blueScore": 0,
         "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-08-29_BFX_vs_T1",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642153",
-        "sourceId": 1642153,
-        "source": "pandascore",
-        "date": "2026-08-29T08:02:23Z",
-        "status": "running",
-        "teamA": "T1",
-        "teamB": "BFX",
-        "blueTeam": "T1",
-        "redTeam": "BFX",
-        "scoreA": 2,
-        "scoreB": 2,
-        "blueScore": 2,
-        "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,

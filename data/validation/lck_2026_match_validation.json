@@ -1,5 +1,31 @@
 [
   {
+    "key": "2026-08-29_BFX_vs_T1",
+    "status": "single_source",
+    "pandascore": {
+      "id": "pandascore-1642153",
+      "sourceId": 1642153,
+      "source": "pandascore",
+      "date": "2026-08-29T08:02:23Z",
+      "status": "finished",
+      "teamA": "T1",
+      "teamB": "BFX",
+      "blueTeam": "T1",
+      "redTeam": "BFX",
+      "scoreA": 3,
+      "scoreB": 2,
+      "blueScore": 3,
+      "redScore": 2,
+      "winner": "T1",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    "naver": null
+  },
+  {
     "key": "2026-08-28_BFX_vs_BRO",
     "status": "single_source",
     "pandascore": {
@@ -1894,31 +1920,6 @@
       "scoreB": 0,
       "blueScore": 0,
       "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    "naver": null
-  },
-  {
-    "key": "2026-08-29_BFX_vs_T1",
-    "status": "single_source",
-    "pandascore": {
-      "id": "pandascore-1642153",
-      "sourceId": 1642153,
-      "source": "pandascore",
-      "date": "2026-08-29T08:02:23Z",
-      "status": "running",
-      "teamA": "T1",
-      "teamB": "BFX",
-      "blueTeam": "T1",
-      "redTeam": "BFX",
-      "scoreA": 2,
-      "scoreB": 2,
-      "blueScore": 2,
-      "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
