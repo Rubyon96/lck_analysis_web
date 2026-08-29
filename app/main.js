@@ -10,6 +10,7 @@ let selectedTeamId = "t1";
 let selectedRoundId = null;
 let selectedDetailMatchId = null;
 let selectedScenarioMatchId = null;
+let selectedTargetRank = null;
 let selectedHomeSlideIndex = 0;
 let previousHomeSlideIndex = 0;
 let selectedStoryMatchId = null;
@@ -127,7 +128,15 @@ selectedRoundId = getInitialRoundId();
 const getSelectedRound = () =>
   rules.rounds.find((round) => round.id === selectedRoundId) || rules.rounds[0];
 
-const getActiveTabName = () => selectedHomeSlideIndex === 1 ? "schedule" : "standings";
+const mainTabIndexes = {
+  standings: 0,
+  schedule: 1,
+  playoffs: 2,
+  story: 3
+};
+
+const getActiveTabName = () =>
+  Object.entries(mainTabIndexes).find(([, index]) => index === selectedHomeSlideIndex)?.[0] || "standings";
 
 const getRouteRoundId = (roundId) =>
   rules.rounds.some((round) => round.id === roundId) ? roundId : getInitialRoundId();
@@ -152,6 +161,64 @@ const setAppRoute = (route, { replace = false } = {}) => {
 const navigateHomeRoute = (tab = getActiveTabName(), roundId = selectedRoundId) => {
   const safeRoundId = getRouteRoundId(roundId);
   setAppRoute(`#${tab}/${safeRoundId}`);
+};
+
+const parseTeamRouteParts = (parts = []) => parts.reduce((state, part, index, list) => {
+  if (!part) {
+    return state;
+  }
+
+  if (part === "final" || previewStartDateByMode[part]) {
+    return { ...state, previewMode: part };
+  }
+
+  if (part === "detail") {
+    return { ...state, detailMatchId: decodeURIComponent(list[index + 1] || "") };
+  }
+
+  if (part === "scenario") {
+    return { ...state, scenarioMatchId: decodeURIComponent(list[index + 1] || "") };
+  }
+
+  if (part === "rank") {
+    return { ...state, targetRank: Number(list[index + 1] || 0) || null };
+  }
+
+  return state;
+}, {
+  previewMode: null,
+  detailMatchId: null,
+  scenarioMatchId: null,
+  targetRank: null
+});
+
+const createTeamRoute = ({
+  teamId = selectedTeamId,
+  roundId = selectedRoundId,
+  previewMode = selectedPreviewMode,
+  detailMatchId = selectedDetailMatchId,
+  scenarioMatchId = selectedScenarioMatchId,
+  targetRank = null
+} = {}) => {
+  const parts = ["team", teamId, getRouteRoundId(roundId)];
+
+  if (previewMode && !(teamId === "t1" && roundId === "r4" && previewMode === "preview-before-0821")) {
+    parts.push(previewMode);
+  }
+
+  if (detailMatchId) {
+    parts.push("detail", encodeURIComponent(detailMatchId));
+  }
+
+  if (scenarioMatchId) {
+    parts.push("scenario", encodeURIComponent(scenarioMatchId));
+  }
+
+  if (targetRank) {
+    parts.push("rank", String(targetRank));
+  }
+
+  return `#${parts.join("/")}`;
 };
 
 const isRoundUnlocked = (round) => {
@@ -190,12 +257,17 @@ const renderHomeSlide = () => {
 
   track.style.transform = `translateX(-${selectedHomeSlideIndex * 100}%)`;
   document.querySelectorAll("[data-main-tab]").forEach((button) => {
-    const targetIndex = button.dataset.mainTab === "schedule" ? 1 : 0;
+    const targetIndex = mainTabIndexes[button.dataset.mainTab] || 0;
     button.classList.toggle("active", selectedHomeSlideIndex === targetIndex);
   });
 };
 
 const showMainTab = (tab) => {
+  if (tab === "playoffs") {
+    setAppRoute("#playoffs");
+    return;
+  }
+
   navigateHomeRoute(tab, tab === "schedule" ? getInitialRoundId() : selectedRoundId);
 };
 
@@ -2751,6 +2823,134 @@ const renderScheduleView = () => {
   });
 };
 
+const playoffSchedule = [
+  { date: "2026-08-26T17:00:00+09:00", stage: "Play-In", title: "PI 1R", teamA: "KT", teamB: "BRO", scoreA: 3, scoreB: 2, winner: "KT", status: "finished" },
+  { date: "2026-08-27T17:00:00+09:00", stage: "Play-In", title: "PI 2R", teamA: "NS", teamB: "BFX", scoreA: 1, scoreB: 3, winner: "BFX", status: "finished" },
+  { date: "2026-08-28T17:00:00+09:00", stage: "Play-In", title: "PI Final", teamA: "BRO", teamB: "BFX", scoreA: 2, scoreB: 3, winner: "BFX", status: "finished" },
+  { date: "2026-08-29T17:00:00+09:00", stage: "Playoffs", title: "PO 1R", teamA: "T1", teamB: "BFX", status: "upcoming" },
+  { date: "2026-08-30T17:00:00+09:00", stage: "Playoffs", title: "PO 1R", teamA: "DK", teamB: "KT", status: "upcoming" },
+  { date: "2026-09-01T17:00:00+09:00", stage: "Playoffs", title: "PO 2R", teamA: "GEN", teamB: "1R 승자", status: "upcoming" },
+  { date: "2026-09-02T17:00:00+09:00", stage: "Playoffs", title: "PO 2R", teamA: "HLE", teamB: "1R 승자", status: "upcoming" },
+  { date: "2026-09-03T17:00:00+09:00", stage: "Lower", title: "패자조 1R", teamA: "1R 패자", teamB: "2R 패자", status: "upcoming" },
+  { date: "2026-09-04T17:00:00+09:00", stage: "Lower", title: "패자조 2R", teamA: "패자조 승자", teamB: "2R 패자", status: "upcoming" },
+  { date: "2026-09-12T14:00:00+09:00", stage: "Finals", title: "결승 진출전", teamA: "상위조 결승 패자", teamB: "하위조 결승 승자", status: "upcoming" },
+  { date: "2026-09-13T14:00:00+09:00", stage: "Finals", title: "결승전", teamA: "상위조 결승 승자", teamB: "결승 진출전 승자", status: "upcoming" }
+];
+
+const playoffSeeds = [
+  { seed: "1시드", team: "GEN", entry: "PO 2R" },
+  { seed: "2시드", team: "HLE", entry: "PO 2R" },
+  { seed: "3시드", team: "T1", entry: "PO 1R" },
+  { seed: "4시드", team: "DK", entry: "PO 1R" },
+  { seed: "PI", team: "KT", entry: "Play-In" },
+  { seed: "PI", team: "BRO", entry: "Play-In" },
+  { seed: "PI", team: "BFX", entry: "Play-In" },
+  { seed: "PI", team: "NS", entry: "Play-In" }
+];
+
+const isKnownTeam = (shortName) => Boolean(getTeamByShortName(shortName));
+
+const createPlayoffTeamToken = (shortName) => isKnownTeam(shortName)
+  ? `
+    <span class="playoff-team-token">
+      ${createMiniLogo(shortName)}
+      <b>${shortName}</b>
+    </span>
+  `
+  : `<span class="playoff-team-token placeholder"><b>${shortName}</b></span>`;
+
+const createPlayoffSeedCard = ({ seed, team, entry }) => `
+  <article class="playoff-seed-card">
+    <span>${seed}</span>
+    ${createPlayoffTeamToken(team)}
+    <small>${entry}</small>
+  </article>
+`;
+
+const createPlayoffMatchCard = (match) => `
+  <article class="playoff-match-card ${match.status}">
+    <div class="playoff-match-meta">
+      <span>${match.title}</span>
+      <b>${formatShortDate(match.date)} · ${formatTime(match.date)}</b>
+    </div>
+    <div class="playoff-match-teams">
+      ${createPlayoffTeamToken(match.teamA)}
+      <i>${match.status === "finished" ? `${match.scoreA} : ${match.scoreB}` : "VS"}</i>
+      ${createPlayoffTeamToken(match.teamB)}
+    </div>
+  </article>
+`;
+
+const renderPlayoffsView = () => {
+  const playoffsView = document.querySelector("#playoffs-view");
+
+  if (!playoffsView) {
+    return;
+  }
+
+  const nextMatch = playoffSchedule.find((match) => match.status !== "finished") || playoffSchedule[0];
+  const playInMatches = playoffSchedule.filter((match) => match.stage === "Play-In");
+  const playoffMatches = playoffSchedule.filter((match) => match.stage !== "Play-In");
+
+  playoffsView.innerHTML = `
+    <section class="playoff-hero-panel">
+      <div>
+        <span>현재 단계</span>
+        <strong>${nextMatch?.title || "포스트시즌"}</strong>
+      </div>
+      <div>
+        <span>다음 경기</span>
+        <strong>${nextMatch ? `${formatShortDate(nextMatch.date)} · ${formatTime(nextMatch.date)}` : "-"}</strong>
+      </div>
+      <div>
+        <span>방식</span>
+        <strong>Bo5 · 더블 엘리미네이션</strong>
+      </div>
+    </section>
+
+    <section class="playoff-seed-strip" aria-label="플레이오프 진입 시드">
+      ${playoffSeeds.map(createPlayoffSeedCard).join("")}
+    </section>
+
+    <section class="playoff-board">
+      <article class="playoff-bracket-panel">
+        <div class="playoff-section-head">
+          <span>브라켓 미니맵</span>
+          <strong>승자조 · 패자조</strong>
+        </div>
+        <div class="playoff-bracket-grid">
+          <div class="playoff-bracket-column">
+            <span>PO 1R</span>
+            ${playoffMatches.slice(0, 2).map(createPlayoffMatchCard).join("")}
+          </div>
+          <div class="playoff-bracket-column">
+            <span>PO 2R</span>
+            ${playoffMatches.slice(2, 4).map(createPlayoffMatchCard).join("")}
+          </div>
+          <div class="playoff-bracket-column lower">
+            <span>패자조</span>
+            ${playoffMatches.slice(4, 6).map(createPlayoffMatchCard).join("")}
+          </div>
+          <div class="playoff-bracket-column final">
+            <span>결승 주간</span>
+            ${playoffMatches.slice(6).map(createPlayoffMatchCard).join("")}
+          </div>
+        </div>
+      </article>
+
+      <aside class="playoff-timeline-panel">
+        <div class="playoff-section-head">
+          <span>일정</span>
+          <strong>Play-In 포함</strong>
+        </div>
+        <div class="playoff-timeline-list">
+          ${[...playInMatches, ...playoffMatches].map(createPlayoffMatchCard).join("")}
+        </div>
+      </aside>
+    </section>
+  `;
+};
+
 const getMatchesBetweenTeams = (teamA, teamB) =>
   [...(headToHeadData?.matches || []), ...getAllMatches()]
     .filter((match) =>
@@ -2961,7 +3161,7 @@ const createRoundMatchPlatePanel = (round, team) => {
 };
 
 const createGoalScenarioPanel = (round, team) => {
-  const initialTarget = team.displayRank || team.rank || 1;
+  const initialTarget = selectedTargetRank || team.displayRank || team.rank || 1;
   const startMatch = getSelectedScenarioMatch(round, team);
   selectedScenarioMatchId = startMatch?.id || null;
   const result = summarizeGoalScenarios({ round, team, targetRank: initialTarget, startMatch });
@@ -3176,22 +3376,29 @@ const renderTeamDetail = () => {
   document.querySelector("#back-to-home").addEventListener("click", () => navigateHomeRoute("standings", selectedRoundId));
   document.querySelectorAll("[data-calendar-match-id]").forEach((button) => {
     button.addEventListener("click", () => {
-      selectedDetailMatchId = button.dataset.calendarMatchId;
-      renderTeamDetail();
+      setAppRoute(createTeamRoute({
+        detailMatchId: button.dataset.calendarMatchId,
+        scenarioMatchId: selectedScenarioMatchId,
+        targetRank: selectedTargetRank
+      }));
     });
   });
   document.querySelectorAll("[data-scenario-base-match-id]").forEach((button) => {
     button.addEventListener("click", () => {
-      selectedScenarioMatchId = button.dataset.scenarioBaseMatchId;
-      renderTeamDetail();
+      setAppRoute(createTeamRoute({
+        detailMatchId: selectedDetailMatchId,
+        scenarioMatchId: button.dataset.scenarioBaseMatchId,
+        targetRank: selectedTargetRank
+      }));
     });
   });
   document.querySelectorAll("[data-target-rank]").forEach((button) => {
     button.addEventListener("click", () => {
-      document.querySelectorAll("[data-target-rank]").forEach((item) => {
-        item.classList.toggle("active", item === button);
-      });
-      renderGoalScenarioResult();
+      setAppRoute(createTeamRoute({
+        detailMatchId: selectedDetailMatchId,
+        scenarioMatchId: selectedScenarioMatchId,
+        targetRank: Number(button.dataset.targetRank)
+      }));
     });
   });
   document.querySelector("#home-page").classList.add("hidden");
@@ -3209,31 +3416,33 @@ const renderHomeRoute = (tab, roundId) => {
   selectedHomeSlideIndex = tab === "schedule" ? 1 : 0;
   selectedDetailMatchId = null;
   selectedScenarioMatchId = null;
+  selectedTargetRank = null;
   renderRoundTabs();
   renderStandingsView();
   renderScheduleRoundTabs();
   renderScheduleView();
+  renderPlayoffsView();
   showHome();
 };
 
-const renderTeamRoute = (teamId, roundId, previewMode = null) => {
+const renderTeamRoute = (teamId, roundId, routeParts = []) => {
+  const routeState = Array.isArray(routeParts)
+    ? parseTeamRouteParts(routeParts)
+    : parseTeamRouteParts([routeParts]);
+  const previewMode = routeState.previewMode;
   const team = teams.find((item) => item.id === teamId) || getSelectedTeam();
   const requestedRoundId = getRouteRoundId(roundId);
   selectedTeamId = team.id;
   selectedRoundId = requestedRoundId;
-  const shouldUseDefaultPreview = team.id === "t1" && selectedRoundId === "r4" && !previewMode;
-  selectedPreviewMode = previewStartDateByMode[previewMode] || shouldUseDefaultPreview
-    ? previewStartDateByMode[previewMode]
-      ? previewMode
-      : "preview-before-0821"
-    : null;
+  selectedPreviewMode = previewStartDateByMode[previewMode] ? previewMode : null;
   ensureUnlockedSelectedRound();
   if (selectedRoundId !== requestedRoundId) {
     const routeSuffix = previewMode === "final" ? "/final" : selectedPreviewMode ? `/${selectedPreviewMode}` : "";
     window.history.replaceState(null, "", `#team/${team.id}/${selectedRoundId}${routeSuffix}`);
   }
-  selectedDetailMatchId = null;
-  selectedScenarioMatchId = null;
+  selectedDetailMatchId = routeState.detailMatchId || null;
+  selectedScenarioMatchId = routeState.scenarioMatchId || null;
+  selectedTargetRank = routeState.targetRank || null;
   renderTeamDetail();
 };
 
@@ -3241,16 +3450,26 @@ const renderStoryRoute = (matchId) => {
   selectedPreviewMode = null;
   const match = getAllMatches().find((item) => item.id === matchId) || getDefaultStoryMatch();
   selectedStoryMatchId = match?.id || null;
-  selectedHomeSlideIndex = 2;
+  selectedHomeSlideIndex = mainTabIndexes.story;
   renderMatchStorySlide();
   showHome();
 };
 
+const renderPlayoffsRoute = () => {
+  selectedPreviewMode = null;
+  selectedHomeSlideIndex = mainTabIndexes.playoffs;
+  selectedDetailMatchId = null;
+  selectedScenarioMatchId = null;
+  selectedTargetRank = null;
+  renderPlayoffsView();
+  showHome();
+};
+
 const applyRouteFromHash = () => {
-  const [route, firstValue, secondValue, thirdValue] = window.location.hash.replace(/^#/, "").split("/");
+  const [route, firstValue, secondValue, ...restValues] = window.location.hash.replace(/^#/, "").split("/");
 
   if (route === "team") {
-    renderTeamRoute(firstValue, secondValue, thirdValue);
+    renderTeamRoute(firstValue, secondValue, restValues);
     return;
   }
 
@@ -3261,6 +3480,11 @@ const applyRouteFromHash = () => {
 
   if (route === "schedule") {
     renderHomeRoute("schedule", firstValue);
+    return;
+  }
+
+  if (route === "playoffs") {
+    renderPlayoffsRoute();
     return;
   }
 
@@ -3276,6 +3500,7 @@ renderRoundTabs();
 renderStandingsView();
 renderScheduleRoundTabs();
 renderScheduleView();
+renderPlayoffsView();
 selectedStoryMatchId = getDefaultStoryMatch()?.id || null;
 renderMatchStorySlide();
 document.querySelectorAll("[data-main-tab]").forEach((button) => {

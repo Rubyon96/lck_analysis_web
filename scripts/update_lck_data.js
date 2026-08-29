@@ -656,12 +656,18 @@ const main = async () => {
     : normalizedPandascoreMatches.length > 0
       ? computeStandingsFromMatches(sample.teams, completedMatches)
       : sample.teams;
+  const officialCurrentTeams = normalizedNaverRankings.length > 0 ? normalizedNaverRankings : [];
   const rounds = buildRoundSnapshots({
     baseTeams: sample.teams,
     naverMatches: normalizedNaverMatches,
-    currentTeams: computedTeams
+    currentTeams: officialCurrentTeams
   });
-  const teamsWithComputedStreak = computedTeams.map((team) => {
+  const currentTeams = normalizedNaverRankings.length > 0
+    ? normalizedNaverRankings
+    : rounds.r4?.standings?.length === sample.teams.length
+      ? rounds.r4.standings
+      : computedTeams;
+  const teamsWithComputedStreak = currentTeams.map((team) => {
     const latestRoundTeam = rounds.r4?.standings?.find((item) => item.shortName === team.shortName);
     return {
       ...team,
@@ -685,14 +691,18 @@ const main = async () => {
       filteredNaverRankings: normalizedNaverRankings.length,
       roundSnapshotSource: "naver_schedule_title",
       roundSnapshotNote: "Round snapshots are cumulative standings computed from Naver schedule matches with titles like 정규시즌 1R~4R. If a round has no schedule rows in the fetched page, its date range and standings stay empty until that month/round is collected.",
-      standingsSource: normalizedPandascoreMatches.length > 0
-        ? normalizedNaverRankings.length > 0
-          ? "naver_team_ranking"
-          : "computed_from_filtered_pandascore_completed_matches"
-        : "sample",
+      standingsSource: normalizedNaverRankings.length > 0
+        ? "naver_team_ranking"
+        : rounds.r4?.standings?.length === sample.teams.length
+          ? "computed_from_naver_schedule_matches"
+          : normalizedPandascoreMatches.length > 0
+            ? "computed_from_filtered_pandascore_completed_matches"
+            : "sample",
       standingsCoverageNote: normalizedNaverRankings.length > 0
         ? "Current standings are loaded from Naver eSports team ranking and match results are cross-validated against PandaScore."
-        : normalizedPandascoreMatches.length > 0
+        : rounds.r4?.standings?.length === sample.teams.length
+          ? "Current standings are computed from Naver eSports schedule match results because the team ranking payload was unavailable."
+          : normalizedPandascoreMatches.length > 0
           ? "Current standings are computed only from the filtered PandaScore matches returned by the current API request/cache."
           : "Current standings use sample data.",
       usesFallbackSampleData: normalizedPandascoreMatches.length === 0,

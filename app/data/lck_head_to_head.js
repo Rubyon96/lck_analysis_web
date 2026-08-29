@@ -1,12 +1,12 @@
 window.lckHeadToHeadData = {
   "metadata": {
-    "generatedAt": "2026-08-24T11:56:15.763Z",
+    "generatedAt": "2026-08-29T01:34:01.581Z",
     "source": "pandascore",
     "leagueId": 293,
     "startDate": "2023-01-01",
-    "endDate": "2026-08-22",
-    "rawMatches": 780,
-    "normalizedMatches": 674,
+    "endDate": "2026-08-23",
+    "rawMatches": 782,
+    "normalizedMatches": 676,
     "note": "Head-to-head story timeline data only. This file does not update standings."
   },
   "matches": [
@@ -8771,6 +8771,32 @@ window.lckHeadToHeadData = {
       "scoreB": 0,
       "winner": "DNS",
       "status": "finished"
+    },
+    {
+      "id": "pandascore-1568939",
+      "source": "pandascore",
+      "date": "2026-08-23T08:01:12Z",
+      "title": "Round 3-4 Legend Group",
+      "roundTitle": "Round 3-4 Legend Group",
+      "teamA": "HLE",
+      "teamB": "T1",
+      "scoreA": 2,
+      "scoreB": 0,
+      "winner": "HLE",
+      "status": "finished"
+    },
+    {
+      "id": "pandascore-1568940",
+      "source": "pandascore",
+      "date": "2026-08-23T10:14:14Z",
+      "title": "Round 3-4 Rise Group",
+      "roundTitle": "Round 3-4 Rise Group",
+      "teamA": "BFX",
+      "teamB": "NS",
+      "scoreA": 1,
+      "scoreB": 2,
+      "winner": "NS",
+      "status": "finished"
     }
   ],
   "pairSummaries": {
@@ -8985,9 +9011,8 @@ window.lckHeadToHeadData = {
       ]
     },
     "HLE_T1": {
-      "total": 25,
+      "total": 26,
       "recent10": [
-        "pandascore-1175613",
         "pandascore-1204680",
         "pandascore-1204701",
         "pandascore-1204720",
@@ -8996,7 +9021,8 @@ window.lckHeadToHeadData = {
         "pandascore-1413426",
         "pandascore-1413465",
         "pandascore-1505698",
-        "pandascore-1568917"
+        "pandascore-1568917",
+        "pandascore-1568939"
       ]
     },
     "HLE_KRX": {
@@ -9253,9 +9279,8 @@ window.lckHeadToHeadData = {
       ]
     },
     "BFX_NS": {
-      "total": 12,
+      "total": 13,
       "recent10": [
-        "pandascore-976753",
         "pandascore-976812",
         "pandascore-1100939",
         "pandascore-1146488",
@@ -9264,7 +9289,8 @@ window.lckHeadToHeadData = {
         "pandascore-1309394",
         "pandascore-1413440",
         "pandascore-1413487",
-        "pandascore-1568908"
+        "pandascore-1568908",
+        "pandascore-1568940"
       ]
     },
     "BFX_GEN": {
