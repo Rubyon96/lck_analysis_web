@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-30T11:52:26.085Z",
+    "generatedAt": "2026-08-30T12:02:30.543Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1148,
+    "rawPandascoreMatches": 1147,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -4325,7 +4325,68 @@ window.lck2026Data = {
       }
     }
   ],
-  "upcomingMatches": [],
+  "upcomingMatches": [
+    {
+      "id": "pandascore-1642155",
+      "sourceId": 1642155,
+      "source": "pandascore",
+      "date": "2026-09-01T08:00:00Z",
+      "status": "not_started",
+      "teamA": "GEN",
+      "teamB": "KT",
+      "blueTeam": "GEN",
+      "redTeam": "KT",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642156",
+      "sourceId": 1642156,
+      "source": "pandascore",
+      "date": "2026-09-02T08:00:00Z",
+      "status": "not_started",
+      "teamA": "HLE",
+      "teamB": "T1",
+      "blueTeam": "HLE",
+      "redTeam": "T1",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642162",
+      "sourceId": 1642162,
+      "source": "pandascore",
+      "date": "2026-09-03T08:00:00Z",
+      "status": "not_started",
+      "teamA": "BFX",
+      "teamB": "DK",
+      "blueTeam": "BFX",
+      "redTeam": "DK",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    }
+  ],
   "validation": [
     {
       "key": "2026-08-30_DK_vs_KT",
@@ -6256,6 +6317,81 @@ window.lck2026Data = {
           "naver": true
         }
       }
+    },
+    {
+      "key": "2026-09-01_GEN_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642155",
+        "sourceId": 1642155,
+        "source": "pandascore",
+        "date": "2026-09-01T08:00:00Z",
+        "status": "not_started",
+        "teamA": "GEN",
+        "teamB": "KT",
+        "blueTeam": "GEN",
+        "redTeam": "KT",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-02_HLE_vs_T1",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642156",
+        "sourceId": 1642156,
+        "source": "pandascore",
+        "date": "2026-09-02T08:00:00Z",
+        "status": "not_started",
+        "teamA": "HLE",
+        "teamB": "T1",
+        "blueTeam": "HLE",
+        "redTeam": "T1",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-03_BFX_vs_DK",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642162",
+        "sourceId": 1642162,
+        "source": "pandascore",
+        "date": "2026-09-03T08:00:00Z",
+        "status": "not_started",
+        "teamA": "BFX",
+        "teamB": "DK",
+        "blueTeam": "BFX",
+        "redTeam": "DK",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
     }
   ]
 };
