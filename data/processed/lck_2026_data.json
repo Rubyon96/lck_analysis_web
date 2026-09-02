@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-02T11:55:23.460Z",
+    "generatedAt": "2026-09-02T12:08:24.077Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1155,
+    "rawPandascoreMatches": 1154,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -72,9 +72,23 @@
       "gameLosses": 8
     },
     {
-      "id": "ns",
+      "id": "hle",
       "group": "legend",
       "rank": 5,
+      "shortName": "HLE",
+      "fullName": "Hanwha Life Esports",
+      "logo": "./assets/logos/hle.png",
+      "wins": 5,
+      "losses": 4,
+      "gameDiff": 2,
+      "streak": "3W",
+      "gameWins": 14,
+      "gameLosses": 12
+    },
+    {
+      "id": "ns",
+      "group": "rise",
+      "rank": 6,
       "shortName": "NS",
       "fullName": "Nongshim RedForce",
       "logo": "./assets/logos/ns.png",
@@ -86,37 +100,9 @@
       "gameLosses": 11
     },
     {
-      "id": "hle",
-      "group": "rise",
-      "rank": 6,
-      "shortName": "HLE",
-      "fullName": "Hanwha Life Esports",
-      "logo": "./assets/logos/hle.png",
-      "wins": 4,
-      "losses": 4,
-      "gameDiff": 1,
-      "streak": "3W",
-      "gameWins": 11,
-      "gameLosses": 10
-    },
-    {
-      "id": "t1",
-      "group": "rise",
-      "rank": 7,
-      "shortName": "T1",
-      "fullName": "T1",
-      "logo": "./assets/logos/t1.png",
-      "wins": 4,
-      "losses": 5,
-      "gameDiff": -2,
-      "streak": "1L",
-      "gameWins": 11,
-      "gameLosses": 13
-    },
-    {
       "id": "bro",
       "group": "rise",
-      "rank": 8,
+      "rank": 7,
       "shortName": "BRO",
       "fullName": "HANJIN BRION",
       "logo": "./assets/logos/bro.png",
@@ -125,6 +111,20 @@
       "gameDiff": -1,
       "streak": "1L",
       "gameWins": 15,
+      "gameLosses": 16
+    },
+    {
+      "id": "t1",
+      "group": "rise",
+      "rank": 8,
+      "shortName": "T1",
+      "fullName": "T1",
+      "logo": "./assets/logos/t1.png",
+      "wins": 4,
+      "losses": 6,
+      "gameDiff": -3,
+      "streak": "1L",
+      "gameWins": 13,
       "gameLosses": 16
     },
     {
@@ -2294,7 +2294,7 @@
         },
         {
           "id": "hle",
-          "group": "rise",
+          "group": "legend",
           "rank": 2,
           "shortName": "HLE",
           "fullName": "Hanwha Life Esports",
@@ -2392,7 +2392,7 @@
         },
         {
           "id": "ns",
-          "group": "legend",
+          "group": "rise",
           "rank": 9,
           "shortName": "NS",
           "fullName": "Nongshim RedForce",
@@ -2890,23 +2890,9 @@
           "gameLosses": 42
         },
         {
-          "id": "ns",
+          "id": "hle",
           "group": "legend",
           "rank": 5,
-          "shortName": "NS",
-          "fullName": "Nongshim RedForce",
-          "logo": "./assets/logos/ns.png",
-          "wins": 10,
-          "losses": 16,
-          "gameDiff": -11,
-          "streak": "3W",
-          "gameWins": 25,
-          "gameLosses": 36
-        },
-        {
-          "id": "hle",
-          "group": "rise",
-          "rank": 6,
           "shortName": "HLE",
           "fullName": "Hanwha Life Esports",
           "logo": "./assets/logos/hle.png",
@@ -2918,23 +2904,23 @@
           "gameLosses": 21
         },
         {
-          "id": "t1",
+          "id": "ns",
           "group": "rise",
-          "rank": 7,
-          "shortName": "T1",
-          "fullName": "T1",
-          "logo": "./assets/logos/t1.png",
-          "wins": 17,
-          "losses": 9,
-          "gameDiff": 17,
-          "streak": "1L",
-          "gameWins": 38,
-          "gameLosses": 21
+          "rank": 6,
+          "shortName": "NS",
+          "fullName": "Nongshim RedForce",
+          "logo": "./assets/logos/ns.png",
+          "wins": 10,
+          "losses": 16,
+          "gameDiff": -11,
+          "streak": "3W",
+          "gameWins": 25,
+          "gameLosses": 36
         },
         {
           "id": "bro",
           "group": "rise",
-          "rank": 8,
+          "rank": 7,
           "shortName": "BRO",
           "fullName": "HANJIN BRION",
           "logo": "./assets/logos/bro.png",
@@ -2944,6 +2930,20 @@
           "streak": "1L",
           "gameWins": 27,
           "gameLosses": 34
+        },
+        {
+          "id": "t1",
+          "group": "rise",
+          "rank": 8,
+          "shortName": "T1",
+          "fullName": "T1",
+          "logo": "./assets/logos/t1.png",
+          "wins": 17,
+          "losses": 9,
+          "gameDiff": 17,
+          "streak": "1L",
+          "gameWins": 38,
+          "gameLosses": 21
         },
         {
           "id": "kt",
@@ -3379,6 +3379,27 @@
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1642156",
+      "sourceId": 1642156,
+      "source": "pandascore",
+      "date": "2026-09-02T08:05:58Z",
+      "status": "finished",
+      "teamA": "HLE",
+      "teamB": "T1",
+      "blueTeam": "HLE",
+      "redTeam": "T1",
+      "scoreA": 3,
+      "scoreB": 2,
+      "blueScore": 3,
+      "redScore": 2,
+      "winner": "HLE",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1642155",
       "sourceId": 1642155,
@@ -4368,19 +4389,19 @@
       }
     },
     {
-      "id": "pandascore-1642156",
-      "sourceId": 1642156,
+      "id": "pandascore-1642157",
+      "sourceId": 1642157,
       "source": "pandascore",
-      "date": "2026-09-02T08:05:58Z",
-      "status": "running",
-      "teamA": "HLE",
-      "teamB": "T1",
-      "blueTeam": "HLE",
-      "redTeam": "T1",
-      "scoreA": 2,
-      "scoreB": 2,
-      "blueScore": 2,
-      "redScore": 2,
+      "date": "2026-09-05T08:00:00Z",
+      "status": "not_started",
+      "teamA": "GEN",
+      "teamB": "HLE",
+      "blueTeam": "GEN",
+      "redTeam": "HLE",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
@@ -4389,6 +4410,32 @@
     }
   ],
   "validation": [
+    {
+      "key": "2026-09-02_HLE_vs_T1",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642156",
+        "sourceId": 1642156,
+        "source": "pandascore",
+        "date": "2026-09-02T08:05:58Z",
+        "status": "finished",
+        "teamA": "HLE",
+        "teamB": "T1",
+        "blueTeam": "HLE",
+        "redTeam": "T1",
+        "scoreA": 3,
+        "scoreB": 2,
+        "blueScore": 3,
+        "redScore": 2,
+        "winner": "HLE",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-09-01_GEN_vs_KT",
       "status": "single_source",
@@ -6371,22 +6418,22 @@
       "naver": null
     },
     {
-      "key": "2026-09-02_HLE_vs_T1",
+      "key": "2026-09-05_GEN_vs_HLE",
       "status": "single_source",
       "pandascore": {
-        "id": "pandascore-1642156",
-        "sourceId": 1642156,
+        "id": "pandascore-1642157",
+        "sourceId": 1642157,
         "source": "pandascore",
-        "date": "2026-09-02T08:05:58Z",
-        "status": "running",
-        "teamA": "HLE",
-        "teamB": "T1",
-        "blueTeam": "HLE",
-        "redTeam": "T1",
-        "scoreA": 2,
-        "scoreB": 2,
-        "blueScore": 2,
-        "redScore": 2,
+        "date": "2026-09-05T08:00:00Z",
+        "status": "not_started",
+        "teamA": "GEN",
+        "teamB": "HLE",
+        "blueTeam": "GEN",
+        "redTeam": "HLE",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
