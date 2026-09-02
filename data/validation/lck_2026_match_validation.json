@@ -1993,9 +1993,9 @@
       "teamB": "T1",
       "blueTeam": "HLE",
       "redTeam": "T1",
-      "scoreA": 0,
+      "scoreA": 1,
       "scoreB": 2,
-      "blueScore": 0,
+      "blueScore": 1,
       "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
