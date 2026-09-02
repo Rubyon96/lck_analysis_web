@@ -1,6 +1,6 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-09-02T11:10:00.326Z",
+    "generatedAt": "2026-09-02T11:24:13.869Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
     "rawPandascoreMatches": 1155,
@@ -4377,9 +4377,9 @@ window.lck2026Data = {
       "teamB": "T1",
       "blueTeam": "HLE",
       "redTeam": "T1",
-      "scoreA": 1,
+      "scoreA": 2,
       "scoreB": 2,
-      "blueScore": 1,
+      "blueScore": 2,
       "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
@@ -6383,9 +6383,9 @@ window.lck2026Data = {
         "teamB": "T1",
         "blueTeam": "HLE",
         "redTeam": "T1",
-        "scoreA": 1,
+        "scoreA": 2,
         "scoreB": 2,
-        "blueScore": 1,
+        "blueScore": 2,
         "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
