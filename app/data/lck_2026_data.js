@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-08-30T14:52:36.684Z",
+    "generatedAt": "2026-09-02T10:07:13.478Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1145,
+    "rawPandascoreMatches": 1155,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -16,9 +16,23 @@ window.lck2026Data = {
   },
   "teams": [
     {
-      "id": "dk",
+      "id": "gen",
       "group": "legend",
       "rank": 1,
+      "shortName": "GEN",
+      "fullName": "Gen.G",
+      "logo": "./assets/logos/gen.png",
+      "wins": 6,
+      "losses": 3,
+      "gameDiff": 6,
+      "streak": "1L",
+      "gameWins": 14,
+      "gameLosses": 8
+    },
+    {
+      "id": "dk",
+      "group": "legend",
+      "rank": 2,
       "shortName": "DK",
       "fullName": "Dplus KIA",
       "logo": "./assets/logos/dk.png",
@@ -32,7 +46,7 @@ window.lck2026Data = {
     {
       "id": "bfx",
       "group": "legend",
-      "rank": 2,
+      "rank": 3,
       "shortName": "BFX",
       "fullName": "BNK FEARX",
       "logo": "./assets/logos/bfx.png",
@@ -42,20 +56,6 @@ window.lck2026Data = {
       "streak": "1L",
       "gameWins": 18,
       "gameLosses": 16
-    },
-    {
-      "id": "gen",
-      "group": "legend",
-      "rank": 3,
-      "shortName": "GEN",
-      "fullName": "Gen.G",
-      "logo": "./assets/logos/gen.png",
-      "wins": 5,
-      "losses": 3,
-      "gameDiff": 3,
-      "streak": "1L",
-      "gameWins": 11,
-      "gameLosses": 8
     },
     {
       "id": "dns",
@@ -135,11 +135,11 @@ window.lck2026Data = {
       "fullName": "KT Rolster",
       "logo": "./assets/logos/kt.png",
       "wins": 4,
-      "losses": 6,
-      "gameDiff": -1,
+      "losses": 7,
+      "gameDiff": -4,
       "streak": "6L",
       "gameWins": 14,
-      "gameLosses": 15
+      "gameLosses": 18
     },
     {
       "id": "krx",
@@ -2834,9 +2834,23 @@ window.lck2026Data = {
       "isCumulativeComplete": true,
       "standings": [
         {
-          "id": "dk",
+          "id": "gen",
           "group": "legend",
           "rank": 1,
+          "shortName": "GEN",
+          "fullName": "Gen.G",
+          "logo": "./assets/logos/gen.png",
+          "wins": 19,
+          "losses": 7,
+          "gameDiff": 22,
+          "streak": "1L",
+          "gameWins": 41,
+          "gameLosses": 19
+        },
+        {
+          "id": "dk",
+          "group": "legend",
+          "rank": 2,
           "shortName": "DK",
           "fullName": "Dplus KIA",
           "logo": "./assets/logos/dk.png",
@@ -2850,7 +2864,7 @@ window.lck2026Data = {
         {
           "id": "bfx",
           "group": "legend",
-          "rank": 2,
+          "rank": 3,
           "shortName": "BFX",
           "fullName": "BNK FEARX",
           "logo": "./assets/logos/bfx.png",
@@ -2860,20 +2874,6 @@ window.lck2026Data = {
           "streak": "1L",
           "gameWins": 24,
           "gameLosses": 35
-        },
-        {
-          "id": "gen",
-          "group": "legend",
-          "rank": 3,
-          "shortName": "GEN",
-          "fullName": "Gen.G",
-          "logo": "./assets/logos/gen.png",
-          "wins": 19,
-          "losses": 7,
-          "gameDiff": 22,
-          "streak": "1L",
-          "gameWins": 41,
-          "gameLosses": 19
         },
         {
           "id": "dns",
@@ -3379,6 +3379,27 @@ window.lck2026Data = {
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1642155",
+      "sourceId": 1642155,
+      "source": "pandascore",
+      "date": "2026-09-01T08:05:13Z",
+      "status": "finished",
+      "teamA": "GEN",
+      "teamB": "KT",
+      "blueTeam": "GEN",
+      "redTeam": "KT",
+      "scoreA": 3,
+      "scoreB": 0,
+      "blueScore": 3,
+      "redScore": 0,
+      "winner": "GEN",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1642154",
       "sourceId": 1642154,
@@ -4327,46 +4348,6 @@ window.lck2026Data = {
   ],
   "upcomingMatches": [
     {
-      "id": "pandascore-1642155",
-      "sourceId": 1642155,
-      "source": "pandascore",
-      "date": "2026-09-01T08:00:00Z",
-      "status": "not_started",
-      "teamA": "GEN",
-      "teamB": "KT",
-      "blueTeam": "GEN",
-      "redTeam": "KT",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
-      "id": "pandascore-1642156",
-      "sourceId": 1642156,
-      "source": "pandascore",
-      "date": "2026-09-02T08:00:00Z",
-      "status": "not_started",
-      "teamA": "HLE",
-      "teamB": "T1",
-      "blueTeam": "HLE",
-      "redTeam": "T1",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
       "id": "pandascore-1642162",
       "sourceId": 1642162,
       "source": "pandascore",
@@ -4385,9 +4366,55 @@ window.lck2026Data = {
         "pandascore": true,
         "naver": false
       }
+    },
+    {
+      "id": "pandascore-1642156",
+      "sourceId": 1642156,
+      "source": "pandascore",
+      "date": "2026-09-02T08:05:58Z",
+      "status": "running",
+      "teamA": "HLE",
+      "teamB": "T1",
+      "blueTeam": "HLE",
+      "redTeam": "T1",
+      "scoreA": 0,
+      "scoreB": 2,
+      "blueScore": 0,
+      "redScore": 2,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
     }
   ],
   "validation": [
+    {
+      "key": "2026-09-01_GEN_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642155",
+        "sourceId": 1642155,
+        "source": "pandascore",
+        "date": "2026-09-01T08:05:13Z",
+        "status": "finished",
+        "teamA": "GEN",
+        "teamB": "KT",
+        "blueTeam": "GEN",
+        "redTeam": "KT",
+        "scoreA": 3,
+        "scoreB": 0,
+        "blueScore": 3,
+        "redScore": 0,
+        "winner": "GEN",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-08-30_DK_vs_KT",
       "status": "single_source",
@@ -6319,18 +6346,18 @@ window.lck2026Data = {
       }
     },
     {
-      "key": "2026-09-01_GEN_vs_KT",
+      "key": "2026-09-03_BFX_vs_DK",
       "status": "single_source",
       "pandascore": {
-        "id": "pandascore-1642155",
-        "sourceId": 1642155,
+        "id": "pandascore-1642162",
+        "sourceId": 1642162,
         "source": "pandascore",
-        "date": "2026-09-01T08:00:00Z",
+        "date": "2026-09-03T08:00:00Z",
         "status": "not_started",
-        "teamA": "GEN",
-        "teamB": "KT",
-        "blueTeam": "GEN",
-        "redTeam": "KT",
+        "teamA": "BFX",
+        "teamB": "DK",
+        "blueTeam": "BFX",
+        "redTeam": "DK",
         "scoreA": 0,
         "scoreB": 0,
         "blueScore": 0,
@@ -6350,41 +6377,16 @@ window.lck2026Data = {
         "id": "pandascore-1642156",
         "sourceId": 1642156,
         "source": "pandascore",
-        "date": "2026-09-02T08:00:00Z",
-        "status": "not_started",
+        "date": "2026-09-02T08:05:58Z",
+        "status": "running",
         "teamA": "HLE",
         "teamB": "T1",
         "blueTeam": "HLE",
         "redTeam": "T1",
         "scoreA": 0,
-        "scoreB": 0,
+        "scoreB": 2,
         "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-09-03_BFX_vs_DK",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642162",
-        "sourceId": 1642162,
-        "source": "pandascore",
-        "date": "2026-09-03T08:00:00Z",
-        "status": "not_started",
-        "teamA": "BFX",
-        "teamB": "DK",
-        "blueTeam": "BFX",
-        "redTeam": "DK",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
+        "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
