@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T12:08:50.080Z",
+    "generatedAt": "2026-09-03T12:29:52.103Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1141,
+    "rawPandascoreMatches": 1139,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -16,9 +16,23 @@
   },
   "teams": [
     {
-      "id": "gen",
+      "id": "dk",
       "group": "legend",
       "rank": 1,
+      "shortName": "DK",
+      "fullName": "Dplus KIA",
+      "logo": "./assets/logos/dk.png",
+      "wins": 7,
+      "losses": 3,
+      "gameDiff": 2,
+      "streak": "1W",
+      "gameWins": 15,
+      "gameLosses": 13
+    },
+    {
+      "id": "gen",
+      "group": "legend",
+      "rank": 2,
       "shortName": "GEN",
       "fullName": "Gen.G",
       "logo": "./assets/logos/gen.png",
@@ -30,20 +44,6 @@
       "gameLosses": 8
     },
     {
-      "id": "dk",
-      "group": "legend",
-      "rank": 2,
-      "shortName": "DK",
-      "fullName": "Dplus KIA",
-      "logo": "./assets/logos/dk.png",
-      "wins": 6,
-      "losses": 3,
-      "gameDiff": 1,
-      "streak": "1W",
-      "gameWins": 12,
-      "gameLosses": 11
-    },
-    {
       "id": "bfx",
       "group": "legend",
       "rank": 3,
@@ -51,11 +51,11 @@
       "fullName": "BNK FEARX",
       "logo": "./assets/logos/bfx.png",
       "wins": 6,
-      "losses": 5,
-      "gameDiff": 2,
+      "losses": 6,
+      "gameDiff": 1,
       "streak": "1L",
-      "gameWins": 18,
-      "gameLosses": 16
+      "gameWins": 20,
+      "gameLosses": 19
     },
     {
       "id": "dns",
@@ -2834,23 +2834,9 @@
       "isCumulativeComplete": true,
       "standings": [
         {
-          "id": "gen",
-          "group": "legend",
-          "rank": 1,
-          "shortName": "GEN",
-          "fullName": "Gen.G",
-          "logo": "./assets/logos/gen.png",
-          "wins": 19,
-          "losses": 7,
-          "gameDiff": 22,
-          "streak": "1L",
-          "gameWins": 41,
-          "gameLosses": 19
-        },
-        {
           "id": "dk",
           "group": "legend",
-          "rank": 2,
+          "rank": 1,
           "shortName": "DK",
           "fullName": "Dplus KIA",
           "logo": "./assets/logos/dk.png",
@@ -2860,6 +2846,20 @@
           "streak": "1W",
           "gameWins": 36,
           "gameLosses": 26
+        },
+        {
+          "id": "gen",
+          "group": "legend",
+          "rank": 2,
+          "shortName": "GEN",
+          "fullName": "Gen.G",
+          "logo": "./assets/logos/gen.png",
+          "wins": 19,
+          "losses": 7,
+          "gameDiff": 22,
+          "streak": "1L",
+          "gameWins": 41,
+          "gameLosses": 19
         },
         {
           "id": "bfx",
@@ -3379,6 +3379,27 @@
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1642162",
+      "sourceId": 1642162,
+      "source": "pandascore",
+      "date": "2026-09-03T08:02:42Z",
+      "status": "finished",
+      "teamA": "BFX",
+      "teamB": "DK",
+      "blueTeam": "BFX",
+      "redTeam": "DK",
+      "scoreA": 2,
+      "scoreB": 3,
+      "blueScore": 2,
+      "redScore": 3,
+      "winner": "DK",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1642156",
       "sourceId": 1642156,
@@ -4369,6 +4390,26 @@
   ],
   "upcomingMatches": [
     {
+      "id": "pandascore-1642161",
+      "sourceId": 1642161,
+      "source": "pandascore",
+      "date": "2026-09-04T08:00:00Z",
+      "status": "not_started",
+      "teamA": "DK",
+      "teamB": "KT",
+      "blueTeam": "DK",
+      "redTeam": "KT",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
       "id": "pandascore-1642157",
       "sourceId": 1642157,
       "source": "pandascore",
@@ -4387,29 +4428,35 @@
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1642162",
-      "sourceId": 1642162,
-      "source": "pandascore",
-      "date": "2026-09-03T08:02:42Z",
-      "status": "running",
-      "teamA": "BFX",
-      "teamB": "DK",
-      "blueTeam": "BFX",
-      "redTeam": "DK",
-      "scoreA": 2,
-      "scoreB": 2,
-      "blueScore": 2,
-      "redScore": 2,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "validation": [
+    {
+      "key": "2026-09-03_BFX_vs_DK",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642162",
+        "sourceId": 1642162,
+        "source": "pandascore",
+        "date": "2026-09-03T08:02:42Z",
+        "status": "finished",
+        "teamA": "BFX",
+        "teamB": "DK",
+        "blueTeam": "BFX",
+        "redTeam": "DK",
+        "scoreA": 2,
+        "scoreB": 3,
+        "blueScore": 2,
+        "redScore": 3,
+        "winner": "DK",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-09-02_HLE_vs_T1",
       "status": "single_source",
@@ -6393,6 +6440,31 @@
       }
     },
     {
+      "key": "2026-09-04_DK_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642161",
+        "sourceId": 1642161,
+        "source": "pandascore",
+        "date": "2026-09-04T08:00:00Z",
+        "status": "not_started",
+        "teamA": "DK",
+        "teamB": "KT",
+        "blueTeam": "DK",
+        "redTeam": "KT",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
       "key": "2026-09-05_GEN_vs_HLE",
       "status": "single_source",
       "pandascore": {
@@ -6409,31 +6481,6 @@
         "scoreB": 0,
         "blueScore": 0,
         "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-09-03_BFX_vs_DK",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642162",
-        "sourceId": 1642162,
-        "source": "pandascore",
-        "date": "2026-09-03T08:02:42Z",
-        "status": "running",
-        "teamA": "BFX",
-        "teamB": "DK",
-        "blueTeam": "BFX",
-        "redTeam": "DK",
-        "scoreA": 2,
-        "scoreB": 2,
-        "blueScore": 2,
-        "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
