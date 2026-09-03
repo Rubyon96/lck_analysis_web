@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-09-02T14:51:12.394Z",
+    "generatedAt": "2026-09-03T10:06:32.688Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1153,
+    "rawPandascoreMatches": 1141,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -4369,26 +4369,6 @@ window.lck2026Data = {
   ],
   "upcomingMatches": [
     {
-      "id": "pandascore-1642162",
-      "sourceId": 1642162,
-      "source": "pandascore",
-      "date": "2026-09-03T08:00:00Z",
-      "status": "not_started",
-      "teamA": "BFX",
-      "teamB": "DK",
-      "blueTeam": "BFX",
-      "redTeam": "DK",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
       "id": "pandascore-1642157",
       "sourceId": 1642157,
       "source": "pandascore",
@@ -4401,6 +4381,26 @@ window.lck2026Data = {
       "scoreA": 0,
       "scoreB": 0,
       "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642162",
+      "sourceId": 1642162,
+      "source": "pandascore",
+      "date": "2026-09-03T08:02:42Z",
+      "status": "running",
+      "teamA": "BFX",
+      "teamB": "DK",
+      "blueTeam": "BFX",
+      "redTeam": "DK",
+      "scoreA": 2,
+      "scoreB": 0,
+      "blueScore": 2,
       "redScore": 0,
       "sourceStatus": "single_source",
       "sources": {
@@ -6393,31 +6393,6 @@ window.lck2026Data = {
       }
     },
     {
-      "key": "2026-09-03_BFX_vs_DK",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642162",
-        "sourceId": 1642162,
-        "source": "pandascore",
-        "date": "2026-09-03T08:00:00Z",
-        "status": "not_started",
-        "teamA": "BFX",
-        "teamB": "DK",
-        "blueTeam": "BFX",
-        "redTeam": "DK",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
       "key": "2026-09-05_GEN_vs_HLE",
       "status": "single_source",
       "pandascore": {
@@ -6433,6 +6408,31 @@ window.lck2026Data = {
         "scoreA": 0,
         "scoreB": 0,
         "blueScore": 0,
+        "redScore": 0,
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-03_BFX_vs_DK",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642162",
+        "sourceId": 1642162,
+        "source": "pandascore",
+        "date": "2026-09-03T08:02:42Z",
+        "status": "running",
+        "teamA": "BFX",
+        "teamB": "DK",
+        "blueTeam": "BFX",
+        "redTeam": "DK",
+        "scoreA": 2,
+        "scoreB": 0,
+        "blueScore": 2,
         "redScore": 0,
         "sourceStatus": "single_source",
         "sources": {

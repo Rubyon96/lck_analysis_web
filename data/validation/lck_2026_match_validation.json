@@ -1982,31 +1982,6 @@
     }
   },
   {
-    "key": "2026-09-03_BFX_vs_DK",
-    "status": "single_source",
-    "pandascore": {
-      "id": "pandascore-1642162",
-      "sourceId": 1642162,
-      "source": "pandascore",
-      "date": "2026-09-03T08:00:00Z",
-      "status": "not_started",
-      "teamA": "BFX",
-      "teamB": "DK",
-      "blueTeam": "BFX",
-      "redTeam": "DK",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    "naver": null
-  },
-  {
     "key": "2026-09-05_GEN_vs_HLE",
     "status": "single_source",
     "pandascore": {
@@ -2022,6 +1997,31 @@
       "scoreA": 0,
       "scoreB": 0,
       "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    "naver": null
+  },
+  {
+    "key": "2026-09-03_BFX_vs_DK",
+    "status": "single_source",
+    "pandascore": {
+      "id": "pandascore-1642162",
+      "sourceId": 1642162,
+      "source": "pandascore",
+      "date": "2026-09-03T08:02:42Z",
+      "status": "running",
+      "teamA": "BFX",
+      "teamB": "DK",
+      "blueTeam": "BFX",
+      "redTeam": "DK",
+      "scoreA": 2,
+      "scoreB": 0,
+      "blueScore": 2,
       "redScore": 0,
       "sourceStatus": "single_source",
       "sources": {
