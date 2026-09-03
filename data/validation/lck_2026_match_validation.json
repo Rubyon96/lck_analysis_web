@@ -2020,9 +2020,9 @@
       "blueTeam": "BFX",
       "redTeam": "DK",
       "scoreA": 2,
-      "scoreB": 0,
+      "scoreB": 1,
       "blueScore": 2,
-      "redScore": 0,
+      "redScore": 1,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,

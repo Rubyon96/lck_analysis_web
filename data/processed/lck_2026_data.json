@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-03T10:46:52.331Z",
+    "generatedAt": "2026-09-03T10:55:19.271Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
     "rawPandascoreMatches": 1141,
@@ -4399,9 +4399,9 @@
       "blueTeam": "BFX",
       "redTeam": "DK",
       "scoreA": 2,
-      "scoreB": 0,
+      "scoreB": 1,
       "blueScore": 2,
-      "redScore": 0,
+      "redScore": 1,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
@@ -6431,9 +6431,9 @@
         "blueTeam": "BFX",
         "redTeam": "DK",
         "scoreA": 2,
-        "scoreB": 0,
+        "scoreB": 1,
         "blueScore": 2,
-        "redScore": 0,
+        "redScore": 1,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
