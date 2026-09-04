@@ -2057,5 +2057,30 @@
       }
     },
     "naver": null
+  },
+  {
+    "key": "2026-09-06_DK_vs_T1",
+    "status": "single_source",
+    "pandascore": {
+      "id": "pandascore-1642160",
+      "sourceId": 1642160,
+      "source": "pandascore",
+      "date": "2026-09-06T08:00:00Z",
+      "status": "not_started",
+      "teamA": "DK",
+      "teamB": "T1",
+      "blueTeam": "DK",
+      "redTeam": "T1",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    "naver": null
   }
 ]
