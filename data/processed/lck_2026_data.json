@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-04T10:22:07.002Z",
+    "generatedAt": "2026-09-04T10:37:52.577Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
     "rawPandascoreMatches": 1128,
@@ -4420,9 +4420,9 @@
       "blueTeam": "KT",
       "redTeam": "DK",
       "scoreA": 1,
-      "scoreB": 1,
+      "scoreB": 2,
       "blueScore": 1,
-      "redScore": 1,
+      "redScore": 2,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
@@ -6478,9 +6478,9 @@
         "blueTeam": "KT",
         "redTeam": "DK",
         "scoreA": 1,
-        "scoreB": 1,
+        "scoreB": 2,
         "blueScore": 1,
-        "redScore": 1,
+        "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
