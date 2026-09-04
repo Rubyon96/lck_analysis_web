@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generatedAt": "2026-09-04T11:23:34.192Z",
+    "generatedAt": "2026-09-04T11:37:17.299Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1128,
+    "rawPandascoreMatches": 1127,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -22,12 +22,12 @@
       "shortName": "DK",
       "fullName": "Dplus KIA",
       "logo": "./assets/logos/dk.png",
-      "wins": 7,
+      "wins": 8,
       "losses": 3,
-      "gameDiff": 2,
+      "gameDiff": 4,
       "streak": "1W",
-      "gameWins": 15,
-      "gameLosses": 13
+      "gameWins": 18,
+      "gameLosses": 14
     },
     {
       "id": "gen",
@@ -135,11 +135,11 @@
       "fullName": "KT Rolster",
       "logo": "./assets/logos/kt.png",
       "wins": 4,
-      "losses": 7,
-      "gameDiff": -4,
+      "losses": 8,
+      "gameDiff": -6,
       "streak": "6L",
-      "gameWins": 14,
-      "gameLosses": 18
+      "gameWins": 15,
+      "gameLosses": 21
     },
     {
       "id": "krx",
@@ -3380,6 +3380,27 @@
   },
   "completedMatches": [
     {
+      "id": "pandascore-1642161",
+      "sourceId": 1642161,
+      "source": "pandascore",
+      "date": "2026-09-04T08:02:52Z",
+      "status": "finished",
+      "teamA": "KT",
+      "teamB": "DK",
+      "blueTeam": "KT",
+      "redTeam": "DK",
+      "scoreA": 1,
+      "scoreB": 3,
+      "blueScore": 1,
+      "redScore": 3,
+      "winner": "DK",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
       "id": "pandascore-1642162",
       "sourceId": 1642162,
       "source": "pandascore",
@@ -4408,29 +4429,35 @@
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1642161",
-      "sourceId": 1642161,
-      "source": "pandascore",
-      "date": "2026-09-04T08:02:52Z",
-      "status": "running",
-      "teamA": "KT",
-      "teamB": "DK",
-      "blueTeam": "KT",
-      "redTeam": "DK",
-      "scoreA": 1,
-      "scoreB": 2,
-      "blueScore": 1,
-      "redScore": 2,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "validation": [
+    {
+      "key": "2026-09-04_DK_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642161",
+        "sourceId": 1642161,
+        "source": "pandascore",
+        "date": "2026-09-04T08:02:52Z",
+        "status": "finished",
+        "teamA": "KT",
+        "teamB": "DK",
+        "blueTeam": "KT",
+        "redTeam": "DK",
+        "scoreA": 1,
+        "scoreB": 3,
+        "blueScore": 1,
+        "redScore": 3,
+        "winner": "DK",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-09-03_BFX_vs_DK",
       "status": "single_source",
@@ -6456,31 +6483,6 @@
         "scoreB": 0,
         "blueScore": 0,
         "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-09-04_DK_vs_KT",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642161",
-        "sourceId": 1642161,
-        "source": "pandascore",
-        "date": "2026-09-04T08:02:52Z",
-        "status": "running",
-        "teamA": "KT",
-        "teamB": "DK",
-        "blueTeam": "KT",
-        "redTeam": "DK",
-        "scoreA": 1,
-        "scoreB": 2,
-        "blueScore": 1,
-        "redScore": 2,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
