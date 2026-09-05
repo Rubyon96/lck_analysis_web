@@ -2071,9 +2071,9 @@
       "teamB": "HLE",
       "blueTeam": "GEN",
       "redTeam": "HLE",
-      "scoreA": 1,
+      "scoreA": 2,
       "scoreB": 1,
-      "blueScore": 1,
+      "blueScore": 2,
       "redScore": 1,
       "sourceStatus": "single_source",
       "sources": {
