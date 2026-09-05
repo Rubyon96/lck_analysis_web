@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-09-05T11:38:49.646Z",
+    "generatedAt": "2026-09-05T11:47:18.896Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1119,
+    "rawPandascoreMatches": 1118,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -36,12 +36,12 @@ window.lck2026Data = {
       "shortName": "GEN",
       "fullName": "Gen.G",
       "logo": "./assets/logos/gen.png",
-      "wins": 6,
+      "wins": 7,
       "losses": 3,
-      "gameDiff": 6,
+      "gameDiff": 8,
       "streak": "1L",
-      "gameWins": 14,
-      "gameLosses": 8
+      "gameWins": 17,
+      "gameLosses": 9
     },
     {
       "id": "bfx",
@@ -72,23 +72,9 @@ window.lck2026Data = {
       "gameLosses": 8
     },
     {
-      "id": "hle",
+      "id": "ns",
       "group": "legend",
       "rank": 5,
-      "shortName": "HLE",
-      "fullName": "Hanwha Life Esports",
-      "logo": "./assets/logos/hle.png",
-      "wins": 5,
-      "losses": 4,
-      "gameDiff": 2,
-      "streak": "3W",
-      "gameWins": 14,
-      "gameLosses": 12
-    },
-    {
-      "id": "ns",
-      "group": "rise",
-      "rank": 6,
       "shortName": "NS",
       "fullName": "Nongshim RedForce",
       "logo": "./assets/logos/ns.png",
@@ -98,6 +84,20 @@ window.lck2026Data = {
       "streak": "3W",
       "gameWins": 13,
       "gameLosses": 11
+    },
+    {
+      "id": "hle",
+      "group": "rise",
+      "rank": 6,
+      "shortName": "HLE",
+      "fullName": "Hanwha Life Esports",
+      "logo": "./assets/logos/hle.png",
+      "wins": 5,
+      "losses": 5,
+      "gameDiff": 0,
+      "streak": "3W",
+      "gameWins": 15,
+      "gameLosses": 15
     },
     {
       "id": "bro",
@@ -2294,7 +2294,7 @@ window.lck2026Data = {
         },
         {
           "id": "hle",
-          "group": "legend",
+          "group": "rise",
           "rank": 2,
           "shortName": "HLE",
           "fullName": "Hanwha Life Esports",
@@ -2392,7 +2392,7 @@ window.lck2026Data = {
         },
         {
           "id": "ns",
-          "group": "rise",
+          "group": "legend",
           "rank": 9,
           "shortName": "NS",
           "fullName": "Nongshim RedForce",
@@ -2890,23 +2890,9 @@ window.lck2026Data = {
           "gameLosses": 42
         },
         {
-          "id": "hle",
+          "id": "ns",
           "group": "legend",
           "rank": 5,
-          "shortName": "HLE",
-          "fullName": "Hanwha Life Esports",
-          "logo": "./assets/logos/hle.png",
-          "wins": 19,
-          "losses": 7,
-          "gameDiff": 22,
-          "streak": "3W",
-          "gameWins": 43,
-          "gameLosses": 21
-        },
-        {
-          "id": "ns",
-          "group": "rise",
-          "rank": 6,
           "shortName": "NS",
           "fullName": "Nongshim RedForce",
           "logo": "./assets/logos/ns.png",
@@ -2916,6 +2902,20 @@ window.lck2026Data = {
           "streak": "3W",
           "gameWins": 25,
           "gameLosses": 36
+        },
+        {
+          "id": "hle",
+          "group": "rise",
+          "rank": 6,
+          "shortName": "HLE",
+          "fullName": "Hanwha Life Esports",
+          "logo": "./assets/logos/hle.png",
+          "wins": 19,
+          "losses": 7,
+          "gameDiff": 22,
+          "streak": "3W",
+          "gameWins": 43,
+          "gameLosses": 21
         },
         {
           "id": "bro",
@@ -3379,6 +3379,27 @@ window.lck2026Data = {
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1642157",
+      "sourceId": 1642157,
+      "source": "pandascore",
+      "date": "2026-09-05T08:07:36Z",
+      "status": "finished",
+      "teamA": "GEN",
+      "teamB": "HLE",
+      "blueTeam": "GEN",
+      "redTeam": "HLE",
+      "scoreA": 3,
+      "scoreB": 1,
+      "blueScore": 3,
+      "redScore": 1,
+      "winner": "GEN",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1642161",
       "sourceId": 1642161,
@@ -4429,29 +4450,35 @@ window.lck2026Data = {
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1642157",
-      "sourceId": 1642157,
-      "source": "pandascore",
-      "date": "2026-09-05T08:07:36Z",
-      "status": "running",
-      "teamA": "GEN",
-      "teamB": "HLE",
-      "blueTeam": "GEN",
-      "redTeam": "HLE",
-      "scoreA": 2,
-      "scoreB": 1,
-      "blueScore": 2,
-      "redScore": 1,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "validation": [
+    {
+      "key": "2026-09-05_GEN_vs_HLE",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642157",
+        "sourceId": 1642157,
+        "source": "pandascore",
+        "date": "2026-09-05T08:07:36Z",
+        "status": "finished",
+        "teamA": "GEN",
+        "teamB": "HLE",
+        "blueTeam": "GEN",
+        "redTeam": "HLE",
+        "scoreA": 3,
+        "scoreB": 1,
+        "blueScore": 3,
+        "redScore": 1,
+        "winner": "GEN",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-09-04_DK_vs_KT",
       "status": "single_source",
@@ -6503,31 +6530,6 @@ window.lck2026Data = {
         "scoreB": 0,
         "blueScore": 0,
         "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-09-05_GEN_vs_HLE",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642157",
-        "sourceId": 1642157,
-        "source": "pandascore",
-        "date": "2026-09-05T08:07:36Z",
-        "status": "running",
-        "teamA": "GEN",
-        "teamB": "HLE",
-        "blueTeam": "GEN",
-        "redTeam": "HLE",
-        "scoreA": 2,
-        "scoreB": 1,
-        "blueScore": 2,
-        "redScore": 1,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
