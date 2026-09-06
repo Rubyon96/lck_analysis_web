@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-09-06T11:36:42.480Z",
+    "generatedAt": "2026-09-06T11:43:59.649Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1113,
+    "rawPandascoreMatches": 1111,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -23,11 +23,11 @@ window.lck2026Data = {
       "fullName": "Dplus KIA",
       "logo": "./assets/logos/dk.png",
       "wins": 8,
-      "losses": 3,
-      "gameDiff": 4,
+      "losses": 4,
+      "gameDiff": 2,
       "streak": "1W",
-      "gameWins": 18,
-      "gameLosses": 14
+      "gameWins": 19,
+      "gameLosses": 17
     },
     {
       "id": "gen",
@@ -100,9 +100,23 @@ window.lck2026Data = {
       "gameLosses": 15
     },
     {
-      "id": "bro",
+      "id": "t1",
       "group": "rise",
       "rank": 7,
+      "shortName": "T1",
+      "fullName": "T1",
+      "logo": "./assets/logos/t1.png",
+      "wins": 5,
+      "losses": 6,
+      "gameDiff": -1,
+      "streak": "1L",
+      "gameWins": 16,
+      "gameLosses": 17
+    },
+    {
+      "id": "bro",
+      "group": "rise",
+      "rank": 8,
       "shortName": "BRO",
       "fullName": "HANJIN BRION",
       "logo": "./assets/logos/bro.png",
@@ -111,20 +125,6 @@ window.lck2026Data = {
       "gameDiff": -1,
       "streak": "1L",
       "gameWins": 15,
-      "gameLosses": 16
-    },
-    {
-      "id": "t1",
-      "group": "rise",
-      "rank": 8,
-      "shortName": "T1",
-      "fullName": "T1",
-      "logo": "./assets/logos/t1.png",
-      "wins": 4,
-      "losses": 6,
-      "gameDiff": -3,
-      "streak": "1L",
-      "gameWins": 13,
       "gameLosses": 16
     },
     {
@@ -2918,23 +2918,9 @@ window.lck2026Data = {
           "gameLosses": 21
         },
         {
-          "id": "bro",
-          "group": "rise",
-          "rank": 7,
-          "shortName": "BRO",
-          "fullName": "HANJIN BRION",
-          "logo": "./assets/logos/bro.png",
-          "wins": 10,
-          "losses": 16,
-          "gameDiff": -7,
-          "streak": "1L",
-          "gameWins": 27,
-          "gameLosses": 34
-        },
-        {
           "id": "t1",
           "group": "rise",
-          "rank": 8,
+          "rank": 7,
           "shortName": "T1",
           "fullName": "T1",
           "logo": "./assets/logos/t1.png",
@@ -2944,6 +2930,20 @@ window.lck2026Data = {
           "streak": "1L",
           "gameWins": 38,
           "gameLosses": 21
+        },
+        {
+          "id": "bro",
+          "group": "rise",
+          "rank": 8,
+          "shortName": "BRO",
+          "fullName": "HANJIN BRION",
+          "logo": "./assets/logos/bro.png",
+          "wins": 10,
+          "losses": 16,
+          "gameDiff": -7,
+          "streak": "1L",
+          "gameWins": 27,
+          "gameLosses": 34
         },
         {
           "id": "kt",
@@ -3379,6 +3379,27 @@ window.lck2026Data = {
     }
   },
   "completedMatches": [
+    {
+      "id": "pandascore-1642160",
+      "sourceId": 1642160,
+      "source": "pandascore",
+      "date": "2026-09-06T08:02:36Z",
+      "status": "finished",
+      "teamA": "T1",
+      "teamB": "DK",
+      "blueTeam": "T1",
+      "redTeam": "DK",
+      "scoreA": 3,
+      "scoreB": 1,
+      "blueScore": 3,
+      "redScore": 1,
+      "winner": "T1",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
     {
       "id": "pandascore-1642157",
       "sourceId": 1642157,
@@ -4432,19 +4453,19 @@ window.lck2026Data = {
   ],
   "upcomingMatches": [
     {
-      "id": "pandascore-1642160",
-      "sourceId": 1642160,
+      "id": "pandascore-1642159",
+      "sourceId": 1642159,
       "source": "pandascore",
-      "date": "2026-09-06T08:02:36Z",
-      "status": "running",
+      "date": "2026-09-12T05:00:00Z",
+      "status": "not_started",
       "teamA": "T1",
-      "teamB": "DK",
+      "teamB": "HLE",
       "blueTeam": "T1",
-      "redTeam": "DK",
-      "scoreA": 2,
-      "scoreB": 1,
-      "blueScore": 2,
-      "redScore": 1,
+      "redTeam": "HLE",
+      "scoreA": 0,
+      "scoreB": 0,
+      "blueScore": 0,
+      "redScore": 0,
       "sourceStatus": "single_source",
       "sources": {
         "pandascore": true,
@@ -4453,6 +4474,32 @@ window.lck2026Data = {
     }
   ],
   "validation": [
+    {
+      "key": "2026-09-06_DK_vs_T1",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642160",
+        "sourceId": 1642160,
+        "source": "pandascore",
+        "date": "2026-09-06T08:02:36Z",
+        "status": "finished",
+        "teamA": "T1",
+        "teamB": "DK",
+        "blueTeam": "T1",
+        "redTeam": "DK",
+        "scoreA": 3,
+        "scoreB": 1,
+        "blueScore": 3,
+        "redScore": 1,
+        "winner": "T1",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-09-05_GEN_vs_HLE",
       "status": "single_source",
@@ -6514,22 +6561,22 @@ window.lck2026Data = {
       }
     },
     {
-      "key": "2026-09-06_DK_vs_T1",
+      "key": "2026-09-12_HLE_vs_T1",
       "status": "single_source",
       "pandascore": {
-        "id": "pandascore-1642160",
-        "sourceId": 1642160,
+        "id": "pandascore-1642159",
+        "sourceId": 1642159,
         "source": "pandascore",
-        "date": "2026-09-06T08:02:36Z",
-        "status": "running",
+        "date": "2026-09-12T05:00:00Z",
+        "status": "not_started",
         "teamA": "T1",
-        "teamB": "DK",
+        "teamB": "HLE",
         "blueTeam": "T1",
-        "redTeam": "DK",
-        "scoreA": 2,
-        "scoreB": 1,
-        "blueScore": 2,
-        "redScore": 1,
+        "redTeam": "HLE",
+        "scoreA": 0,
+        "scoreB": 0,
+        "blueScore": 0,
+        "redScore": 0,
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": true,
