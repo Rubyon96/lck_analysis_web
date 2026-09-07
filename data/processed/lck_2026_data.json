@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generatedAt": "2026-08-29T01:40:38.622Z",
+    "generatedAt": "2026-09-06T12:55:53.143Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1158,
+    "rawPandascoreMatches": 1111,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -3380,6 +3380,174 @@
   },
   "completedMatches": [
     {
+      "id": "pandascore-1642160",
+      "sourceId": 1642160,
+      "source": "pandascore",
+      "date": "2026-09-06T08:02:36Z",
+      "status": "finished",
+      "teamA": "T1",
+      "teamB": "DK",
+      "blueTeam": "T1",
+      "redTeam": "DK",
+      "scoreA": 3,
+      "scoreB": 1,
+      "blueScore": 3,
+      "redScore": 1,
+      "winner": "T1",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642157",
+      "sourceId": 1642157,
+      "source": "pandascore",
+      "date": "2026-09-05T08:07:36Z",
+      "status": "finished",
+      "teamA": "GEN",
+      "teamB": "HLE",
+      "blueTeam": "GEN",
+      "redTeam": "HLE",
+      "scoreA": 3,
+      "scoreB": 1,
+      "blueScore": 3,
+      "redScore": 1,
+      "winner": "GEN",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642161",
+      "sourceId": 1642161,
+      "source": "pandascore",
+      "date": "2026-09-04T08:02:52Z",
+      "status": "finished",
+      "teamA": "KT",
+      "teamB": "DK",
+      "blueTeam": "KT",
+      "redTeam": "DK",
+      "scoreA": 1,
+      "scoreB": 3,
+      "blueScore": 1,
+      "redScore": 3,
+      "winner": "DK",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642162",
+      "sourceId": 1642162,
+      "source": "pandascore",
+      "date": "2026-09-03T08:02:42Z",
+      "status": "finished",
+      "teamA": "BFX",
+      "teamB": "DK",
+      "blueTeam": "BFX",
+      "redTeam": "DK",
+      "scoreA": 2,
+      "scoreB": 3,
+      "blueScore": 2,
+      "redScore": 3,
+      "winner": "DK",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642156",
+      "sourceId": 1642156,
+      "source": "pandascore",
+      "date": "2026-09-02T08:05:58Z",
+      "status": "finished",
+      "teamA": "HLE",
+      "teamB": "T1",
+      "blueTeam": "HLE",
+      "redTeam": "T1",
+      "scoreA": 3,
+      "scoreB": 2,
+      "blueScore": 3,
+      "redScore": 2,
+      "winner": "HLE",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642155",
+      "sourceId": 1642155,
+      "source": "pandascore",
+      "date": "2026-09-01T08:05:13Z",
+      "status": "finished",
+      "teamA": "GEN",
+      "teamB": "KT",
+      "blueTeam": "GEN",
+      "redTeam": "KT",
+      "scoreA": 3,
+      "scoreB": 0,
+      "blueScore": 3,
+      "redScore": 0,
+      "winner": "GEN",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642154",
+      "sourceId": 1642154,
+      "source": "pandascore",
+      "date": "2026-08-30T08:04:51Z",
+      "status": "finished",
+      "teamA": "DK",
+      "teamB": "KT",
+      "blueTeam": "DK",
+      "redTeam": "KT",
+      "scoreA": 0,
+      "scoreB": 3,
+      "blueScore": 0,
+      "redScore": 3,
+      "winner": "KT",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
+      "id": "pandascore-1642153",
+      "sourceId": 1642153,
+      "source": "pandascore",
+      "date": "2026-08-29T08:02:23Z",
+      "status": "finished",
+      "teamA": "T1",
+      "teamB": "BFX",
+      "blueTeam": "T1",
+      "redTeam": "BFX",
+      "scoreA": 3,
+      "scoreB": 2,
+      "blueScore": 3,
+      "redScore": 2,
+      "winner": "T1",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
       "id": "pandascore-1629297",
       "sourceId": 1629297,
       "source": "pandascore",
@@ -4285,35 +4453,15 @@
   ],
   "upcomingMatches": [
     {
-      "id": "pandascore-1642153",
-      "sourceId": 1642153,
+      "id": "pandascore-1642159",
+      "sourceId": 1642159,
       "source": "pandascore",
-      "date": "2026-08-29T08:00:00Z",
+      "date": "2026-09-12T05:00:00Z",
       "status": "not_started",
       "teamA": "T1",
-      "teamB": "BFX",
+      "teamB": "HLE",
       "blueTeam": "T1",
-      "redTeam": "BFX",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
-      "id": "pandascore-1642154",
-      "sourceId": 1642154,
-      "source": "pandascore",
-      "date": "2026-08-30T08:00:00Z",
-      "status": "not_started",
-      "teamA": "DK",
-      "teamB": "KT",
-      "blueTeam": "DK",
-      "redTeam": "KT",
+      "redTeam": "HLE",
       "scoreA": 0,
       "scoreB": 0,
       "blueScore": 0,
@@ -4326,6 +4474,214 @@
     }
   ],
   "validation": [
+    {
+      "key": "2026-09-06_DK_vs_T1",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642160",
+        "sourceId": 1642160,
+        "source": "pandascore",
+        "date": "2026-09-06T08:02:36Z",
+        "status": "finished",
+        "teamA": "T1",
+        "teamB": "DK",
+        "blueTeam": "T1",
+        "redTeam": "DK",
+        "scoreA": 3,
+        "scoreB": 1,
+        "blueScore": 3,
+        "redScore": 1,
+        "winner": "T1",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-05_GEN_vs_HLE",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642157",
+        "sourceId": 1642157,
+        "source": "pandascore",
+        "date": "2026-09-05T08:07:36Z",
+        "status": "finished",
+        "teamA": "GEN",
+        "teamB": "HLE",
+        "blueTeam": "GEN",
+        "redTeam": "HLE",
+        "scoreA": 3,
+        "scoreB": 1,
+        "blueScore": 3,
+        "redScore": 1,
+        "winner": "GEN",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-04_DK_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642161",
+        "sourceId": 1642161,
+        "source": "pandascore",
+        "date": "2026-09-04T08:02:52Z",
+        "status": "finished",
+        "teamA": "KT",
+        "teamB": "DK",
+        "blueTeam": "KT",
+        "redTeam": "DK",
+        "scoreA": 1,
+        "scoreB": 3,
+        "blueScore": 1,
+        "redScore": 3,
+        "winner": "DK",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-03_BFX_vs_DK",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642162",
+        "sourceId": 1642162,
+        "source": "pandascore",
+        "date": "2026-09-03T08:02:42Z",
+        "status": "finished",
+        "teamA": "BFX",
+        "teamB": "DK",
+        "blueTeam": "BFX",
+        "redTeam": "DK",
+        "scoreA": 2,
+        "scoreB": 3,
+        "blueScore": 2,
+        "redScore": 3,
+        "winner": "DK",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-02_HLE_vs_T1",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642156",
+        "sourceId": 1642156,
+        "source": "pandascore",
+        "date": "2026-09-02T08:05:58Z",
+        "status": "finished",
+        "teamA": "HLE",
+        "teamB": "T1",
+        "blueTeam": "HLE",
+        "redTeam": "T1",
+        "scoreA": 3,
+        "scoreB": 2,
+        "blueScore": 3,
+        "redScore": 2,
+        "winner": "HLE",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-09-01_GEN_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642155",
+        "sourceId": 1642155,
+        "source": "pandascore",
+        "date": "2026-09-01T08:05:13Z",
+        "status": "finished",
+        "teamA": "GEN",
+        "teamB": "KT",
+        "blueTeam": "GEN",
+        "redTeam": "KT",
+        "scoreA": 3,
+        "scoreB": 0,
+        "blueScore": 3,
+        "redScore": 0,
+        "winner": "GEN",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-08-30_DK_vs_KT",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642154",
+        "sourceId": 1642154,
+        "source": "pandascore",
+        "date": "2026-08-30T08:04:51Z",
+        "status": "finished",
+        "teamA": "DK",
+        "teamB": "KT",
+        "blueTeam": "DK",
+        "redTeam": "KT",
+        "scoreA": 0,
+        "scoreB": 3,
+        "blueScore": 0,
+        "redScore": 3,
+        "winner": "KT",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
+    {
+      "key": "2026-08-29_BFX_vs_T1",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642153",
+        "sourceId": 1642153,
+        "source": "pandascore",
+        "date": "2026-08-29T08:02:23Z",
+        "status": "finished",
+        "teamA": "T1",
+        "teamB": "BFX",
+        "blueTeam": "T1",
+        "redTeam": "BFX",
+        "scoreA": 3,
+        "scoreB": 2,
+        "blueScore": 3,
+        "redScore": 2,
+        "winner": "T1",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-08-28_BFX_vs_BRO",
       "status": "single_source",
@@ -6205,43 +6561,18 @@
       }
     },
     {
-      "key": "2026-08-29_BFX_vs_T1",
+      "key": "2026-09-12_HLE_vs_T1",
       "status": "single_source",
       "pandascore": {
-        "id": "pandascore-1642153",
-        "sourceId": 1642153,
+        "id": "pandascore-1642159",
+        "sourceId": 1642159,
         "source": "pandascore",
-        "date": "2026-08-29T08:00:00Z",
+        "date": "2026-09-12T05:00:00Z",
         "status": "not_started",
         "teamA": "T1",
-        "teamB": "BFX",
+        "teamB": "HLE",
         "blueTeam": "T1",
-        "redTeam": "BFX",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
-    },
-    {
-      "key": "2026-08-30_DK_vs_KT",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642154",
-        "sourceId": 1642154,
-        "source": "pandascore",
-        "date": "2026-08-30T08:00:00Z",
-        "status": "not_started",
-        "teamA": "DK",
-        "teamB": "KT",
-        "blueTeam": "DK",
-        "redTeam": "KT",
+        "redTeam": "HLE",
         "scoreA": 0,
         "scoreB": 0,
         "blueScore": 0,

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <!-- iOS Safari는 파싱 시점에 viewport meta가 없으면 980px 레이아웃 뷰포트로 렌더링하므로 CSR 주입 대신 정적 선언 필요 — NNG-55702 -->
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1"
+    />
+    <title>네이버 e스포츠</title>
+    <!-- LCP 썸네일 이미지 CDN(전 환경 공통 호스트) 조기 연결 — NNG-53277 -->
+    <link rel="preconnect" href="https://nng-phinf.pstatic.net" />
+    <link rel="dns-prefetch" href="https://nng-phinf.pstatic.net" />
+    <script type="module" crossorigin src="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/index-W3o9_qpI.js"></script>
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/rolldown-runtime-BG2f4sTM.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/common-vendor-Bf9aOJop.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/date-vendor-yW1oLK8K.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/utils-CgeFFLVW.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/vendor-Dt9dWniD.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/os-check-DRPaUvBU.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/ba-D8PAI9rI.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/_client-BDgqKlHB.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/dateControl-Cq8q10Bx.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/video-view-model-Bep3gLcT.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/common-model-2pvZnpb1.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/news-view-model-UHNzIrA_.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/match-api-service-kCpgg_sh.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/video-CAUpwc8b.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/video-Vb-7F92G.js">
+    <link rel="modulepreload" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/js/api-lu7kQd7g.js">
+    <link rel="stylesheet" crossorigin href="https://ssl.pstatic.net/static/nng/esports/resource/p/static/css/index-1UHHWNkS.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.addEventListener('load', function () {
+        window.loaded = true
+      })
+    </script>
+    <script>
+      ;(function () {
+        try {
+          if (window.navigator.userAgent.indexOf('Edg/140.0') !== -1) {
+            window.addEventListener('load', function () {
+              setTimeout(function () {
+                var hydrated =
+                  Boolean(window.__ESPORTS_HYDRATED__) || document.documentElement.classList.contains('esports-hydrated')
+                var hasRoot = !!document.getElementById('root')
+                if (!hydrated && hasRoot) {
+                  window.alert(
+                    '긴급 점검 안내\n\n현재 엣지 브라우저 일부 버전에서 치지직과 네이버 게임 서비스에 접속되지 않는 현상이 확인되어 긴급 점검 중입니다.\n\n※ 임시 해결방법\nEdge 브라우저 설정 - 개인정보 - 추적방지 - "엄격" 설정을 "기본 or 밸런스"로 변경시 정상 접속 가능\n또는\n엣지 브라우저 외 다른 브라우저(크롬, 웨일 등) 사용\n\n최대한 빨리 정상화 될 수 있도록 최선을 다하겠습니다.\n서비스 이용에 불편을 드려 죄송합니다.'
+                  )
+                }
+              }, 1000)
+            })
+          }
+        } catch (e) {
+          console.error(e)
+        }
+      })()
+    </script>
+  </body>
+</html>

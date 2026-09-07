@@ -1,6 +1,6 @@
 window.lckHeadToHeadData = {
   "metadata": {
-    "generatedAt": "2026-08-29T01:34:01.581Z",
+    "generatedAt": "2026-09-06T12:56:19.936Z",
     "source": "pandascore",
     "leagueId": 293,
     "startDate": "2023-01-01",
