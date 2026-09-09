@@ -1,6 +1,6 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-09-09T13:40:15.428Z",
+    "generatedAt": "2026-09-09T13:52:30.966Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
     "rawPandascoreMatches": 1094,
