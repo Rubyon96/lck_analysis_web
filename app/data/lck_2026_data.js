@@ -1,9 +1,9 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-09-12T14:53:55.053Z",
+    "generatedAt": "2026-09-13T10:11:12.110Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1072,
+    "rawPandascoreMatches": 1065,
     "filteredPandascoreMatches": 53,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
@@ -3380,6 +3380,27 @@ window.lck2026Data = {
   },
   "completedMatches": [
     {
+      "id": "pandascore-1642158",
+      "sourceId": 1642158,
+      "source": "pandascore",
+      "date": "2026-09-13T05:22:41Z",
+      "status": "finished",
+      "teamA": "GEN",
+      "teamB": "HLE",
+      "blueTeam": "GEN",
+      "redTeam": "HLE",
+      "scoreA": 3,
+      "scoreB": 1,
+      "blueScore": 3,
+      "redScore": 1,
+      "winner": "GEN",
+      "sourceStatus": "single_source",
+      "sources": {
+        "pandascore": true,
+        "naver": false
+      }
+    },
+    {
       "id": "pandascore-1642159",
       "sourceId": 1642159,
       "source": "pandascore",
@@ -4472,29 +4493,34 @@ window.lck2026Data = {
       }
     }
   ],
-  "upcomingMatches": [
-    {
-      "id": "pandascore-1642158",
-      "sourceId": 1642158,
-      "source": "pandascore",
-      "date": "2026-09-13T05:00:00Z",
-      "status": "not_started",
-      "teamA": "GEN",
-      "teamB": "HLE",
-      "blueTeam": "GEN",
-      "redTeam": "HLE",
-      "scoreA": 0,
-      "scoreB": 0,
-      "blueScore": 0,
-      "redScore": 0,
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    }
-  ],
+  "upcomingMatches": [],
   "validation": [
+    {
+      "key": "2026-09-13_GEN_vs_HLE",
+      "status": "single_source",
+      "pandascore": {
+        "id": "pandascore-1642158",
+        "sourceId": 1642158,
+        "source": "pandascore",
+        "date": "2026-09-13T05:22:41Z",
+        "status": "finished",
+        "teamA": "GEN",
+        "teamB": "HLE",
+        "blueTeam": "GEN",
+        "redTeam": "HLE",
+        "scoreA": 3,
+        "scoreB": 1,
+        "blueScore": 3,
+        "redScore": 1,
+        "winner": "GEN",
+        "sourceStatus": "single_source",
+        "sources": {
+          "pandascore": true,
+          "naver": false
+        }
+      },
+      "naver": null
+    },
     {
       "key": "2026-09-12_HLE_vs_T1",
       "status": "single_source",
@@ -6606,31 +6632,6 @@ window.lck2026Data = {
           "naver": true
         }
       }
-    },
-    {
-      "key": "2026-09-13_GEN_vs_HLE",
-      "status": "single_source",
-      "pandascore": {
-        "id": "pandascore-1642158",
-        "sourceId": 1642158,
-        "source": "pandascore",
-        "date": "2026-09-13T05:00:00Z",
-        "status": "not_started",
-        "teamA": "GEN",
-        "teamB": "HLE",
-        "blueTeam": "GEN",
-        "redTeam": "HLE",
-        "scoreA": 0,
-        "scoreB": 0,
-        "blueScore": 0,
-        "redScore": 0,
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": null
     }
   ]
 };
