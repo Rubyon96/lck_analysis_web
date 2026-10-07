@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-04T15:01:58.621Z",
+    "generatedAt": "2026-10-07T17:09:22.744Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1095,
-    "filteredPandascoreMatches": 51,
+    "rawPandascoreMatches": 1074,
+    "filteredPandascoreMatches": 49,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
     "roundSnapshotSource": "naver_schedule_title",
@@ -4407,48 +4407,6 @@
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1568903",
-      "sourceId": 1568903,
-      "source": "pandascore",
-      "date": "2026-07-30T10:11:00Z",
-      "status": "finished",
-      "teamA": "HLE",
-      "teamB": "DK",
-      "blueTeam": "HLE",
-      "redTeam": "DK",
-      "scoreA": 1,
-      "scoreB": 2,
-      "blueScore": 1,
-      "redScore": 2,
-      "winner": "DK",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
-      "id": "pandascore-1568904",
-      "sourceId": 1568904,
-      "source": "pandascore",
-      "date": "2026-07-30T08:01:18Z",
-      "status": "finished",
-      "teamA": "DNS",
-      "teamB": "BFX",
-      "blueTeam": "DNS",
-      "redTeam": "BFX",
-      "scoreA": 0,
-      "scoreB": 2,
-      "blueScore": 0,
-      "redScore": 2,
-      "winner": "BFX",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "upcomingMatches": [],
@@ -6404,96 +6362,6 @@
         "scoreA": 0,
         "scoreB": 2,
         "winner": "T1",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
-      "key": "2026-07-30_DK_vs_HLE",
-      "status": "confirmed",
-      "pandascore": {
-        "id": "pandascore-1568903",
-        "sourceId": 1568903,
-        "source": "pandascore",
-        "date": "2026-07-30T10:11:00Z",
-        "status": "finished",
-        "teamA": "HLE",
-        "teamB": "DK",
-        "blueTeam": "HLE",
-        "redTeam": "DK",
-        "scoreA": 1,
-        "scoreB": 2,
-        "blueScore": 1,
-        "redScore": 2,
-        "winner": "DK",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025073019qBjRgLu7087lol",
-        "sourceId": "2025073019qBjRgLu7087lol",
-        "source": "naver",
-        "date": "2026-07-30T10:00:00.000Z",
-        "status": "finished",
-        "title": "정규시즌 3R",
-        "roundId": "r3",
-        "roundTitle": "정규시즌 3R",
-        "teamA": "HLE",
-        "teamB": "DK",
-        "scoreA": 1,
-        "scoreB": 2,
-        "winner": "DK",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
-      "key": "2026-07-30_BFX_vs_DNS",
-      "status": "confirmed",
-      "pandascore": {
-        "id": "pandascore-1568904",
-        "sourceId": 1568904,
-        "source": "pandascore",
-        "date": "2026-07-30T08:01:18Z",
-        "status": "finished",
-        "teamA": "DNS",
-        "teamB": "BFX",
-        "blueTeam": "DNS",
-        "redTeam": "BFX",
-        "scoreA": 0,
-        "scoreB": 2,
-        "blueScore": 0,
-        "redScore": 2,
-        "winner": "BFX",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025073017D2WkKxh0565lol",
-        "sourceId": "2025073017D2WkKxh0565lol",
-        "source": "naver",
-        "date": "2026-07-30T08:00:00.000Z",
-        "status": "finished",
-        "title": "정규시즌 3R",
-        "roundId": "r3",
-        "roundTitle": "정규시즌 3R",
-        "teamA": "DNS",
-        "teamB": "BFX",
-        "scoreA": 0,
-        "scoreB": 2,
-        "winner": "BFX",
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": false,
