@@ -1,10 +1,10 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-10-18T16:53:19.141Z",
+    "generatedAt": "2026-10-21T14:47:59.311Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1045,
-    "filteredPandascoreMatches": 46,
+    "rawPandascoreMatches": 1042,
+    "filteredPandascoreMatches": 45,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
     "roundSnapshotSource": "naver_schedule_title",
@@ -4323,27 +4323,6 @@ window.lck2026Data = {
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1568907",
-      "sourceId": 1568907,
-      "source": "pandascore",
-      "date": "2026-08-01T11:04:02Z",
-      "status": "finished",
-      "teamA": "GEN",
-      "teamB": "DK",
-      "blueTeam": "GEN",
-      "redTeam": "DK",
-      "scoreA": 0,
-      "scoreB": 2,
-      "blueScore": 0,
-      "redScore": 2,
-      "winner": "DK",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "upcomingMatches": [],
@@ -6119,51 +6098,6 @@ window.lck2026Data = {
         "scoreA": 2,
         "scoreB": 1,
         "winner": "DNS",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
-      "key": "2026-08-01_DK_vs_GEN",
-      "status": "confirmed",
-      "pandascore": {
-        "id": "pandascore-1568907",
-        "sourceId": 1568907,
-        "source": "pandascore",
-        "date": "2026-08-01T11:04:02Z",
-        "status": "finished",
-        "teamA": "GEN",
-        "teamB": "DK",
-        "blueTeam": "GEN",
-        "redTeam": "DK",
-        "scoreA": 0,
-        "scoreB": 2,
-        "blueScore": 0,
-        "redScore": 2,
-        "winner": "DK",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025080119Qpig0B85154lol",
-        "sourceId": "2025080119Qpig0B85154lol",
-        "source": "naver",
-        "date": "2026-08-01T10:00:00.000Z",
-        "status": "finished",
-        "title": "정규시즌 3R",
-        "roundId": "r3",
-        "roundTitle": "정규시즌 3R",
-        "teamA": "GEN",
-        "teamB": "DK",
-        "scoreA": 0,
-        "scoreB": 2,
-        "winner": "DK",
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": false,
