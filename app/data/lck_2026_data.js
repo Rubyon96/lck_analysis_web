@@ -1,10 +1,10 @@
 window.lck2026Data = {
   "metadata": {
-    "generatedAt": "2026-10-24T17:01:22.178Z",
+    "generatedAt": "2026-10-25T14:00:22.931Z",
     "primarySource": "fetched",
     "secondarySource": "fetched",
-    "rawPandascoreMatches": 1038,
-    "filteredPandascoreMatches": 45,
+    "rawPandascoreMatches": 1030,
+    "filteredPandascoreMatches": 43,
     "filteredNaverMatches": 130,
     "filteredNaverRankings": 0,
     "roundSnapshotSource": "naver_schedule_title",
@@ -4281,48 +4281,6 @@ window.lck2026Data = {
         "pandascore": true,
         "naver": false
       }
-    },
-    {
-      "id": "pandascore-1568909",
-      "sourceId": 1568909,
-      "source": "pandascore",
-      "date": "2026-08-02T11:22:24Z",
-      "status": "finished",
-      "teamA": "KT",
-      "teamB": "HLE",
-      "blueTeam": "KT",
-      "redTeam": "HLE",
-      "scoreA": 2,
-      "scoreB": 1,
-      "blueScore": 2,
-      "redScore": 1,
-      "winner": "KT",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
-    },
-    {
-      "id": "pandascore-1568910",
-      "sourceId": 1568910,
-      "source": "pandascore",
-      "date": "2026-08-02T08:00:54Z",
-      "status": "finished",
-      "teamA": "DNS",
-      "teamB": "BRO",
-      "blueTeam": "DNS",
-      "redTeam": "BRO",
-      "scoreA": 2,
-      "scoreB": 1,
-      "blueScore": 2,
-      "redScore": 1,
-      "winner": "DNS",
-      "sourceStatus": "single_source",
-      "sources": {
-        "pandascore": true,
-        "naver": false
-      }
     }
   ],
   "upcomingMatches": [],
@@ -6008,96 +5966,6 @@ window.lck2026Data = {
         "scoreA": 2,
         "scoreB": 1,
         "winner": "BRO",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
-      "key": "2026-08-02_HLE_vs_KT",
-      "status": "confirmed",
-      "pandascore": {
-        "id": "pandascore-1568909",
-        "sourceId": 1568909,
-        "source": "pandascore",
-        "date": "2026-08-02T11:22:24Z",
-        "status": "finished",
-        "teamA": "KT",
-        "teamB": "HLE",
-        "blueTeam": "KT",
-        "redTeam": "HLE",
-        "scoreA": 2,
-        "scoreB": 1,
-        "blueScore": 2,
-        "redScore": 1,
-        "winner": "KT",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025080219e7SLhdy8431lol",
-        "sourceId": "2025080219e7SLhdy8431lol",
-        "source": "naver",
-        "date": "2026-08-02T10:00:00.000Z",
-        "status": "finished",
-        "title": "정규시즌 3R",
-        "roundId": "r3",
-        "roundTitle": "정규시즌 3R",
-        "teamA": "KT",
-        "teamB": "HLE",
-        "scoreA": 2,
-        "scoreB": 1,
-        "winner": "KT",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": false,
-          "naver": true
-        }
-      }
-    },
-    {
-      "key": "2026-08-02_BRO_vs_DNS",
-      "status": "confirmed",
-      "pandascore": {
-        "id": "pandascore-1568910",
-        "sourceId": 1568910,
-        "source": "pandascore",
-        "date": "2026-08-02T08:00:54Z",
-        "status": "finished",
-        "teamA": "DNS",
-        "teamB": "BRO",
-        "blueTeam": "DNS",
-        "redTeam": "BRO",
-        "scoreA": 2,
-        "scoreB": 1,
-        "blueScore": 2,
-        "redScore": 1,
-        "winner": "DNS",
-        "sourceStatus": "single_source",
-        "sources": {
-          "pandascore": true,
-          "naver": false
-        }
-      },
-      "naver": {
-        "id": "naver-2025080217hmCnKtw2671lol",
-        "sourceId": "2025080217hmCnKtw2671lol",
-        "source": "naver",
-        "date": "2026-08-02T08:00:00.000Z",
-        "status": "finished",
-        "title": "정규시즌 3R",
-        "roundId": "r3",
-        "roundTitle": "정규시즌 3R",
-        "teamA": "DNS",
-        "teamB": "BRO",
-        "scoreA": 2,
-        "scoreB": 1,
-        "winner": "DNS",
         "sourceStatus": "single_source",
         "sources": {
           "pandascore": false,
